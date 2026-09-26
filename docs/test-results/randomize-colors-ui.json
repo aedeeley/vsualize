@@ -1,0 +1,121 @@
+{
+  "passed": 28,
+  "checks": [
+    {
+      "name": "Randomize is first in the actual UI",
+      "passed": true
+    },
+    {
+      "name": "the new first option has an accessible name",
+      "passed": true
+    },
+    {
+      "name": "Randomize is selected after updating old preferences",
+      "passed": true
+    },
+    {
+      "name": "the current color label says Randomize",
+      "passed": true
+    },
+    {
+      "name": "all nine color choices are available",
+      "passed": true
+    },
+    {
+      "name": "update preserves devices, response, favorites and effect",
+      "passed": true
+    },
+    {
+      "name": "the curated 21-effect library stays intact",
+      "passed": true
+    },
+    {
+      "name": "8px corners stay intact",
+      "passed": true
+    },
+    {
+      "name": "actual renderer advances color phase while receiving the fixture audio",
+      "passed": true
+    },
+    {
+      "name": "pausing freezes the color cycle",
+      "passed": true
+    },
+    {
+      "name": "resuming continues color cycling",
+      "passed": true
+    },
+    {
+      "name": "choosing a fixed palette works",
+      "passed": true
+    },
+    {
+      "name": "manual fixed palette is persisted with migration marker",
+      "passed": true
+    },
+    {
+      "name": "palette choice does not restart capture",
+      "passed": true
+    },
+    {
+      "name": "Visual default remains selectable",
+      "passed": true
+    },
+    {
+      "name": "color swatches fit 300x240",
+      "passed": true
+    },
+    {
+      "name": "first button remains reachable 300x240",
+      "passed": true
+    },
+    {
+      "name": "color swatches fit 420x700",
+      "passed": true
+    },
+    {
+      "name": "first button remains reachable 420x700",
+      "passed": true
+    },
+    {
+      "name": "color swatches fit 860x850",
+      "passed": true
+    },
+    {
+      "name": "first button remains reachable 860x850",
+      "passed": true
+    },
+    {
+      "name": "color swatches fit 1024x450",
+      "passed": true
+    },
+    {
+      "name": "first button remains reachable 1024x450",
+      "passed": true
+    },
+    {
+      "name": "a chosen fixed palette survives a fresh app frontend session",
+      "passed": true
+    },
+    {
+      "name": "only Ember is marked selected after restart",
+      "passed": true
+    },
+    {
+      "name": "appearance reset selects Randomize",
+      "passed": true
+    },
+    {
+      "name": "a clean installation selects Randomize too",
+      "passed": true
+    },
+    {
+      "name": "no uncaught JavaScript errors",
+      "passed": true
+    }
+  ],
+  "WebGL": "mocked",
+  "nativeIPC": "mocked",
+  "windowsTested": false,
+  "realDeviceAudioTested": false
+}

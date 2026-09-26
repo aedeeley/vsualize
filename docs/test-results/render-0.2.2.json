@@ -1,0 +1,240 @@
+{
+  "visuals": [
+    {
+      "mean": 25.91589912280702,
+      "litFraction": 0.1022313596491228,
+      "glError": 0,
+      "stopped": false,
+      "frames": 10,
+      "id": "ripple",
+      "seconds": 0.52
+    },
+    {
+      "mean": 30.592417763157894,
+      "litFraction": 0.13084978070175438,
+      "glError": 0,
+      "stopped": false,
+      "frames": 18,
+      "id": "glass",
+      "seconds": 1.33
+    },
+    {
+      "mean": 25.72605263157895,
+      "litFraction": 0.12733552631578948,
+      "glError": 0,
+      "stopped": false,
+      "frames": 26,
+      "id": "mandelbrot",
+      "seconds": 0.56
+    },
+    {
+      "mean": 16.51813048245614,
+      "litFraction": 0.04956140350877193,
+      "glError": 0,
+      "stopped": false,
+      "frames": 58,
+      "id": "spectrum",
+      "seconds": 7.11
+    },
+    {
+      "mean": 21.17577850877193,
+      "litFraction": 0.07037280701754386,
+      "glError": 0,
+      "stopped": false,
+      "frames": 66,
+      "id": "prism",
+      "seconds": 0.92
+    },
+    {
+      "mean": 33.93646929824561,
+      "litFraction": 0.24051535087719297,
+      "glError": 0,
+      "stopped": false,
+      "frames": 74,
+      "id": "lattice",
+      "seconds": 1.26
+    },
+    {
+      "mean": 23.775455043859647,
+      "litFraction": 0.11271929824561404,
+      "glError": 0,
+      "stopped": false,
+      "frames": 82,
+      "id": "orbital",
+      "seconds": 1.37
+    },
+    {
+      "mean": 97.12035087719298,
+      "litFraction": 0.7437171052631579,
+      "glError": 0,
+      "stopped": false,
+      "frames": 90,
+      "id": "julia",
+      "seconds": 0.36
+    },
+    {
+      "mean": 27.15002192982456,
+      "litFraction": 0.12540570175438598,
+      "glError": 0,
+      "stopped": false,
+      "frames": 98,
+      "id": "neural",
+      "seconds": 5.33
+    },
+    {
+      "mean": 22.885805921052633,
+      "litFraction": 0.06936951754385964,
+      "glError": 0,
+      "stopped": false,
+      "frames": 106,
+      "id": "starflight",
+      "seconds": 2.84
+    },
+    {
+      "mean": 43.92705043859649,
+      "litFraction": 0.3178125,
+      "glError": 0,
+      "stopped": false,
+      "frames": 114,
+      "id": "organism",
+      "seconds": 0.45
+    },
+    {
+      "mean": 32.31009868421052,
+      "litFraction": 0.12612938596491227,
+      "glError": 0,
+      "stopped": false,
+      "frames": 122,
+      "id": "vortex",
+      "seconds": 0.17
+    },
+    {
+      "mean": 41.76584978070176,
+      "litFraction": 0.2541831140350877,
+      "glError": 0,
+      "stopped": false,
+      "frames": 130,
+      "id": "overdrive",
+      "seconds": 0.22
+    },
+    {
+      "mean": 46.81927631578947,
+      "litFraction": 0.22314144736842106,
+      "glError": 0,
+      "stopped": false,
+      "frames": 138,
+      "id": "cube",
+      "seconds": 1.74
+    },
+    {
+      "mean": 92.23374451754385,
+      "litFraction": 0.9975219298245614,
+      "glError": 0,
+      "stopped": false,
+      "frames": 146,
+      "id": "dissolution",
+      "seconds": 0.49
+    },
+    {
+      "mean": 28.12467105263158,
+      "litFraction": 0.13837719298245615,
+      "glError": 0,
+      "stopped": false,
+      "frames": 154,
+      "id": "mandala",
+      "seconds": 1.51
+    },
+    {
+      "mean": 80.36576206140352,
+      "litFraction": 0.5664089912280702,
+      "glError": 0,
+      "stopped": false,
+      "frames": 162,
+      "id": "petals",
+      "seconds": 0.27
+    },
+    {
+      "mean": 151.4080701754386,
+      "litFraction": 0.9618859649122807,
+      "glError": 0,
+      "stopped": false,
+      "frames": 170,
+      "id": "bloom",
+      "seconds": 0.22
+    },
+    {
+      "mean": 84.33560307017544,
+      "litFraction": 0.6898684210526316,
+      "glError": 0,
+      "stopped": false,
+      "frames": 178,
+      "id": "kaleidoscope",
+      "seconds": 0.3
+    },
+    {
+      "mean": 22.351058114035087,
+      "litFraction": 0.11422149122807018,
+      "glError": 0,
+      "stopped": false,
+      "frames": 258,
+      "id": "groove",
+      "seconds": 1.59
+    },
+    {
+      "mean": 31.210367324561403,
+      "litFraction": 0.12804276315789473,
+      "glError": 0,
+      "stopped": false,
+      "frames": 266,
+      "id": "lava",
+      "seconds": 0.91
+    },
+    {
+      "mean": 39.200208333333336,
+      "litFraction": 0.3508771929824561,
+      "glError": 0,
+      "stopped": false,
+      "frames": 298,
+      "id": "cascade",
+      "seconds": 6.75
+    },
+    {
+      "mean": 31.958843201754387,
+      "litFraction": 0.26466557017543857,
+      "glError": 0,
+      "stopped": false,
+      "frames": 306,
+      "id": "pulse",
+      "seconds": 0.24
+    },
+    {
+      "mean": 65.57290021929825,
+      "litFraction": 0.40678179824561406,
+      "glError": 0,
+      "stopped": false,
+      "frames": 314,
+      "id": "highway",
+      "seconds": 0.45
+    },
+    {
+      "mean": 57.1449725877193,
+      "litFraction": 0.37667763157894735,
+      "glError": 0,
+      "stopped": false,
+      "frames": 322,
+      "id": "chaos",
+      "seconds": 0.12
+    },
+    {
+      "mean": 25.848985745614034,
+      "litFraction": 0.13401864035087718,
+      "glError": 0,
+      "stopped": false,
+      "frames": 330,
+      "id": "weaver",
+      "seconds": 0.18
+    }
+  ],
+  "jsErrors": [],
+  "nativeTested": false
+}

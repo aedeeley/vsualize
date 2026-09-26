@@ -1,0 +1,129 @@
+{
+  "source": "Eleven screenshots supplied by Alex for the 0.2.11 update. No inferred slider values. Percentages stored as 0..1. Palette shown as Randomize in every screenshot.",
+  "order": [
+    "ripple",
+    "glass",
+    "mandelbrot",
+    "spectrum",
+    "organism",
+    "overdrive",
+    "dissolution",
+    "mandala",
+    "kaleidoscope",
+    "groove",
+    "lava"
+  ],
+  "removed": [
+    "prism",
+    "lattice",
+    "neural",
+    "starflight",
+    "cube",
+    "petals",
+    "julia",
+    "bloom",
+    "cascade",
+    "highway"
+  ],
+  "profiles": {
+    "ripple": {
+      "name": "Ripple Classic",
+      "intensity": 1.85,
+      "reactivity": 1.85,
+      "motion": 0.65,
+      "smoothness": 0,
+      "glow": 0,
+      "palette": "randomize"
+    },
+    "glass": {
+      "name": "Liquid Glass",
+      "intensity": 1.95,
+      "reactivity": 1.15,
+      "motion": 0.6,
+      "smoothness": 0.7,
+      "glow": 0.3,
+      "palette": "randomize"
+    },
+    "mandelbrot": {
+      "name": "Mandelbrot Dive",
+      "intensity": 1.85,
+      "reactivity": 1.6,
+      "motion": 0.9,
+      "smoothness": 0.85,
+      "glow": 0.3,
+      "palette": "randomize"
+    },
+    "spectrum": {
+      "name": "Spectrum Field",
+      "intensity": 1.5,
+      "reactivity": 1.7,
+      "motion": 0.8,
+      "smoothness": 0.85,
+      "glow": 1,
+      "palette": "randomize"
+    },
+    "organism": {
+      "name": "Acid Organism",
+      "intensity": 0.9,
+      "reactivity": 1.4,
+      "motion": 0.55,
+      "smoothness": 0.8,
+      "glow": 0.8,
+      "palette": "randomize"
+    },
+    "overdrive": {
+      "name": "Neon Overdrive",
+      "intensity": 1.95,
+      "reactivity": 1.85,
+      "motion": 1,
+      "smoothness": 0.75,
+      "glow": 0.2,
+      "palette": "randomize"
+    },
+    "dissolution": {
+      "name": "Dissolution",
+      "intensity": 2,
+      "reactivity": 1.85,
+      "motion": 1,
+      "smoothness": 0.8,
+      "glow": 0.85,
+      "palette": "randomize"
+    },
+    "mandala": {
+      "name": "Energy Mandala",
+      "intensity": 1.6,
+      "reactivity": 1.75,
+      "motion": 1,
+      "smoothness": 0.3,
+      "glow": 0.7,
+      "palette": "randomize"
+    },
+    "kaleidoscope": {
+      "name": "Cosmic Kaleidoscope",
+      "intensity": 1.85,
+      "reactivity": 1.2,
+      "motion": 2,
+      "smoothness": 0.8,
+      "glow": 0.5,
+      "palette": "randomize"
+    },
+    "groove": {
+      "name": "Groove Current",
+      "intensity": 2.2,
+      "reactivity": 1.8,
+      "motion": 0.85,
+      "smoothness": 0,
+      "glow": 0,
+      "palette": "randomize"
+    },
+    "lava": {
+      "name": "Lava Forms",
+      "intensity": 1.8,
+      "reactivity": 1.85,
+      "motion": 0.2,
+      "smoothness": 0.75,
+      "glow": 0.85,
+      "palette": "randomize"
+    }
+  }
+}

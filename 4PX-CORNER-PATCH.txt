@@ -1,0 +1,5 @@
+4px corners are already included in this 0.2.6 source package.
+
+No separate corner patch is needed. The corner-patched static/style.css is
+unchanged from the previously supplied 4px patch. Rebuild with UPDATE-WINDOWS.cmd
+along with the other 0.2.6 source changes.

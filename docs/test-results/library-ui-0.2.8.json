@@ -1,0 +1,225 @@
+{
+  "checks": [
+    {
+      "name": "orbital: falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "orbital: only retained favorites remain",
+      "passed": true
+    },
+    {
+      "name": "orbital: preserves devices/colors/response",
+      "passed": true
+    },
+    {
+      "name": "orbital: picker is exactly the remaining 21",
+      "passed": true
+    },
+    {
+      "name": "orbital: no broken thumbnail",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Orbital Vortex",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Chromatic Vortex",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Pulse Tunnel",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Chromatic Chaos",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Silk Weaver",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: Hpno+Vortex+Illusio",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: color-vortex-suck",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: pulse-warp-tunnel",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: rainbow-chaos-stars",
+      "passed": true
+    },
+    {
+      "name": "removed search returns empty: sound-weaver",
+      "passed": true
+    },
+    {
+      "name": "retained alias: volumetric-led-field",
+      "passed": true
+    },
+    {
+      "name": "retained alias: fractal-orbit-film",
+      "passed": true
+    },
+    {
+      "name": "retained alias: disolve",
+      "passed": true
+    },
+    {
+      "name": "favorites filter contains only retained choices",
+      "passed": true
+    },
+    {
+      "name": "favorite shuffle moves from Ripple to Julia",
+      "passed": true
+    },
+    {
+      "name": "favorite shuffle returns to Ripple",
+      "passed": true
+    },
+    {
+      "name": "Tunnel has only remaining three effects",
+      "passed": true
+    },
+    {
+      "name": "next traverses all 21 and wraps to Ripple",
+      "passed": true
+    },
+    {
+      "name": "previous wraps to Prismatic Highway",
+      "passed": true
+    },
+    {
+      "name": "100 shuffles stay in current library with no immediate repeats",
+      "passed": true
+    },
+    {
+      "name": "one set of custom window buttons preserved",
+      "passed": true
+    },
+    {
+      "name": "4px corners preserved",
+      "passed": true
+    },
+    {
+      "name": "native version label is 0.2.8",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation cannot select removed effects",
+      "passed": true
+    },
+    {
+      "name": "orbital: no uncaught frontend errors",
+      "passed": true
+    },
+    {
+      "name": "vortex: falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "vortex: only retained favorites remain",
+      "passed": true
+    },
+    {
+      "name": "vortex: preserves devices/colors/response",
+      "passed": true
+    },
+    {
+      "name": "vortex: picker is exactly the remaining 21",
+      "passed": true
+    },
+    {
+      "name": "vortex: no broken thumbnail",
+      "passed": true
+    },
+    {
+      "name": "vortex: no uncaught frontend errors",
+      "passed": true
+    },
+    {
+      "name": "pulse: falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "pulse: only retained favorites remain",
+      "passed": true
+    },
+    {
+      "name": "pulse: preserves devices/colors/response",
+      "passed": true
+    },
+    {
+      "name": "pulse: picker is exactly the remaining 21",
+      "passed": true
+    },
+    {
+      "name": "pulse: no broken thumbnail",
+      "passed": true
+    },
+    {
+      "name": "pulse: no uncaught frontend errors",
+      "passed": true
+    },
+    {
+      "name": "chaos: falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "chaos: only retained favorites remain",
+      "passed": true
+    },
+    {
+      "name": "chaos: preserves devices/colors/response",
+      "passed": true
+    },
+    {
+      "name": "chaos: picker is exactly the remaining 21",
+      "passed": true
+    },
+    {
+      "name": "chaos: no broken thumbnail",
+      "passed": true
+    },
+    {
+      "name": "chaos: no uncaught frontend errors",
+      "passed": true
+    },
+    {
+      "name": "weaver: falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "weaver: only retained favorites remain",
+      "passed": true
+    },
+    {
+      "name": "weaver: preserves devices/colors/response",
+      "passed": true
+    },
+    {
+      "name": "weaver: picker is exactly the remaining 21",
+      "passed": true
+    },
+    {
+      "name": "weaver: no broken thumbnail",
+      "passed": true
+    },
+    {
+      "name": "weaver: no uncaught frontend errors",
+      "passed": true
+    }
+  ],
+  "passed": 54,
+  "WebGL": "mocked",
+  "nativeIPC": "mocked",
+  "liveAudioTested": false,
+  "windowsTested": false
+}

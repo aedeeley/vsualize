@@ -1,0 +1,26 @@
+# Dependencies and generated builds
+node_modules/
+src-tauri/target/
+src-tauri/gen/
+dist/
+.bundle/
+artifacts/
+Vsualize-Preview.html
+Resonance-Preview.html
+*.log
+
+# Local settings and credentials (do not publish)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+.DS_Store
+Thumbs.db
+__pycache__/
+
+# Source verification stamp is machine-local.
+.vsualize-build.sha256

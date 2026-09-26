@@ -1,0 +1,127 @@
+{
+  "WebGL": "mocked (sizing/reporting only)",
+  "nativeAPI": "not tested",
+  "passed": 30,
+  "checks": [
+    {
+      "name": "readout at 100% scaling",
+      "passed": true
+    },
+    {
+      "name": "Native is highest/default choice at 100%",
+      "passed": true
+    },
+    {
+      "name": "no document horizontal overflow at 100%",
+      "passed": true
+    },
+    {
+      "name": "Balanced is visibly reduced at 100%",
+      "passed": true
+    },
+    {
+      "name": "reselect Native at 100%",
+      "passed": true
+    },
+    {
+      "name": "implementation-smaller buffer is not mislabelled",
+      "passed": true
+    },
+    {
+      "name": "readout updates after resize to 800x600",
+      "passed": true
+    },
+    {
+      "name": "readout updates after resize to 300x240",
+      "passed": true
+    },
+    {
+      "name": "readout updates after resize to 900x700",
+      "passed": true
+    },
+    {
+      "name": "readout at 125.0% scaling",
+      "passed": true
+    },
+    {
+      "name": "Native is highest/default choice at 125.0%",
+      "passed": true
+    },
+    {
+      "name": "no document horizontal overflow at 125.0%",
+      "passed": true
+    },
+    {
+      "name": "Balanced is visibly reduced at 125.0%",
+      "passed": true
+    },
+    {
+      "name": "reselect Native at 125.0%",
+      "passed": true
+    },
+    {
+      "name": "readout at 150.0% scaling",
+      "passed": true
+    },
+    {
+      "name": "Native is highest/default choice at 150.0%",
+      "passed": true
+    },
+    {
+      "name": "no document horizontal overflow at 150.0%",
+      "passed": true
+    },
+    {
+      "name": "Balanced is visibly reduced at 150.0%",
+      "passed": true
+    },
+    {
+      "name": "reselect Native at 150.0%",
+      "passed": true
+    },
+    {
+      "name": "readout at 200% scaling",
+      "passed": true
+    },
+    {
+      "name": "Native is highest/default choice at 200%",
+      "passed": true
+    },
+    {
+      "name": "no document horizontal overflow at 200%",
+      "passed": true
+    },
+    {
+      "name": "Balanced is visibly reduced at 200%",
+      "passed": true
+    },
+    {
+      "name": "reselect Native at 200%",
+      "passed": true
+    },
+    {
+      "name": "readout at 300% scaling",
+      "passed": true
+    },
+    {
+      "name": "Native is highest/default choice at 300%",
+      "passed": true
+    },
+    {
+      "name": "no document horizontal overflow at 300%",
+      "passed": true
+    },
+    {
+      "name": "Balanced is visibly reduced at 300%",
+      "passed": true
+    },
+    {
+      "name": "reselect Native at 300%",
+      "passed": true
+    },
+    {
+      "name": "no uncaught errors",
+      "passed": true
+    }
+  ]
+}

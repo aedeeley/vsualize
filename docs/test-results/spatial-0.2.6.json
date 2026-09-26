@@ -1,0 +1,474 @@
+{
+  "method": "Unmodified GLSL ES 300 in Mesa EGL/GLES3 llvmpipe. Same volume/exposure/progression; low/mid/high spectra. Not WebGL or Windows capture validation.",
+  "backend": "OpenGL ES 3.2 Mesa 25.0.7-2",
+  "reports": [
+    {
+      "visual": "ripple",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.8861949880778509,
+        0.6661143333540849,
+        0.7071442766486206
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        222
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "glass",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.8728698747002333,
+        0.8758450962768085,
+        0.11008227269525134
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        65
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "mandelbrot",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.3856683802777558,
+        0.49817150522709,
+        0.5422148209816443
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        215
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "spectrum",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.2184299796098934,
+        1.2143692553957286,
+        1.2181589168153013
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "prism",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.6708801067479201,
+        0.5711305856036697,
+        0.4219570997385963
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "lattice",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.1474426708094365,
+        1.2757352558382482,
+        1.034691450686488
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "orbital",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.5881739125012626,
+        0.6257547605704408,
+        0.7707324795324032
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "julia",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.814091753090628,
+        0.8018975901478113,
+        0.7438652230539756
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        235
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "neural",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.7281960312793452,
+        0.8302687849884675,
+        0.7679743499930257
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "starflight",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.5329444027072007,
+        0.5292733252102715,
+        0.34322826367956244
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "organism",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.019583045230476,
+        1.0461337466665854,
+        0.8778707307262397
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        226
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "vortex",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.032017257335846,
+        0.8346631760034925,
+        0.9828030804808038
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        208
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "overdrive",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.9265605613707032,
+        0.9388410858847305,
+        0.8786598325918408
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        194
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "cube",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.6208252323059243,
+        0.6241436879550374,
+        0.10092482022236823
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "dissolution",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.47791204617427113,
+        0.2637834722422119,
+        0.48872862177896903
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        161
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "mandala",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.5263079751345456,
+        0.6237671216614682,
+        0.7740364857631234
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "petals",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.5046471206897126,
+        0.5235144328681552,
+        0.1937341761576829
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "bloom",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.3909869642460092,
+        0.30846787348880916,
+        0.3103488679857024
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        228
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "kaleidoscope",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.6162677633881379,
+        0.5599933625235541,
+        0.6074706769308775
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        5,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "groove",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.0231543166069683,
+        1.0262742982573825,
+        0.792394809377032
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        238
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "lava",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.7464073850870643,
+        0.6600484218620501,
+        0.6788335011936457
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        228
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "cascade",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        1.202146018097641,
+        1.2062626782409274,
+        1.192291475285791
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "pulse",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.8436971618176913,
+        0.8528541292581581,
+        0.5079674948302888
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        121
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "highway",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.26375240412455964,
+        0.276794380311799,
+        0.1790476952821305
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "chaos",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.2850929898898675,
+        0.26387563630776645,
+        0.30837557856909703
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        240
+      ],
+      "alphaRespondsToOpacity": true
+    },
+    {
+      "visual": "weaver",
+      "sameVolume": true,
+      "transportFrozen": true,
+      "attacksDisabled": true,
+      "normalizedSpatialDifferences": [
+        0.8757644181230217,
+        0.7135457993306896,
+        0.8686104516362051
+      ],
+      "passed": true,
+      "shaderCompiled": true,
+      "alphaRange": [
+        1,
+        199
+      ],
+      "alphaRespondsToOpacity": true
+    }
+  ]
+}

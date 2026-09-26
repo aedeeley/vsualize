@@ -1,0 +1,88 @@
+{
+  "baseline": "0.2.5 full source plus supplied 4px-corners patch",
+  "files": [
+    {
+      "path": "src-tauri/src/native_frame.rs",
+      "unchanged": true,
+      "sha256": "8095dfeaf8a2825e2dccb2bece7ab821e0ab2a35fb04df23c5f54efd5847be37"
+    },
+    {
+      "path": "src-tauri/src/main.rs",
+      "unchanged": true,
+      "sha256": "198c8c2e46b252064ec812a2382a4b33db585179cbc914531754901f658b5247"
+    },
+    {
+      "path": "src-tauri/src/native_frame/windows.rs",
+      "unchanged": true,
+      "sha256": "02f6f8593d986eb4de2f0b029bfd5c2aa977adb73ab3ae60fc1ce045bfea493c"
+    },
+    {
+      "path": "src-tauri/src/audio/analyzer.rs",
+      "unchanged": true,
+      "sha256": "81528f10b9d32d37363e2f4d4e97fcebaab4e2c1128ad0b521fb2c546abf2d80"
+    },
+    {
+      "path": "src-tauri/src/audio/mod.rs",
+      "unchanged": true,
+      "sha256": "2dca1e21658f4cff799f94335a7034d9041fe90c1f5bc257d1035c1379e57ab3"
+    },
+    {
+      "path": "src-tauri/src/audio/windows.rs",
+      "unchanged": true,
+      "sha256": "9f310c02d70c1c6388398d458d2bc1e22e3f4ecd685124eaed5a8212cb0fe4ec"
+    },
+    {
+      "path": "src-tauri/src/native_frame/windows/tests.rs",
+      "unchanged": true,
+      "sha256": "4d982f858069e0fab9d0db70f6c4f5657a92e479080fe678ca28f1cdc9e896d0"
+    },
+    {
+      "path": "static/style.css",
+      "unchanged": true,
+      "sha256": "6bc4cbfb54c53e12ae6c3a98cdafc9a3ef83b7b38b2484037d0bee58963dfb52"
+    },
+    {
+      "path": "scripts/setup-windows.ps1",
+      "unchanged": true,
+      "sha256": "8e188a2c5e0a65262c455ef57d6326639164474c5eadff1d46876b006f92deaf"
+    },
+    {
+      "path": "scripts/start-windows.ps1",
+      "unchanged": true,
+      "sha256": "72b12a7f632cfa6b8b1dfffa901ccbdc4538815901da7e0a5d9d498d781933b1"
+    },
+    {
+      "path": "scripts/windows-common.ps1",
+      "unchanged": true,
+      "sha256": "57fd3c9e82b396ffc423db5aaa02f81a2796190b132a0c67b5bed44910d3655e"
+    },
+    {
+      "path": "UPDATE-WINDOWS.cmd",
+      "unchanged": true,
+      "sha256": "3ca9dc9083c73dea368de2673ee5602ba858ffc0485d69d704dc7292ce52f75c"
+    },
+    {
+      "path": "BUILD-INSTALLER.cmd",
+      "unchanged": true,
+      "sha256": "ebe50474a4b403ca20d284557ea19627fd3cb9afab61f34c000c1e64acb419cf"
+    },
+    {
+      "path": "REBUILD-WINDOWS.cmd",
+      "unchanged": true,
+      "sha256": "3ca9dc9083c73dea368de2673ee5602ba858ffc0485d69d704dc7292ce52f75c"
+    },
+    {
+      "path": "START-WINDOWS.cmd",
+      "unchanged": true,
+      "sha256": "ef9554d6bc92cbca878e4ead14e0d78cad296c5be7b3454e55348602d5d39f53"
+    },
+    {
+      "path": "SETUP-WINDOWS.cmd",
+      "unchanged": true,
+      "sha256": "fc73a77355c9f577a648830b8f21e39e9078d9dda9b946257b5ccc5234d0a03b"
+    }
+  ],
+  "packageDependenciesUnchanged": true,
+  "TauriConfigOnlyVersionChanged": true,
+  "CargoOnlyVersionChanged": true
+}

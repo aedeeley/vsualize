@@ -1,0 +1,221 @@
+{
+  "baseline": "Vsualize-0.2.3-Desktop-Update.zip",
+  "checked": 43,
+  "files": [
+    {
+      "file": "src/audio.ts",
+      "sha256": "18d50b618d682ff54ed7ed1556f6c30729c7c426d77ddfd68a7549886dd2b6eb",
+      "unchanged": true
+    },
+    {
+      "file": "src/catalog.ts",
+      "sha256": "a37d1a8172f2a6c3bf81fee5f64b673083edcb14a2a57bbd85dbf9242bd60008",
+      "unchanged": true
+    },
+    {
+      "file": "src/library.ts",
+      "sha256": "e61a99ec21a96a6e3e962986d881f0486de68030d18a204ab60530f1f0f545fa",
+      "unchanged": true
+    },
+    {
+      "file": "src/motion.ts",
+      "sha256": "ac39b797e7a993a2badc9d8a2cd4f9e8c0ce09b1de445b7352a7b3557909d165",
+      "unchanged": true
+    },
+    {
+      "file": "src/native.ts",
+      "sha256": "b71e4e96d64a6854f4f6c5b705eefaed8f446bf14ddd83bbe80cc08431805887",
+      "unchanged": true
+    },
+    {
+      "file": "src/renderer.ts",
+      "sha256": "c800cadaf04792c441dadb79cf88cfbae55c16ee545f060abcf6340bea691861",
+      "unchanged": true
+    },
+    {
+      "file": "src/settings.ts",
+      "sha256": "6fba291f6bc6fffefdffe98bc197853feb4e9e1c673352c82450273e0ffc3c7e",
+      "unchanged": true
+    },
+    {
+      "file": "src/signal.ts",
+      "sha256": "8b0a9263ac9036dafb34f66afcafed40515bf730c6aa6f467894a9d0b692eb62",
+      "unchanged": true
+    },
+    {
+      "file": "src/types.ts",
+      "sha256": "4f21cbe8c967f571ad0c038753917e6470452522d463f53605cc2e9561b0f199",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/bloom.ts",
+      "sha256": "6eb11f2d5d198f055dc3a67c0eaa01a97a8684e666df27b4b1111d17e1c422ea",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/cascade.ts",
+      "sha256": "b419f5f001c116cb410de8c753ce8b032d2e67626380fb09b506d577392a1d10",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/chaos.ts",
+      "sha256": "7a803e36457185e5e5b31d22abe28338b908af5b899e49576b782396eea26ebe",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/collection-common.ts",
+      "sha256": "8ab264aad9e055d1770ce185d54554c4c15670663584c8aff5f3110c3e1704f4",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/common.ts",
+      "sha256": "53c228f71439dfe53792003c481f3a9c622e8ccb97934646d60d1cc52268d4dc",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/cube.ts",
+      "sha256": "62cab92669dba400bc9f0b975af60d9f5b88359341c2826b4325fc139a15f041",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/dissolution.ts",
+      "sha256": "143a7df5cff2fb5d6e2c677ab29e5664285ade3f84edd369c3ab72d7bb0b5aeb",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/glass.ts",
+      "sha256": "71dc48c37cb482652972f09d6a390b32e60d383e0f7f877d48d929424c4a7c46",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/groove.ts",
+      "sha256": "59265b10ab048263f819f90285a714546615a5b54d6e667f19a99ae433895a33",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/highway.ts",
+      "sha256": "047ae1ccee5c328a523777bdc73882f6b0ee14a113d5c0f0f3fa148c4b162c6e",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/index.ts",
+      "sha256": "a3de57e5b3adbbc47a2b71ed40b7d70308a48ae73db2d53628cac795cc9d0120",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/julia.ts",
+      "sha256": "090ac5ab17fc5e99522e6815da6c4d69c662db3310d0105487c5675d83092d55",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/kaleidoscope.ts",
+      "sha256": "ad3b4950f14090e074999d99c966a1aee440a1f6209c630d97631fc9815e9490",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/lattice.ts",
+      "sha256": "557cce6a69f291d788bf3dd25e1796c81ca72c18c1f210a242fb3c020ee3a5c7",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/lava.ts",
+      "sha256": "0932aa88dfab0920947ec2f929a8c830af08088186d98dfb70b78908c3385ff9",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/mandala.ts",
+      "sha256": "5bf00b43078092783ac4035de343ce644a0cfdbbc270331b9d7c44580610bedd",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/mandelbrot.ts",
+      "sha256": "0d3844fd84de144c843103a0d92ff215f0443d8dda42a237c351ca3c98e7dbcc",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/neural.ts",
+      "sha256": "16733f682b30ce23964cbf95db0fd532b296bce447c6d2bdd14d0abe30a0b7d5",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/orbital.ts",
+      "sha256": "6bae1307d257fa381ce1802aaa340a6b635c912a07f72b41a5379e99f5bdc511",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/organism.ts",
+      "sha256": "9edc2a4b635666e0cb223bf408acf83a6cc65fdff4ac08af0e5d11f89cf4a9b1",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/overdrive.ts",
+      "sha256": "4d1d9d518021fe31f6f88a99c90dff08a93fa83d31ca78fafd0eb408f7d860b7",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/petals.ts",
+      "sha256": "eed4c28a3527762adeedf3685095ac053dcebe34869ab408223fdb52a8d8040a",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/prism.ts",
+      "sha256": "6b201f97fe84f3469aec585ea7e1ab1e408216fe4e1efc73247f4df6f1442fc7",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/pulse.ts",
+      "sha256": "455b55b08dc62796a0e29fa5c7196a1e85f480b3c11e72f2c99d7fa4bbfa1f17",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/ripple.ts",
+      "sha256": "4e19952d328f335f33935ae6e5044b7757d739aece47ca607109c9300bcd9c69",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/spectrum.ts",
+      "sha256": "9945409ed93f5fe11d946c478f67ba1e8ada65586db04699bb1f868b3728eb8b",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/starflight.ts",
+      "sha256": "ca43eba3a76d5283cd7639e2ae192f21446c912489d0f0fab199efb2ce73932e",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/thumbnails.ts",
+      "sha256": "7de5625e641d5e6aaecc1a58b8368d5da8cc507d02c00da7b14271d64feb94eb",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/vortex.ts",
+      "sha256": "131794c16658824011b5ed97be0a3c8d36de845225f3c96941259de66ee80c6e",
+      "unchanged": true
+    },
+    {
+      "file": "src/visuals/weaver.ts",
+      "sha256": "dacb58914e3c46fcaecc2e8f933120c994246f09b96f813f9f08604dfc541679",
+      "unchanged": true
+    },
+    {
+      "file": "src-tauri/src/audio/analyzer.rs",
+      "sha256": "81528f10b9d32d37363e2f4d4e97fcebaab4e2c1128ad0b521fb2c546abf2d80",
+      "unchanged": true
+    },
+    {
+      "file": "src-tauri/src/audio/mod.rs",
+      "sha256": "2dca1e21658f4cff799f94335a7034d9041fe90c1f5bc257d1035c1379e57ab3",
+      "unchanged": true
+    },
+    {
+      "file": "src-tauri/src/audio/windows.rs",
+      "sha256": "9f310c02d70c1c6388398d458d2bc1e22e3f4ecd685124eaed5a8212cb0fe4ec",
+      "unchanged": true
+    },
+    {
+      "file": "static/style.css",
+      "sha256": "c114a59f9c66a3dc42f9396a0b3db4ab1df85c5f1ef15662de318fb24101e29e",
+      "unchanged": true
+    }
+  ]
+}

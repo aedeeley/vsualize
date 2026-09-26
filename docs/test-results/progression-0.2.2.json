@@ -1,0 +1,241 @@
+{
+  "checks": [
+    {
+      "id": "ripple",
+      "historyPixelDifference": 34.21578125,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "glass",
+      "historyPixelDifference": 8.785872395833334,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "mandelbrot",
+      "historyPixelDifference": 17.77853515625,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "spectrum",
+      "historyPixelDifference": 2.2377669270833334,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": false,
+      "passed": true
+    },
+    {
+      "id": "prism",
+      "historyPixelDifference": 12.346061197916667,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "lattice",
+      "historyPixelDifference": 17.60619140625,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "orbital",
+      "historyPixelDifference": 9.26216796875,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "julia",
+      "historyPixelDifference": 37.277018229166664,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "neural",
+      "historyPixelDifference": 21.409375,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "starflight",
+      "historyPixelDifference": 10.617018229166666,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "organism",
+      "historyPixelDifference": 39.95888020833333,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "historyPixelDifference": 22.282259114583333,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "overdrive",
+      "historyPixelDifference": 43.987194010416665,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "cube",
+      "historyPixelDifference": 10.271302083333333,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "dissolution",
+      "historyPixelDifference": 37.966510416666665,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "mandala",
+      "historyPixelDifference": 16.51791015625,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "petals",
+      "historyPixelDifference": 63.147083333333335,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "bloom",
+      "historyPixelDifference": 42.347265625,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "kaleidoscope",
+      "historyPixelDifference": 40.913020833333334,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "groove",
+      "historyPixelDifference": 5.62751953125,
+      "quietTravel": 4.239318042438666,
+      "loudTravel": 5.991277086093006,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "lava",
+      "historyPixelDifference": 26.929127604166666,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "cascade",
+      "historyPixelDifference": 3.2187239583333334,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": false,
+      "passed": true
+    },
+    {
+      "id": "pulse",
+      "historyPixelDifference": 37.36164713541667,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "highway",
+      "historyPixelDifference": 11.887734375,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "chaos",
+      "historyPixelDifference": 35.37802083333333,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    },
+    {
+      "id": "weaver",
+      "historyPixelDifference": 30.484114583333334,
+      "quietTravel": 3.912850600427697,
+      "loudTravel": 5.753794653813597,
+      "glError": 0,
+      "historyRequired": true,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "nativeTested": false,
+  "method": "Different earlier audio, identical final 1.5-second signal and identical GPU history; compare resulting rendered phases."
+}

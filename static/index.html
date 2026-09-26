@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Vsualize · Audio Visualizer</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app-surface">
+  <canvas id="visualizer" tabindex="0" aria-label="Audio visualizer. Click or press Enter to show controls."></canvas>
+  <div id="preview-label" hidden>Browser preview · No audio connected</div>
+  <button id="signal-monitor" class="signal-monitor" hidden title="Open audio controls">
+    <span id="monitor-dot" class="signal-dot"></span><span id="monitor-label">No audio connected</span>
+    <meter id="monitor-level" min="0" max="1" value="0" aria-label="Received audio level"></meter>
+  </button>
+  <div id="chrome" class="chrome" aria-hidden="true" inert>
+    <div id="drag-zone" aria-label="Drag this area to move the window">
+      <div class="wordmark"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="6"/><ellipse cx="12" cy="12" rx="6.5" ry="3.8"/><ellipse cx="12" cy="12" rx="2.5" ry="1.5"/></svg><span>vsualize</span></div>
+      <span class="drag-hint">DRAG TO MOVE</span>
+    </div>
+    <div class="window-actions">
+      <button id="minimize" class="icon-button" title="Minimize" aria-label="Minimize"><svg viewBox="0 0 24 24"><path d="M6 16h12"/></svg></button>
+      <button id="fullscreen" class="icon-button" title="Fullscreen (F11)" aria-label="Toggle fullscreen"><svg viewBox="0 0 24 24"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button>
+      <button id="close-app" class="icon-button" title="Quit" aria-label="Quit Vsualize"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+  </div>
+  <section id="panel" class="panel bottom-right" aria-label="Vsualize controls" aria-hidden="true" inert>
+    <header class="panel-heading">
+      <div><div class="eyebrow">YOUR SOUND, IN MOTION</div><h1 id="visual-name">Soundform Ripple</h1></div>
+      <button id="dismiss" class="icon-button" aria-label="Hide controls" title="Hide controls (Esc)"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </header>
+    <div class="signal-line"><span id="signal-dot" class="signal-dot"></span><span id="signal-summary">Connecting to audio…</span><button id="pause" class="text-button" title="Pause animation (Space)" aria-label="Pause animation">Pause</button></div>
+    <nav class="tabs" role="tablist" aria-label="Control sections">
+      <button id="tab-visuals" role="tab" aria-selected="true" aria-controls="page-visuals" data-tab="visuals">Visuals</button>
+      <button id="tab-audio" role="tab" aria-selected="false" aria-controls="page-audio" data-tab="audio" tabindex="-1">Audio</button>
+      <button id="tab-settings" role="tab" aria-selected="false" aria-controls="page-settings" data-tab="settings" tabindex="-1">Settings</button>
+    </nav>
+    <div id="page-visuals" class="page" role="tabpanel" aria-labelledby="tab-visuals">
+      <div class="library-search"><input id="visual-search" type="search" placeholder="Search visuals…" aria-label="Search visuals by name or reference" autocomplete="off" spellcheck="false"><button id="favorites-only" title="Show favorites" aria-label="Show favorites" aria-pressed="false">☆</button></div>
+      <div id="categories" class="categories" role="group" aria-label="Visual category"></div>
+      <div class="library-tools"><span id="library-count" aria-live="polite">12 / 12</span><span id="render-cost"></span><div><button id="random-visual" title="Random matching visual" aria-label="Random matching visual">Shuffle</button><button id="previous-visual" title="Previous visual" aria-label="Previous visual">‹</button><button id="next-visual" title="Next visual" aria-label="Next visual">›</button></div></div>
+      <div class="visual-grid" id="visual-grid" role="group" aria-label="Visualizer library"></div>
+      <p id="empty-library" class="panel-note" hidden>No matches. Try another search or turn off Favorites.</p>
+      <p id="visual-description" class="visual-description"></p>
+      <div class="control slider-control"><label for="intensity">Intensity</label><output for="intensity" id="intensity-value"></output><input id="intensity" data-setting="intensity" type="range" min="0" max="3" step="0.05" title="One control for shape energy and music response. 100% is this effect's tuned balance; higher is more dramatic."></div>
+      <div class="control slider-control"><label for="lineWidth">Line thickness</label><output for="lineWidth" id="lineWidth-value"></output><input id="lineWidth" data-setting="lineWidth" type="range" min="0.35" max="4" step="0.05" title="Fine filaments to bold ribbons, without changing resolution or zoom."></div>
+      <p id="width-note" class="control-note" hidden>For this surface, thickness controls the width of luminous highlights.</p>
+      <div class="control slider-control"><label for="motion">Speed</label><output for="motion" id="motion-value"></output><input id="motion" data-setting="motion" type="range" min="0" max="3" step="0.05" title="Forward travel and pattern motion. Zero stops travel; higher values move from slow drift to rapid flight."></div>
+      <div class="control slider-control"><label for="glow">Glow</label><output for="glow" id="glow-value"></output><input id="glow" data-setting="glow" type="range" min="0" max="1" step="0.01" title="Clean line cores at 0%; broad, saturated light halos at 100%."></div>
+      <p class="control-note">Smooth motion is built in · settings are saved per effect.</p>
+      <button id="reset-response" class="secondary-button" title="Restore this effect's defaults. Keep audio devices, global settings and other effects.">Reset this effect</button>
+      <div class="palette-section"><div class="row-label"><span>Palette</span><span id="palette-name" class="muted">Randomize</span></div><div id="palettes" class="palettes" role="group" aria-label="Color palette"></div>
+        <div id="randomize-details" hidden>
+          <div id="live-palette" class="live-palette" aria-label="Current five-color palette"><span></span><span></span><span></span><span></span><span></span></div>
+          <p class="palette-note">Five colors together. Fresh palettes blend in continuously.</p>
+        </div>
+      </div>
+      <div class="panel-note">Click outside to return · ← / → to browse while hidden</div>
+    </div>
+    <div id="page-audio" class="page" role="tabpanel" aria-labelledby="tab-audio" hidden>
+      <div class="audio-proof" id="audio-proof" data-state="connecting">
+        <div class="proof-heading"><strong id="capture-title">Connecting</strong><span id="beat-led" aria-label="Detected onset">BEAT</span></div>
+        <p id="capture-detail" role="status">Waiting for the audio engine.</p>
+        <div id="live-spectrum" class="live-spectrum" aria-label="Live captured spectrum"></div>
+        <div class="proof-level"><span>To visualizer</span><meter id="master-level" min="0" max="1" value="0" aria-label="Visualizer input level"></meter></div>
+        <p class="proof-hint">Play music, then pause it. These meters are capture data, not animation. No sound should mean no pulses.</p>
+      </div>
+      <div class="segmented" role="group" aria-label="Audio source">
+        <button data-mode="desktop">Desktop</button><button data-mode="microphone">Mic</button><button data-mode="both">Both</button>
+      </div>
+      <div id="desktop-options" class="device-options">
+        <label class="field" for="desktop-device"><span>Output device</span><select id="desktop-device" data-setting="desktopDevice"><option value="">Follow default output</option></select></label>
+        <p class="source-status" id="desktop-status"></p>
+        <div class="raw-level"><span>Raw input</span><meter id="desktop-raw-meter" min="0" max="1" value="0" aria-label="Desktop raw level"></meter><output id="desktop-raw-value">No samples</output></div>
+        <div class="control slider-control" id="desktop-gain-control"><label for="desktopGain">Desktop contribution</label><output id="desktopGain-value" for="desktopGain"></output><input id="desktopGain" data-setting="desktopGain" type="range" min="0" max="3" step="0.05"></div>
+      </div>
+      <div id="microphone-options" class="device-options">
+        <label class="field" for="microphone-device"><span>Microphone</span><select id="microphone-device" data-setting="microphoneDevice"><option value="">Follow default microphone</option></select></label>
+        <p class="source-status" id="microphone-status"></p>
+        <div class="raw-level"><span>Raw input</span><meter id="microphone-raw-meter" min="0" max="1" value="0" aria-label="Microphone raw level"></meter><output id="microphone-raw-value">No samples</output></div>
+        <div class="control slider-control"><label for="microphoneGain">Microphone contribution</label><output id="microphoneGain-value" for="microphoneGain"></output><input id="microphoneGain" data-setting="microphoneGain" type="range" min="0" max="3" step="0.05"></div>
+      </div>
+      <div class="band-meters" aria-label="Frequency energy">
+        <div><span>Bass</span><meter id="bass-meter" min="0" max="1" value="0" aria-label="Bass energy"></meter></div>
+        <div><span>Mids</span><meter id="mid-meter" min="0" max="1" value="0" aria-label="Midrange energy"></meter></div>
+        <div><span>Highs</span><meter id="treble-meter" min="0" max="1" value="0" aria-label="Treble energy"></meter></div>
+      </div>
+      <div class="control slider-control"><label for="sensitivity">Sensitivity</label><output id="sensitivity-value" for="sensitivity"></output><input id="sensitivity" data-setting="sensitivity" type="range" min="0.25" max="4" step="0.05"></div>
+      <div class="control slider-control"><label for="noiseGate">Silence threshold</label><output id="noiseGate-value" for="noiseGate"></output><input id="noiseGate" data-setting="noiseGate" type="range" min="0" max="0.025" step="0.0005"></div>
+      <div id="audio-error" class="inline-notice" role="status" hidden></div>
+      <div class="button-row"><button id="reconnect" class="secondary-button">Reconnect</button><button id="refresh-devices" class="secondary-button">Refresh devices</button></div>
+      <div class="button-row"><button id="compare-audio" class="secondary-button" aria-pressed="false">Compare: response on</button><button id="copy-diagnostics" class="secondary-button">Copy diagnostics</button></div>
+      <p id="compare-note" class="panel-note" hidden>Comparison only: the scene has no audio input. Meters above still show capture. Click again to restore music response.</p>
+      <div class="button-row"><button data-mode="demo" class="secondary-button">Demo signal</button><button data-mode="off" class="secondary-button">Stop capture</button></div>
+      <p class="panel-note">Audio stays on this device. Nothing is recorded, uploaded, or played back. Both combines visual energy, not speaker output.</p>
+    </div>
+    <div id="page-settings" class="page" role="tabpanel" aria-labelledby="tab-settings" hidden>
+      <div class="row-label"><span>Background</span></div>
+      <div class="segmented two" role="group" aria-label="Background mode"><button data-background="solid">Solid</button><button data-background="transparent">Desktop</button></div>
+      <div id="solid-color-control" class="control color-control"><label for="background-color">Background color</label><input id="background-color" data-setting="backgroundColor" type="color" value="#07080d"></div>
+      <div id="transparency-options"><div class="control slider-control"><label for="opacity">Visual opacity</label><output id="opacity-value" for="opacity"></output><input id="opacity" data-setting="opacity" type="range" min="0.1" max="1" step="0.01"></div><p class="panel-note left">Shows whatever is behind the window. Glass is lighting, not a distortion of your desktop.</p></div>
+      <label class="field inline" for="menu-position"><span>Menu position</span><select id="menu-position" data-setting="menuPosition"><option value="bottom-right">Bottom right</option><option value="bottom-center">Bottom center</option><option value="bottom-left">Bottom left</option><option value="top-right">Top right</option><option value="top-center">Top center</option><option value="top-left">Top left</option><option value="center">Center</option></select></label>
+      <label class="field inline" for="timeout"><span>Hide controls after</span><select id="timeout" data-setting="controlsTimeout" data-number="true"><option value="4">4 seconds</option><option value="7">7 seconds</option><option value="12">12 seconds</option><option value="0">Only when dismissed</option></select></label>
+      <label class="field inline" for="layer"><span>Window layer</span><select id="layer" data-setting="layer"><option value="normal">Normal</option><option value="top">Always on top</option><option value="bottom">Always on bottom</option></select></label>
+      <label class="toggle-row" for="hide-taskbar"><span>Hide from taskbar<small>Restore from the system tray.</small></span><input id="hide-taskbar" data-setting="hideTaskbar" type="checkbox" role="switch"></label>
+      <div class="section-rule"></div>
+      <label class="field inline" for="fps"><span>Frame limit</span><select id="fps" data-setting="fps" data-number="true"><option value="30">30 fps</option><option value="60">60 fps</option><option value="120">120 fps</option></select></label>
+      <label class="field inline" for="quality"><span>Render quality</span><select id="quality" data-setting="quality"><option value="auto">Automatic (recommended)</option><option value="low">Light (reduced)</option><option value="medium">Balanced (reduced)</option><option value="high">Native (100%)</option></select></label>
+      <p id="render-resolution" class="source-status" role="status">Waiting for first rendered frame…</p>
+      <p id="render-resolution-detail" class="panel-note"></p>
+      <p class="panel-note">Automatic adjusts resolution to keep effects responsive with less GPU work. Choose 30 fps to save more power, or Native for full display resolution.</p>
+      <label class="toggle-row" for="idle-motion"><span>Drift during silence<small>Off by default: movement settles when audio stops.</small></span><input id="idle-motion" data-setting="idleMotion" type="checkbox" role="switch"></label>
+      <label class="toggle-row" for="show-signal"><span>Pin live input monitor<small>Show source and level while controls are hidden.</small></span><input id="show-signal" data-setting="showSignal" type="checkbox" role="switch"></label>
+      <label class="toggle-row" for="gentle-peaks"><span>Softer light flashes</span><input id="gentle-peaks" data-setting="gentlePeaks" type="checkbox" role="switch"></label>
+      <div class="button-row"><button id="export-profiles" class="secondary-button">Export effect settings</button><button id="import-profiles" class="secondary-button">Import effect settings</button></div>
+      <input id="profile-file" type="file" accept=".json,application/json" hidden aria-label="Choose effect settings">
+      <p class="panel-note">Move your effect settings between Browser Studio and the Windows app.</p>
+      <div id="app-updates"><div class="button-row"><button id="check-updates" class="secondary-button">Check for updates</button><button id="install-update" class="secondary-button" hidden>Install update and restart</button></div><p id="update-status" class="source-status" role="status" aria-live="polite"></p></div>
+      <div class="button-row"><button id="reset-settings" class="secondary-button">Reset appearance</button><button id="center-window" class="secondary-button">Center window</button></div>
+      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.3.0</p>
+    </div>
+  </section>
+  <div class="resize-edge north" data-resize="North"></div><div class="resize-edge south" data-resize="South"></div><div class="resize-edge west" data-resize="West"></div><div class="resize-edge east" data-resize="East"></div>
+  <div class="resize-edge northwest" data-resize="NorthWest"></div><div class="resize-edge northeast" data-resize="NorthEast"></div><div class="resize-edge southwest" data-resize="SouthWest"></div><div class="resize-edge southeast" data-resize="SouthEast"></div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

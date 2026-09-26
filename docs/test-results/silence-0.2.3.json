@@ -1,0 +1,240 @@
+{
+  "visuals": [
+    {
+      "id": "ripple",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "glass",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "mandelbrot",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "spectrum",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "prism",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "lattice",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "orbital",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "julia",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "neural",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "starflight",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "organism",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "overdrive",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "cube",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "dissolution",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "mandala",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "petals",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "bloom",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "kaleidoscope",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "groove",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "lava",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "cascade",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "pulse",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "highway",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "chaos",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "weaver",
+      "pixelChange": 0,
+      "stationary": true,
+      "sleeping": true,
+      "resumed": true,
+      "glError": 0,
+      "passed": true
+    }
+  ],
+  "windowsCaptureTested": false,
+  "method": "Synthetic PCM features rendered in Chromium SwiftShader; not real music capture."
+}

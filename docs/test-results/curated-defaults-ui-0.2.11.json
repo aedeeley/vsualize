@@ -1,0 +1,776 @@
+{
+  "passed": 192,
+  "checks": [
+    {
+      "name": "removed selected Julia falls back to Ripple",
+      "passed": true
+    },
+    {
+      "name": "saved remaining favorites retain order",
+      "passed": true
+    },
+    {
+      "name": "eleven cards in exact retained order",
+      "passed": true
+    },
+    {
+      "name": "counter reports 11 / 11",
+      "passed": true
+    },
+    {
+      "name": "all retained thumbnails decode",
+      "passed": true
+    },
+    {
+      "name": "Space filter gone",
+      "passed": true
+    },
+    {
+      "name": "audio, quality, window appearance preserved",
+      "passed": true
+    },
+    {
+      "name": "one pre-migration backup retained",
+      "passed": true
+    },
+    {
+      "name": "ripple: active ID",
+      "passed": true
+    },
+    {
+      "name": "ripple: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "ripple: selected card",
+      "passed": true
+    },
+    {
+      "name": "ripple: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "ripple: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "ripple: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "ripple: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "ripple: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "ripple: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "glass: active ID",
+      "passed": true
+    },
+    {
+      "name": "glass: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "glass: selected card",
+      "passed": true
+    },
+    {
+      "name": "glass: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "glass: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "glass: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "glass: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "glass: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "glass: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: active ID",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: selected card",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "spectrum: active ID",
+      "passed": true
+    },
+    {
+      "name": "spectrum: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "spectrum: selected card",
+      "passed": true
+    },
+    {
+      "name": "spectrum: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "spectrum: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "spectrum: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "spectrum: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "spectrum: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "spectrum: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "organism: active ID",
+      "passed": true
+    },
+    {
+      "name": "organism: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "organism: selected card",
+      "passed": true
+    },
+    {
+      "name": "organism: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "organism: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "organism: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "organism: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "organism: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "organism: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "overdrive: active ID",
+      "passed": true
+    },
+    {
+      "name": "overdrive: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "overdrive: selected card",
+      "passed": true
+    },
+    {
+      "name": "overdrive: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "overdrive: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "overdrive: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "overdrive: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "overdrive: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "overdrive: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "dissolution: active ID",
+      "passed": true
+    },
+    {
+      "name": "dissolution: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "dissolution: selected card",
+      "passed": true
+    },
+    {
+      "name": "dissolution: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "dissolution: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "dissolution: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "dissolution: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "dissolution: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "dissolution: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "mandala: active ID",
+      "passed": true
+    },
+    {
+      "name": "mandala: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "mandala: selected card",
+      "passed": true
+    },
+    {
+      "name": "mandala: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "mandala: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "mandala: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "mandala: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "mandala: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "mandala: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: active ID",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: selected card",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "groove: active ID",
+      "passed": true
+    },
+    {
+      "name": "groove: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "groove: selected card",
+      "passed": true
+    },
+    {
+      "name": "groove: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "groove: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "groove: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "groove: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "groove: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "groove: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "lava: active ID",
+      "passed": true
+    },
+    {
+      "name": "lava: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "lava: selected card",
+      "passed": true
+    },
+    {
+      "name": "lava: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "lava: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "lava: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "lava: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "lava: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "lava: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "visual changes did not restart capture",
+      "passed": true
+    },
+    {
+      "name": "removed search: Prism Triangles",
+      "passed": true
+    },
+    {
+      "name": "removed search: Luminous Lattice",
+      "passed": true
+    },
+    {
+      "name": "removed search: Neural Constellation",
+      "passed": true
+    },
+    {
+      "name": "removed search: Starflight",
+      "passed": true
+    },
+    {
+      "name": "removed search: Nocturne Cube",
+      "passed": true
+    },
+    {
+      "name": "removed search: Petal Resonance",
+      "passed": true
+    },
+    {
+      "name": "removed search: Iridescent Julia",
+      "passed": true
+    },
+    {
+      "name": "removed search: Fractal Bloom",
+      "passed": true
+    },
+    {
+      "name": "removed search: Spectral Cascade",
+      "passed": true
+    },
+    {
+      "name": "removed search: Prismatic Highway",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: active ID",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: selected card",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass unaffected by Ripple edits: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "custom Ripple survives a visual switch",
+      "passed": true
+    },
+    {
+      "name": "custom Glass survives return",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: active ID",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: selected card",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Glass: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "resetting Glass did not reset Ripple",
+      "passed": true
+    },
+    {
+      "name": "saved profile map has exactly eleven entries",
+      "passed": true
+    },
+    {
+      "name": "restart preserves custom active Ripple and does not re-migrate",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: active ID",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: selected card",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "Glass defaults after restart: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: active ID",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: selected card",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "Reset Ripple to zero smoothing/glow: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: active ID",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: all screenshot values",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: selected card",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: intensity value shown",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: reactivity value shown",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: motion value shown",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: smoothness value shown",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: glow value shown",
+      "passed": true
+    },
+    {
+      "name": "Groove zeros survive restart: Randomize selected",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 0 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 1 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 2 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 3 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 4 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 5 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 6 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "filtered shuffle 7 uses correct profile",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies glass defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies mandelbrot defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies spectrum defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies organism defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies overdrive defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies dissolution defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies mandala defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies kaleidoscope defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies groove defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies lava defaults",
+      "passed": true
+    },
+    {
+      "name": "keyboard navigation applies ripple defaults",
+      "passed": true
+    },
+    {
+      "name": "previous keyboard wraps to Lava",
+      "passed": true
+    },
+    {
+      "name": "Native (100%) retained",
+      "passed": true
+    },
+    {
+      "name": "version is 0.2.11",
+      "passed": true
+    },
+    {
+      "name": "one window control row",
+      "passed": true
+    },
+    {
+      "name": "no uncaught script exceptions",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "graphics": "Explicit WebGL API mock; not shader rendering",
+  "native": "Explicit IPC mock; not Windows or live capture"
+}

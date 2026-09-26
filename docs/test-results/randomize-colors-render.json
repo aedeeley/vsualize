@@ -1,0 +1,343 @@
+{
+  "backend": "OpenGL ES 3.2 Mesa 25.0.7-2",
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "method": "Fixed transport and synthetic audio; only the three palette color uniforms change. Unmodified effect shaders. Not WebGL, Windows or live capture validation.",
+  "reports": [
+    {
+      "visual": "ripple",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        11.681504991319445,
+        14.08465576171875,
+        11.684332953559029,
+        14.048895941840279,
+        11.71380615234375,
+        14.057963053385416
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "glass",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        2.4768202039930554,
+        2.8226318359375,
+        2.4704182942708335,
+        2.835110134548611,
+        2.46923828125,
+        2.8273383246527777
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "mandelbrot",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        2.5166219075520835,
+        3.5677286783854165,
+        2.516940646701389,
+        3.5686170789930554,
+        2.51727294921875,
+        3.5677422417534723
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "spectrum",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        1.6354641384548612,
+        1.8344387478298612,
+        1.6332329644097223,
+        1.82855224609375,
+        1.6366373697916667,
+        1.8337877061631944
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "prism",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        2.818210177951389,
+        3.777099609375,
+        2.8193291558159723,
+        3.7704060872395835,
+        2.8247273763020835,
+        3.772182888454861
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "lattice",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        1.8539564344618056,
+        2.0209893120659723,
+        1.8567097981770833,
+        2.0118815104166665,
+        1.8647257486979167,
+        2.0137532552083335
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "julia",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        17.99447292751736,
+        23.009629991319443,
+        17.98870171440972,
+        23.01107449001736,
+        17.98855251736111,
+        23.0064697265625
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "neural",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        4.145921495225695,
+        4.859130859375,
+        4.149176703559028,
+        4.843126085069445,
+        4.160020616319445,
+        4.848700629340278
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "starflight",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        0.9308878580729166,
+        1.0038926866319444,
+        0.9329427083333334,
+        0.9984334309895834,
+        0.9358452690972222,
+        1.0022650824652777
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "organism",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        7.741814507378472,
+        9.10165066189236,
+        7.749104817708333,
+        9.061699761284721,
+        7.78167724609375,
+        9.070848253038195
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "overdrive",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        10.368028428819445,
+        11.45175509982639,
+        10.37057156032986,
+        11.445075141059029,
+        10.374552408854166,
+        11.446112738715279
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "cube",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        5.495571560329861,
+        6.471164279513889,
+        5.499443901909722,
+        6.441372341579861,
+        5.524244520399305,
+        6.449130588107639
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "dissolution",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        18.51546902126736,
+        20.78756374782986,
+        18.533528645833332,
+        20.69476318359375,
+        18.60906304253472,
+        20.709913465711807
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "mandala",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        5.422166612413195,
+        6.589382595486111,
+        5.422220865885417,
+        6.561211480034722,
+        5.44476318359375,
+        6.569532606336805
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "petals",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        13.550313313802084,
+        18.574930826822918,
+        13.55508083767361,
+        18.548292371961807,
+        13.576341417100695,
+        18.55527072482639
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "bloom",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        20.870836046006943,
+        28.96822781032986,
+        20.87588161892361,
+        28.961588541666668,
+        20.87763129340278,
+        28.96944851345486
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "kaleidoscope",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        20.662828233506943,
+        26.91159396701389,
+        20.666490342881943,
+        26.86133490668403,
+        20.711134168836807,
+        26.86798773871528
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "groove",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        0.4227362738715278,
+        0.5043741861979166,
+        0.4232449001736111,
+        0.5022650824652778,
+        0.4250013563368056,
+        0.5030992296006944
+      ],
+      "seamMaxPixelChange": 0,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "lava",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        2.395236545138889,
+        2.9299994574652777,
+        2.395602756076389,
+        2.930141872829861,
+        2.394619411892361,
+        2.9305013020833335
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "cascade",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        7.590630425347222,
+        8.538018120659721,
+        7.593926323784722,
+        8.510843912760416,
+        7.615220811631945,
+        8.51605224609375
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    },
+    {
+      "visual": "highway",
+      "compiled": true,
+      "sixDistinctHueFrames": true,
+      "adjacentHueFrameDifferences": [
+        10.74752468532986,
+        12.711656358506945,
+        10.75701904296875,
+        12.680216471354166,
+        10.783277723524305,
+        12.683342827690971
+      ],
+      "seamMaxPixelChange": 1,
+      "transparencyWorks": true,
+      "passed": true
+    }
+  ]
+}

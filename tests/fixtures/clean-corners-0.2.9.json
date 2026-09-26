@@ -1,0 +1,14 @@
+{
+  "reason": "Approved host/client corner clipping and version metadata only. Palette, shader, audio, transport and settings data must remain identical to the cumulative 0.2.8 source.",
+  "files": {
+    "package.json": "785cbdc13d0ddaf2918d62aa6a4646361b3cf6b48059d1aed39d1a873f52cbb4",
+    "static/index.html": "d1fa6a0f7525ced1f47ce266cc3834bc7f0050a2954e06fedc4c9255158ac98e",
+    "static/style.css": "23323da42b9ac0a9f36c8d603f0026276f01fdd385a07acf4e1b183217d2c6ab",
+    "src/main.ts": "5e56713fff0b3ef27139e9b5950a4b42f56b7d077fd95f4e91a2a764fc2741b4",
+    "src-tauri/Cargo.toml": "30c8c94b8938136ee86276a4661b0f8aa3f45360248653ccaefa2c055f4f1aa3",
+    "src-tauri/tauri.conf.json": "0cdda4f964cdac348681f873cae620f784b31cafa603f119d080487dadf04d56",
+    "src-tauri/src/native_frame.rs": "4a2e6f4a271a698623a4bf29b310994fd50c009dc073b8790447a7883476fce2",
+    "src-tauri/src/main.rs": "e56ddfae657c9b712ea6959a7cc431cd6acac357c55bf8b99ab1efc61da1af49",
+    "src-tauri/src/native_frame/windows.rs": "29ecae23661ebfda08d215b87a08c2119364c789c4b8057d4d7e132cb7569d56"
+  }
+}

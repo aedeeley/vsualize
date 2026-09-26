@@ -1,0 +1,18 @@
+[
+  {
+    "file": "static/style.css",
+    "unchanged": true
+  },
+  {
+    "file": "src-tauri/src/main.rs",
+    "unchanged": true
+  },
+  {
+    "file": "src-tauri/src/audio/windows.rs",
+    "unchanged": true
+  },
+  {
+    "file": "scripts/start-windows.ps1",
+    "unchanged": true
+  }
+]

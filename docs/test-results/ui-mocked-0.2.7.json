@@ -1,0 +1,66 @@
+{
+  "passed": 14,
+  "checks": [
+    {
+      "name": "real frontend consumes explicitly mocked live packets",
+      "passed": true
+    },
+    {
+      "name": "comparison disables rendered response while leaving meters live",
+      "passed": true
+    },
+    {
+      "name": "recommended button sets response values and disables ambient drift",
+      "passed": true
+    },
+    {
+      "name": "smooth response restores 75 percent motion smoothing",
+      "passed": true
+    },
+    {
+      "name": "motion smoothing slider is bound to the persisted setting",
+      "passed": true
+    },
+    {
+      "name": "recommended button preserves visual, palette, source, devices and gains",
+      "passed": true
+    },
+    {
+      "name": "recommended button does not restart native capture",
+      "passed": true
+    },
+    {
+      "name": "recommended button restores response from comparison mode",
+      "passed": true
+    },
+    {
+      "name": "one custom window control row",
+      "passed": true
+    },
+    {
+      "name": "4px outer clipping preserved",
+      "passed": true
+    },
+    {
+      "name": "recommended button reachable at 300x240",
+      "passed": true
+    },
+    {
+      "name": "recommended button reachable at 420x700",
+      "passed": true
+    },
+    {
+      "name": "recommended button reachable at 960x450",
+      "passed": true
+    },
+    {
+      "name": "no production JavaScript exceptions",
+      "passed": true
+    }
+  ],
+  "nativeIPC": "mocked",
+  "WebGL": "mocked",
+  "WindowsTested": false,
+  "productionUIJavaScriptTested": true,
+  "pixelRenderingTested": false
+}

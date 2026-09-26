@@ -1,0 +1,14 @@
+import type { VisualId, VisualDefinition } from '../types.js';
+import * as soundform_js_1 from './soundform.js';
+import * as soundform_topdown_js_1 from './soundform-topdown.js';
+import * as glass_js_1 from './glass.js';
+import * as mandelbrot_js_1 from './mandelbrot.js';
+import * as spectrum_js_1 from './spectrum.js';
+import * as organism_js_1 from './organism.js';
+import * as overdrive_js_1 from './overdrive.js';
+import * as dissolution_js_1 from './dissolution.js';
+import * as mandala_js_1 from './mandala.js';
+import * as kaleidoscope_js_1 from './kaleidoscope.js';
+import * as groove_js_1 from './groove.js';
+import * as lava_js_1 from './lava.js';
+export const VISUALS: Record<VisualId, VisualDefinition> = { soundform: soundform_js_1.soundform, 'soundform-topdown': soundform_topdown_js_1.soundformTopdown, glass: glass_js_1.glass, mandelbrot: mandelbrot_js_1.mandelbrot, spectrum: spectrum_js_1.spectrum, organism: organism_js_1.organism, overdrive: overdrive_js_1.overdrive, dissolution: dissolution_js_1.dissolution, mandala: mandala_js_1.mandala, kaleidoscope: kaleidoscope_js_1.kaleidoscope, groove: groove_js_1.groove, lava: lava_js_1.lava };

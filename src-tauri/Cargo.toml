@@ -1,0 +1,32 @@
+[package]
+name = "vsualize"
+version = "0.3.0"
+edition = "2021"
+description = "A quiet, borderless desktop audio visualizer"
+publish = false
+homepage = "https://vsualize.app"
+repository = "https://github.com/aedeeley/vsualize"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2.11.6", features = ["tray-icon", "image-png"] }
+tauri-runtime = "2.11.3"
+tauri-plugin-window-state = "2.4.1"
+tauri-plugin-single-instance = "2"
+tauri-plugin-updater = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rustfft = "6"
+
+[target.'cfg(windows)'.dependencies]
+wasapi = "=0.24.0"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+strip = true

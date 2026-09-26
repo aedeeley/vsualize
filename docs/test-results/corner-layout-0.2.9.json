@@ -1,0 +1,1463 @@
+{
+  "checks": [
+    {
+      "name": "640x600, scale 1, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 1, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 1 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "640x600, scale 1 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 1 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 1 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 1, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          20,
+          22,
+          29,
+          248
+        ],
+        "unclipped": [
+          20,
+          22,
+          29,
+          248
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 1 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "300x240, scale 1 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 1 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "1024x360, scale 1 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 1.5 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "640x600, scale 1.5 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 1.5 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "640x600, scale 1.5 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 1.5 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          20,
+          22,
+          29,
+          248
+        ],
+        "unclipped": [
+          20,
+          22,
+          29,
+          248
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 1.5 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "300x240, scale 1.5 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1.5 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "300x240, scale 1.5 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 1.5 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "1024x360, scale 1.5 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1.5 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 1.5 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 1.5 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 2, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 2, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 2, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 2, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 2, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 2, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "640x600, scale 2, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "640x600, scale 2 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "640x600, scale 2 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 2 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "640x600, scale 2 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "640x600, scale 2 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 2, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 2, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 2, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 2, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 2, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 2, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "300x240, scale 2, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          20,
+          22,
+          29,
+          248
+        ],
+        "unclipped": [
+          20,
+          22,
+          29,
+          248
+        ]
+      }
+    },
+    {
+      "name": "300x240, scale 2 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "300x240, scale 2 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 2 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "300x240, scale 2 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "300x240, scale 2 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls False corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, solid, controls True corner does not remove straight edges",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls False 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls False outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls False interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls True 8 CSS-pixel clip",
+      "passed": true,
+      "detail": {
+        "radius": "8px",
+        "clip": "inset(0px round 8px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls True outer pixels transparent",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1024x360, scale 2, transparent, controls True interior unchanged by clipping",
+      "passed": true,
+      "detail": {
+        "clipped": [
+          64,
+          104,
+          143,
+          128
+        ],
+        "unclipped": [
+          64,
+          104,
+          143,
+          128
+        ]
+      }
+    },
+    {
+      "name": "1024x360, scale 2 resize corner hit targets",
+      "passed": true,
+      "detail": [
+        "NorthWest",
+        "NorthEast",
+        "SouthWest",
+        "SouthEast"
+      ]
+    },
+    {
+      "name": "1024x360, scale 2 one control row",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 2 fullscreen is square",
+      "passed": true,
+      "detail": {
+        "radius": "0px",
+        "clip": "inset(0px)"
+      }
+    },
+    {
+      "name": "1024x360, scale 2 fullscreen corners are filled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024x360, scale 2 returning to window restores 8px",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 153,
+  "nativeWindowsTested": false,
+  "productionJavaScriptTested": false,
+  "WebGLTested": false,
+  "testScope": "CSS compositing with a 2D canvas fixture; shaders and native Windows are not exercised.",
+  "deviceScaleFactors": [
+    1,
+    1.5,
+    2
+  ]
+}

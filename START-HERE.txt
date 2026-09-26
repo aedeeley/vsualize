@@ -1,0 +1,14 @@
+VSUALIZE 0.3.0 - WINDOWS RELEASE
+
+For normal use, download and run Vsualize_0.3.0_x64-setup.exe from:
+https://github.com/aedeeley/vsualize/releases/latest
+
+Launch Vsualize from the Start menu. Click the image to reveal controls.
+Select Audio > Desktop to visualize music playing in your usual Windows player.
+Settings > Check for updates installs future signed releases without rebuilding.
+
+Auto quality / 60 fps is the new-install default. Native (100%) is available for
+full-resolution rendering. Existing explicit quality settings are retained.
+
+The source-build launchers in this folder are for development. See README.md
+and docs/RELEASING.md for build, test, signing and release instructions.

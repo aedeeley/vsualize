@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "name": "native frontend selects desktop, not demo",
+      "passed": true
+    },
+    {
+      "name": "quiet capture not falsely labelled live",
+      "passed": true
+    },
+    {
+      "name": "quiet has no animated spectrum",
+      "passed": true
+    },
+    {
+      "name": "real-frame contract produces LIVE status",
+      "passed": true
+    },
+    {
+      "name": "raw meter displays physical RMS as dBFS",
+      "passed": true
+    },
+    {
+      "name": "beat indicator follows captured beat envelope",
+      "passed": true
+    },
+    {
+      "name": "live spectrum follows packet data",
+      "passed": true
+    },
+    {
+      "name": "only one HTML window control row",
+      "passed": true
+    },
+    {
+      "name": "custom minimize dispatches its native command (mock)",
+      "passed": true
+    },
+    {
+      "name": "custom fullscreen dispatches its native command (mock)",
+      "passed": true
+    },
+    {
+      "name": "custom close-app dispatches its native command (mock)",
+      "passed": true
+    },
+    {
+      "name": "copied diagnostics identify native input and version",
+      "passed": true
+    },
+    {
+      "name": "copy does not include recordings or waveform",
+      "passed": true
+    },
+    {
+      "name": "A/B mode visibly states response is off",
+      "passed": true
+    },
+    {
+      "name": "A/B leaves captured meters live",
+      "passed": true
+    },
+    {
+      "name": "A/B removes audio from rendered scene",
+      "passed": true
+    },
+    {
+      "name": "A/B restores audio-reactive scene",
+      "passed": true
+    },
+    {
+      "name": "music-only mode stops the complete transport in silence",
+      "passed": true
+    },
+    {
+      "name": "gate problem is distinguished from no signal",
+      "passed": true
+    },
+    {
+      "name": "backend device error surfaces without synthetic fallback",
+      "passed": true
+    },
+    {
+      "name": "capture error remains discoverable with controls hidden",
+      "passed": true
+    },
+    {
+      "name": "warning opens the audio panel",
+      "passed": true
+    },
+    {
+      "name": "device recovery clears error status",
+      "passed": true
+    },
+    {
+      "name": "pinned live monitor remains visible",
+      "passed": true
+    },
+    {
+      "name": "successful capture has no mandatory idle chrome",
+      "passed": true
+    },
+    {
+      "name": "demo is unmistakable in native UI",
+      "passed": true
+    },
+    {
+      "name": "demo label cannot hide with menu",
+      "passed": true
+    },
+    {
+      "name": "no uncaught JavaScript errors",
+      "passed": true
+    }
+  ],
+  "count": 28,
+  "errors": [],
+  "windowsCaptureTested": false,
+  "nativeIpc": "explicit mock; not real WASAPI",
+  "nativeCaptionPaintingTested": false,
+  "version": "0.2.4"
+}

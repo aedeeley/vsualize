@@ -1,0 +1,1732 @@
+{
+  "passed": 305,
+  "failed": 0,
+  "scope": "Actual Chromium raster alpha, browser-tab focus, synthetic 2D fill. Conservative native mask math compared with CSS pixels. No native Windows or WebGL execution.",
+  "checks": [
+    {
+      "name": "scale 1, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, transparent False, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, transparent False, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, transparent True, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1, transparent True, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1, sample backdrop does not fill corners",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, transparent False, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, transparent False, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, transparent True, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.25, transparent True, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.25, sample backdrop does not fill corners",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, transparent False, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, transparent False, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, transparent True, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.5, transparent True, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.5, sample backdrop does not fill corners",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, transparent False, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, transparent False, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, transparent True, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 1.75, transparent True, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 1.75, sample backdrop does not fill corners",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, transparent False, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, transparent False, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, transparent True, controls False, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, focus transition True",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused True native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, focus transition False",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False smooth alpha TL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False smooth alpha TR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False smooth alpha BL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False smooth alpha BR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False all four cutouts completely clear",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focused False native conservative cutout preserves CSS fringe",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "scale 2, transparent True, controls True, focus has identical pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scale 2, sample backdrop does not fill corners",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "purpose": "Approved 0.2.11 library/profile/metadata changes. All other subsystem hashes must match their prior baseline.",
+  "files": {
+    "src/settings.ts": "bfe47f43e32acf1ce4ab9a863da99272d74fdc73d9819296c754f566c9478d33",
+    "src/main.ts": "9d1f63bd913cd4945af5442544acaf49ee0b57f38853be07a561e97f4aa787ac",
+    "src/types.ts": "36d5376763063bb28c8815234be5a83b7e6b366eb0b042ff58e3891257be0135",
+    "src/catalog.ts": "7745ac6778a795e8dbef974654325e77187cc09372b5c72bc13c578e4edbfb6f",
+    "src/visuals/index.ts": "fa02e2410b5b0275f3d1e23f0e8c9f906c5ba67717e72d49fae192da6af984c0",
+    "src/visuals/thumbnails.ts": "4f4c68325c6ef7becc2909f1f3534d0a6ebdc54d72459a2caea105158df31b59",
+    "src/visual-presets.ts": "203abca4a13c9486e7547da538584cf38552e2570c77594f376d9a31d8ed4d28",
+    "static/index.html": "159e9b823ebd70a9aa8d5f3c00a588012c8c37be7910e4dc7b3ef212fc91034d",
+    "scripts/prune-retired-visuals.mjs": "6f91b4f4248739a69f67031b8f8dd64ffa2f11fd660810a1abca2d95731581dd",
+    "package.json": "8a5af6d88fca97c6e38ff98c85a4fcfeb4f1307307e12ea2365fb467c764acea",
+    "src-tauri/Cargo.toml": "11d7b89374c7fa215ff51193e6ae3c8c3253dd8cf2c2380a3c33c7fd753ededd",
+    "src-tauri/tauri.conf.json": "86cc01cbcfd08bcd3784c8577477ac89789624d08087ff2ba1a065026c988d2c"
+  },
+  "removedFiles": [
+    "src/visuals/prism.ts",
+    "src/visuals/lattice.ts",
+    "src/visuals/neural.ts",
+    "src/visuals/starflight.ts",
+    "src/visuals/cube.ts",
+    "src/visuals/petals.ts",
+    "src/visuals/julia.ts",
+    "src/visuals/bloom.ts",
+    "src/visuals/cascade.ts",
+    "src/visuals/highway.ts"
+  ]
+}

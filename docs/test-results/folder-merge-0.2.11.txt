@@ -1,0 +1,1136 @@
+
+> vsualize@0.2.11 test
+> npm run build && node --test tests/*.test.mjs
+
+
+> vsualize@0.2.11 build
+> node scripts/build.mjs
+
+Removed 10 retired visual source files from this in-place update.
+Built dist/ and Vsualize-Preview.html. Native Windows build is separate.
+TAP version 13
+# Subtest: native start uses selected capture; valid channel frames drive analyzer state
+ok 1 - native start uses selected capture; valid channel frames drive analyzer state
+  ---
+  duration_ms: 5.072482
+  type: 'test'
+  ...
+# Subtest: capture failure is explicit and never falls back to synthetic animation
+ok 2 - capture failure is explicit and never falls back to synthetic animation
+  ---
+  duration_ms: 1.303986
+  type: 'test'
+  ...
+# Subtest: stop failure is handled, not an unhandled start rejection
+ok 3 - stop failure is handled, not an unhandled start rejection
+  ---
+  duration_ms: 2.381331
+  type: 'test'
+  ...
+# Subtest: rapid source changes serialize and cannot let an old channel win
+ok 4 - rapid source changes serialize and cannot let an old channel win
+  ---
+  duration_ms: 0.665836
+  type: 'test'
+  ...
+# Subtest: transport timeout clears waveform and per-source meters, then accepts recovered frames
+ok 5 - transport timeout clears waveform and per-source meters, then accepts recovered frames
+  ---
+  duration_ms: 0.952177
+  type: 'test'
+  ...
+# Subtest: malformed packets cannot leave stale energy stuck on screen
+ok 6 - malformed packets cannot leave stale energy stuck on screen
+  ---
+  duration_ms: 0.383871
+  type: 'test'
+  ...
+# Subtest: demo only runs when explicitly requested and off clears it
+ok 7 - demo only runs when explicitly requested and off clears it
+  ---
+  duration_ms: 0.885638
+  type: 'test'
+  ...
+# Subtest: source-selection debounce cannot label old audio as the newly selected input
+ok 8 - source-selection debounce cannot label old audio as the newly selected input
+  ---
+  duration_ms: 1.242759
+  type: 'test'
+  ...
+# Subtest: 0.2.5 removes the unsupported noRedirectionBitmap setting and preserves the borderless window
+ok 9 - 0.2.5 removes the unsupported noRedirectionBitmap setting and preserves the borderless window
+  ---
+  duration_ms: 2.586193
+  type: 'test'
+  ...
+# Subtest: the exact 0.2.4 window setting fails the released-runtime key check
+ok 10 - the exact 0.2.4 window setting fails the released-runtime key check
+  ---
+  duration_ms: 1.44463
+  type: 'test'
+  ...
+# Subtest: a newer/permissive CLI cannot conceal an unsupported Rust runtime key
+ok 11 - a newer/permissive CLI cannot conceal an unsupported Rust runtime key
+  ---
+  duration_ms: 0.518904
+  type: 'test'
+  ...
+# Subtest: an older installed CLI schema is checked too
+ok 12 - an older installed CLI schema is checked too
+  ---
+  duration_ms: 0.582545
+  type: 'test'
+  ...
+# Subtest: malformed window data and CLI schemas fail with actionable messages
+ok 13 - malformed window data and CLI schemas fail with actionable messages
+  ---
+  duration_ms: 0.547968
+  type: 'test'
+  ...
+# Subtest: source versions agree and missing CLI is not reported as validated
+ok 14 - source versions agree and missing CLI is not reported as validated
+  ---
+  duration_ms: 7.971007
+  type: 'test'
+  ...
+# Subtest: launcher captures stderr inside CMD and records native exit status rather than relying on transcription
+ok 15 - launcher captures stderr inside CMD and records native exit status rather than relying on transcription
+  ---
+  duration_ms: 3.719784
+  type: 'test'
+  ...
+# Subtest: Windows PowerShell 5.1 parses the scripts and logs real stdout/stderr/failed exit codes
+ok 16 - Windows PowerShell 5.1 parses the scripts and logs real stdout/stderr/failed exit codes # SKIP Requires Windows PowerShell 5.1; not executed on Linux.
+  ---
+  duration_ms: 0.12279
+  type: 'test'
+  ...
+# Subtest: document backing stays clear; all drawable content belongs to the isolated surface
+ok 17 - document backing stays clear; all drawable content belongs to the isolated surface
+  ---
+  duration_ms: 3.594399
+  type: 'test'
+  ...
+# Subtest: shape update follows the existing main-thread lifecycle and fullscreen changes
+ok 18 - shape update follows the existing main-thread lifecycle and fullscreen changes
+  ---
+  duration_ms: 0.644386
+  type: 'test'
+  ...
+# Subtest: host shape is client-aligned, rounded in device units, reentry-safe and ownership-safe
+ok 19 - host shape is client-aligned, rounded in device units, reentry-safe and ownership-safe
+  ---
+  duration_ms: 1.088594
+  type: 'test'
+  ...
+# Subtest: cumulative palettes, all 11 effects, audio, settings and launchers are byte-preserved
+ok 20 - cumulative palettes, all 11 effects, audio, settings and launchers are byte-preserved
+  ---
+  duration_ms: 9.976847
+  type: 'test'
+  ...
+# Subtest: Randomize is the first and default color option; all fixed palettes remain
+ok 21 - Randomize is the first and default color option; all fixed palettes remain
+  ---
+  duration_ms: 4.022782
+  type: 'test'
+  ...
+# Subtest: existing color choices adopt Randomize once without disturbing anything else
+ok 22 - existing color choices adopt Randomize once without disturbing anything else
+  ---
+  duration_ms: 3.910241
+  type: 'test'
+  ...
+# Subtest: manual color selections after migration persist across save/reload
+ok 23 - manual color selections after migration persist across save/reload
+  ---
+  duration_ms: 6.204421
+  type: 'test'
+  ...
+# Subtest: each generated palette has five simultaneously distinct, saturated hues
+ok 24 - each generated palette has five simultaneously distinct, saturated hues
+  ---
+  duration_ms: 99.340638
+  type: 'test'
+  ...
+# Subtest: destinations change color relationships, saturation and lightness, not just a common hue
+ok 25 - destinations change color relationships, saturation and lightness, not just a common hue
+  ---
+  duration_ms: 0.95408
+  type: 'test'
+  ...
+# Subtest: palettes continue to be generated rather than repeating after one minute
+ok 26 - palettes continue to be generated rather than repeating after one minute
+  ---
+  duration_ms: 10.381334
+  type: 'test'
+  ...
+# Subtest: all transition boundaries are continuous and RGB stays bounded during ten minutes
+ok 27 - all transition boundaries are continuous and RGB stays bounded during ten minutes
+  ---
+  duration_ms: 555.496274
+  type: 'test'
+  ...
+# Subtest: 30, 60 and 120 FPS reach the same generated palette and flow after equal active time
+ok 28 - 30, 60 and 120 FPS reach the same generated palette and flow after equal active time
+  ---
+  duration_ms: 11.628091
+  type: 'test'
+  ...
+# Subtest: invalid deltas and suspended frames cannot skip to a distant destination
+ok 29 - invalid deltas and suspended frames cannot skip to a distant destination
+  ---
+  duration_ms: 1.013919
+  type: 'test'
+  ...
+# Subtest: session randomness seeds once; later destinations are deterministic and tuples reused
+ok 30 - session randomness seeds once; later destinations are deterministic and tuples reused
+  ---
+  duration_ms: 12.292076
+  type: 'test'
+  ...
+# Subtest: all 11 effects receive the cycling palette, including effects with a rainbow default
+ok 31 - all 11 effects receive the cycling palette, including effects with a rainbow default
+  ---
+  duration_ms: 419.053076
+  type: 'test'
+  ...
+# Subtest: fixed and Visual default color uniforms are identical to the previous implementation
+ok 32 - fixed and Visual default color uniforms are identical to the previous implementation
+  ---
+  duration_ms: 78.069722
+  type: 'test'
+  ...
+# Subtest: pause, silence and preset switching preserve color phase, with no false musical motion
+ok 33 - pause, silence and preset switching preserve color phase, with no false musical motion
+  ---
+  duration_ms: 353.060297
+  type: 'test'
+  ...
+# Subtest: cycling does not clear the feedback trails each frame
+ok 34 - cycling does not clear the feedback trails each frame
+  ---
+  duration_ms: 124.557104
+  type: 'test'
+  ...
+# Subtest: critically damped shape movement never overshoots either target
+ok 35 - critically damped shape movement never overshoots either target
+  ---
+  duration_ms: 5.478236
+  type: 'test'
+  ...
+# Subtest: damping uses elapsed seconds and agrees at 30, 60 and 120 fps
+ok 36 - damping uses elapsed seconds and agrees at 30, 60 and 120 fps
+  ---
+  duration_ms: 0.264279
+  type: 'test'
+  ...
+# Subtest: a source step cannot instantly relocate geometry
+ok 37 - a source step cannot instantly relocate geometry
+  ---
+  duration_ms: 0.27161
+  type: 'test'
+  ...
+# Subtest: damping preserves sustained band magnitude instead of flattening music
+ok 38 - damping preserves sustained band magnitude instead of flattening music
+  ---
+  duration_ms: 50.738706
+  type: 'test'
+  ...
+# Subtest: rapid packet alternation has much less geometric jitter without moving the input meters
+ok 39 - rapid packet alternation has much less geometric jitter without moving the input meters
+  ---
+  duration_ms: 2.98204
+  type: 'test'
+  ...
+# Subtest: more smoothing reduces short-step shape displacement
+ok 40 - more smoothing reduces short-step shape displacement
+  ---
+  duration_ms: 0.468
+  type: 'test'
+  ...
+# Subtest: invalid values or frame gaps cannot create NaN in shape state
+ok 41 - invalid values or frame gaps cannot create NaN in shape state
+  ---
+  duration_ms: 1.102972
+  type: 'test'
+  ...
+# Subtest: smoothing reset clears deformation but does not own or reset the camera
+ok 42 - smoothing reset clears deformation but does not own or reset the camera
+  ---
+  duration_ms: 19.678635
+  type: 'test'
+  ...
+# Subtest: smoothing defaults migrate without changing sources, gain, palettes or favorites
+ok 43 - smoothing defaults migrate without changing sources, gain, palettes or favorites
+  ---
+  duration_ms: 2.92818
+  type: 'test'
+  ...
+# Subtest: every event slot retains its original position and strength while alive
+ok 44 - every event slot retains its original position and strength while alive
+  ---
+  duration_ms: 1.468048
+  type: 'test'
+  ...
+# Subtest: invalid or too-close attacks cannot consume ring slots
+ok 45 - invalid or too-close attacks cannot consume ring slots
+  ---
+  duration_ms: 0.597775
+  type: 'test'
+  ...
+# Subtest: shared shaders match the sized impulse buffer and fade old events before reuse
+ok 46 - shared shaders match the sized impulse buffer and fade old events before reuse
+  ---
+  duration_ms: 0.786099
+  type: 'test'
+  ...
+# Subtest: retained fractal flight helper keeps coordinates free of audio-dependent scale or roll
+ok 47 - retained fractal flight helper keeps coordinates free of audio-dependent scale or roll
+  ---
+  duration_ms: 0.500623
+  type: 'test'
+  ...
+# Subtest: raw PCM phase no longer distorts surface or tunnel coordinates
+ok 48 - raw PCM phase no longer distorts surface or tunnel coordinates
+  ---
+  duration_ms: 1.063605
+  type: 'test'
+  ...
+# Subtest: log-depth passages now move outward toward the viewer
+ok 49 - log-depth passages now move outward toward the viewer
+  ---
+  duration_ms: 0.185055
+  type: 'test'
+  ...
+# Subtest: ripple samples delayed spectral layers instead of translating a flat disc
+ok 50 - ripple samples delayed spectral layers instead of translating a flat disc
+  ---
+  duration_ms: 0.166708
+  type: 'test'
+  ...
+# Subtest: compiler script invokes Node directly without Windows shell concatenation
+ok 51 - compiler script invokes Node directly without Windows shell concatenation
+  ---
+  duration_ms: 0.23112
+  type: 'test'
+  ...
+# Subtest: exactly eleven effects remain in their prior order with matching registry and thumbnails
+ok 52 - exactly eleven effects remain in their prior order with matching registry and thumbnails
+  ---
+  duration_ms: 3.53132
+  type: 'test'
+  ...
+# Subtest: removed display names and reference aliases no longer resolve in the library
+ok 53 - removed display names and reference aliases no longer resolve in the library
+  ---
+  duration_ms: 5.337019
+  type: 'test'
+  ...
+# Subtest: every category has a retained effect; unused Space category is removed
+ok 54 - every category has a retained effect; unused Space category is removed
+  ---
+  duration_ms: 0.361026
+  type: 'test'
+  ...
+# Subtest: a retired selection uses Ripple tuning instead of carrying discarded sliders into Ripple
+ok 55 - a retired selection uses Ripple tuning instead of carrying discarded sliders into Ripple
+  ---
+  duration_ms: 4.633238
+  type: 'test'
+  ...
+# Subtest: all retained selections keep their own saved settings and remaining favorites
+ok 56 - all retained selections keep their own saved settings and remaining favorites
+  ---
+  duration_ms: 5.009643
+  type: 'test'
+  ...
+# Subtest: current and legacy storage keys migrate removed selections and filter removed favorites
+ok 57 - current and legacy storage keys migrate removed selections and filter removed favorites
+  ---
+  duration_ms: 1.103718
+  type: 'test'
+  ...
+# Subtest: navigation visits only retained effects and wraps at Lava Forms
+ok 58 - navigation visits only retained effects and wraps at Lava Forms
+  ---
+  duration_ms: 0.628198
+  type: 'test'
+  ...
+# Subtest: retained shader bodies, thumbnails, 4K renderer, palettes, audio and native window code are byte-preserved
+ok 59 - retained shader bodies, thumbnails, 4K renderer, palettes, audio and native window code are byte-preserved
+  ---
+  duration_ms: 4.481294
+  type: 'test'
+  ...
+# Subtest: generated preview contains only curated effect modules and shows 11 / 11
+ok 60 - generated preview contains only curated effect modules and shows 11 / 11
+  ---
+  duration_ms: 11.918196
+  type: 'test'
+  ...
+# Subtest: folder-merge cleanup removes only retired files and can run repeatedly
+ok 61 - folder-merge cleanup removes only retired files and can run repeatedly
+  ---
+  duration_ms: 26.618198
+  type: 'test'
+  ...
+# Subtest: cleanup refuses to recursively remove an unexpected directory
+ok 62 - cleanup refuses to recursively remove an unexpected directory
+  ---
+  duration_ms: 3.610257
+  type: 'test'
+  ...
+# Subtest: upgrade cleanup is invoked before compilation
+ok 63 - upgrade cleanup is invoked before compilation
+  ---
+  duration_ms: 0.403206
+  type: 'test'
+  ...
+# Subtest: all transport phases move forward through attacks, decays, silence and response changes
+ok 64 - all transport phases move forward through attacks, decays, silence and response changes
+  ---
+  duration_ms: 381.414413
+  type: 'test'
+  ...
+# Subtest: a beat adds lasting distance, not a temporary positional offset
+ok 65 - a beat adds lasting distance, not a temporary positional offset
+  ---
+  duration_ms: 123.090867
+  type: 'test'
+  ...
+# Subtest: louder sustained input creates more forward travel
+ok 66 - louder sustained input creates more forward travel
+  ---
+  duration_ms: 30.76022
+  type: 'test'
+  ...
+# Subtest: music response slider changes acceleration without multiplying or rewinding phase
+ok 67 - music response slider changes acceleration without multiplying or rewinding phase
+  ---
+  duration_ms: 37.44868
+  type: 'test'
+  ...
+# Subtest: bass, mids and highs drive different transport lanes
+ok 68 - bass, mids and highs drive different transport lanes
+  ---
+  duration_ms: 40.976099
+  type: 'test'
+  ...
+# Subtest: gentle peaks limits flashes without reducing forward momentum
+ok 69 - gentle peaks limits flashes without reducing forward momentum
+  ---
+  duration_ms: 30.746063
+  type: 'test'
+  ...
+# Subtest: zero flow speed freezes positions and changing it never jumps the phase
+ok 70 - zero flow speed freezes positions and changing it never jumps the phase
+  ---
+  duration_ms: 36.48191
+  type: 'test'
+  ...
+# Subtest: silence and gated noise generate no fabricated beat events
+ok 71 - silence and gated noise generate no fabricated beat events
+  ---
+  duration_ms: 36.044431
+  type: 'test'
+  ...
+# Subtest: a held native beat does not spawn a fresh impulse every rendering frame
+ok 72 - a held native beat does not spawn a fresh impulse every rendering frame
+  ---
+  duration_ms: 10.355205
+  type: 'test'
+  ...
+# Subtest: native beat pulses below the old .32 threshold survive
+ok 73 - native beat pulses below the old .32 threshold survive
+  ---
+  duration_ms: 6.967477
+  type: 'test'
+  ...
+# Subtest: spectral onset detector can react without a native beat signal
+ok 74 - spectral onset detector can react without a native beat signal
+  ---
+  duration_ms: 3.711826
+  type: 'test'
+  ...
+# Subtest: frame rate differences do not materially change integrated travel
+ok 75 - frame rate differences do not materially change integrated travel
+  ---
+  duration_ms: 133.263519
+  type: 'test'
+  ...
+# Subtest: source changes clear signal history but do not rewind the scene
+ok 76 - source changes clear signal history but do not rewind the scene
+  ---
+  duration_ms: 15.12293
+  type: 'test'
+  ...
+# Subtest: invalid packets and frame gaps cannot contaminate the transport with NaN
+ok 77 - invalid packets and frame gaps cannot contaminate the transport with NaN
+  ---
+  duration_ms: 1.546488
+  type: 'test'
+  ...
+# Subtest: capture settings from 0.2.1 migrate with the new music-response default
+ok 78 - capture settings from 0.2.1 migrate with the new music-response default
+  ---
+  duration_ms: 0.475521
+  type: 'test'
+  ...
+# Subtest: there is exactly one working HTML control row and no native decorations requested
+ok 79 - there is exactly one working HTML control row and no native decorations requested
+  ---
+  duration_ms: 1.711136
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 100% scaling
+ok 80 - Native requests all 3840 x 2160 pixels at 100% scaling
+  ---
+  duration_ms: 2.189729
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 125% scaling
+ok 81 - Native requests all 3840 x 2160 pixels at 125% scaling
+  ---
+  duration_ms: 0.182651
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 150% scaling
+ok 82 - Native requests all 3840 x 2160 pixels at 150% scaling
+  ---
+  duration_ms: 2.503728
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 175% scaling
+ok 83 - Native requests all 3840 x 2160 pixels at 175% scaling
+  ---
+  duration_ms: 0.939991
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 200% scaling
+ok 84 - Native requests all 3840 x 2160 pixels at 200% scaling
+  ---
+  duration_ms: 0.135311
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 250% scaling
+ok 85 - Native requests all 3840 x 2160 pixels at 250% scaling
+  ---
+  duration_ms: 0.178284
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 300% scaling
+ok 86 - Native requests all 3840 x 2160 pixels at 300% scaling
+  ---
+  duration_ms: 0.263302
+  type: 'test'
+  ...
+# Subtest: Native requests all 3840 x 2160 pixels at 400% scaling
+ok 87 - Native requests all 3840 x 2160 pixels at 400% scaling
+  ---
+  duration_ms: 0.1202
+  type: 'test'
+  ...
+# Subtest: Native has no megapixel ceiling for 4K DCI, ultrawide or supported 8K
+ok 88 - Native has no megapixel ceiling for 4K DCI, ultrawide or supported 8K
+  ---
+  duration_ms: 0.670265
+  type: 'test'
+  ...
+# Subtest: physical pixel size follows fractional CSS dimensions, fullscreen and return
+ok 89 - physical pixel size follows fractional CSS dimensions, fullscreen and return
+  ---
+  duration_ms: 1.983525
+  type: 'test'
+  ...
+# Subtest: Light and Balanced preserve their previous reduced-pixel budgets
+ok 90 - Light and Balanced preserve their previous reduced-pixel budgets
+  ---
+  duration_ms: 0.332254
+  type: 'test'
+  ...
+# Subtest: graphics size limits are proportionate, explicit and not sold as Native
+ok 91 - graphics size limits are proportionate, explicit and not sold as Native
+  ---
+  duration_ms: 0.509627
+  type: 'test'
+  ...
+# Subtest: readout reports real drawing buffer size, not requested canvas dimensions
+ok 92 - readout reports real drawing buffer size, not requested canvas dimensions
+  ---
+  duration_ms: 0.16516
+  type: 'test'
+  ...
+# Subtest: unallocated drawing buffer and invalid numerical inputs cannot claim native resolution
+ok 93 - unallocated drawing buffer and invalid numerical inputs cannot claim native resolution
+  ---
+  duration_ms: 0.217852
+  type: 'test'
+  ...
+# Subtest: true native readout is unambiguous; one-pixel underallocation is not rounded to 100%
+ok 94 - true native readout is unambiguous; one-pixel underallocation is not rounded to 100%
+  ---
+  duration_ms: 0.173743
+  type: 'test'
+  ...
+# Subtest: Native is the new-install default, and saved Detailed remains high without preference resets
+ok 95 - Native is the new-install default, and saved Detailed remains high without preference resets
+  ---
+  duration_ms: 1.879365
+  type: 'test'
+  ...
+# Subtest: all 11 effects use the native viewport and matching uResolution, including feedback
+ok 96 - all 11 effects use the native viewport and matching uResolution, including feedback
+  ---
+  duration_ms: 25.066743
+  type: 'test'
+  ...
+# Subtest: smaller actual allocation governs viewport, uniforms and feedback; warning is shown once
+ok 97 - smaller actual allocation governs viewport, uniforms and feedback; warning is shown once
+  ---
+  duration_ms: 2.744914
+  type: 'test'
+  ...
+# Subtest: Native resize updates viewport and returns to smaller window without stale sizes
+ok 98 - Native resize updates viewport and returns to smaller window without stale sizes
+  ---
+  duration_ms: 1.940792
+  type: 'test'
+  ...
+# Subtest: the 4K update preserves shader bodies, capture, native corners, colors and motion
+ok 99 - the 4K update preserves shader bodies, capture, native corners, colors and motion
+  ---
+  duration_ms: 6.051008
+  type: 'test'
+  ...
+# Subtest: a paused image cannot claim native after fullscreen enlarges its destination
+ok 100 - a paused image cannot claim native after fullscreen enlarges its destination
+  ---
+  duration_ms: 1.782791
+  type: 'test'
+  ...
+# Subtest: display amplitude inversion preserves dB contrast and sanitizes invalid values
+ok 101 - display amplitude inversion preserves dB contrast and sanitizes invalid values
+  ---
+  duration_ms: 2.150063
+  type: 'test'
+  ...
+# Subtest: narrow bass notes survive averaging across a broad display band
+ok 102 - narrow bass notes survive averaging across a broad display band
+  ---
+  duration_ms: 40.756992
+  type: 'test'
+  ...
+# Subtest: equal-volume bass, mid and treble notes create different band features
+ok 103 - equal-volume bass, mid and treble notes create different band features
+  ---
+  duration_ms: 51.835483
+  type: 'test'
+  ...
+# Subtest: steady held audio creates one onset, not a fresh attack every frame
+ok 104 - steady held audio creates one onset, not a fresh attack every frame
+  ---
+  duration_ms: 18.955311
+  type: 'test'
+  ...
+# Subtest: silence cannot generate spectrum, geometric energy or onsets
+ok 105 - silence cannot generate spectrum, geometric energy or onsets
+  ---
+  duration_ms: 15.834125
+  type: 'test'
+  ...
+# Subtest: transient envelopes recover between separate attacks without rewinding progress
+ok 106 - transient envelopes recover between separate attacks without rewinding progress
+  ---
+  duration_ms: 26.308287
+  type: 'test'
+  ...
+# Subtest: input normalization keeps near-floor spectral noise small
+ok 107 - input normalization keeps near-floor spectral noise small
+  ---
+  duration_ms: 53.644133
+  type: 'test'
+  ...
+# Subtest: invalid delta and values never contaminate response state
+ok 108 - invalid delta and values never contaminate response state
+  ---
+  duration_ms: 0.423976
+  type: 'test'
+  ...
+# Subtest: reset clears adaptation and attack history
+ok 109 - reset clears adaptation and attack history
+  ---
+  duration_ms: 1.16378
+  type: 'test'
+  ...
+# Subtest: gentle peaks keeps structural attacks intact while reducing light accents
+ok 110 - gentle peaks keeps structural attacks intact while reducing light accents
+  ---
+  duration_ms: 27.548427
+  type: 'test'
+  ...
+# Subtest: PCM burst attacks survive 30 Hz native-style packets rendered at 30 Hz
+ok 111 - PCM burst attacks survive 30 Hz native-style packets rendered at 30 Hz
+  ---
+  duration_ms: 50.36047
+  type: 'test'
+  ...
+# Subtest: PCM burst attacks survive 30 Hz native-style packets rendered at 60 Hz
+ok 112 - PCM burst attacks survive 30 Hz native-style packets rendered at 60 Hz
+  ---
+  duration_ms: 29.956358
+  type: 'test'
+  ...
+# Subtest: PCM burst attacks survive 30 Hz native-style packets rendered at 120 Hz
+ok 113 - PCM burst attacks survive 30 Hz native-style packets rendered at 120 Hz
+  ---
+  duration_ms: 47.127374
+  type: 'test'
+  ...
+# Subtest: recommended response control restores animation settings without restarting capture
+ok 114 - recommended response control restores animation settings without restarting capture
+  ---
+  duration_ms: 1.446985
+  type: 'test'
+  ...
+# Subtest: defaults match the agreed first-launch behavior
+ok 115 - defaults match the agreed first-launch behavior
+  ---
+  duration_ms: 2.276611
+  type: 'test'
+  ...
+# Subtest: invalid stored values fall back instead of reaching graphics/audio APIs
+ok 116 - invalid stored values fall back instead of reaching graphics/audio APIs
+  ---
+  duration_ms: 3.852919
+  type: 'test'
+  ...
+# Subtest: settings clamp finite numeric values and ignore unknown keys
+ok 117 - settings clamp finite numeric values and ignore unknown keys
+  ---
+  duration_ms: 1.12229
+  type: 'test'
+  ...
+# Subtest: stored settings persist and corrupted storage is recovered
+ok 118 - stored settings persist and corrupted storage is recovered
+  ---
+  duration_ms: 4.570293
+  type: 'test'
+  ...
+# Subtest: storage unavailability is reported without crashing
+ok 119 - storage unavailability is reported without crashing
+  ---
+  duration_ms: 0.398759
+  type: 'test'
+  ...
+# Subtest: silence has no fabricated energy or shared arrays
+ok 120 - silence has no fabricated energy or shared arrays
+  ---
+  duration_ms: 0.402002
+  type: 'test'
+  ...
+# Subtest: explicit demo signal is deterministic and bounded over ten minutes
+ok 121 - explicit demo signal is deterministic and bounded over ten minutes
+  ---
+  duration_ms: 107.54072
+  type: 'test'
+  ...
+# Subtest: all 11 visualizers have distinct shader bodies, metadata and valid palettes
+ok 122 - all 11 visualizers have distinct shader bodies, metadata and valid palettes
+  ---
+  duration_ms: 0.794277
+  type: 'test'
+  ...
+# Subtest: hex colors normalize correctly
+ok 123 - hex colors normalize correctly
+  ---
+  duration_ms: 0.70764
+  type: 'test'
+  ...
+# Subtest: favorites sanitize, deduplicate and never share a mutable default array
+ok 124 - favorites sanitize, deduplicate and never share a mutable default array
+  ---
+  duration_ms: 0.934925
+  type: 'test'
+  ...
+# Subtest: the existing v1 settings schema migrates without losing original choices
+ok 125 - the existing v1 settings schema migrates without losing original choices
+  ---
+  duration_ms: 0.37625
+  type: 'test'
+  ...
+# Subtest: all 7 retained reference names find their matching visual
+ok 126 - all 7 retained reference names find their matching visual
+  ---
+  duration_ms: 0.571997
+  type: 'test'
+  ...
+# Subtest: category and favorites filters compose with search
+ok 127 - category and favorites filters compose with search
+  ---
+  duration_ms: 0.22928
+  type: 'test'
+  ...
+# Subtest: navigation uses collection length, handles empty pools and wraps both ways
+ok 128 - navigation uses collection length, handles empty pools and wraps both ways
+  ---
+  duration_ms: 0.176916
+  type: 'test'
+  ...
+# Subtest: every preset ships an embedded thumbnail with no network dependency
+ok 129 - every preset ships an embedded thumbnail with no network dependency
+  ---
+  duration_ms: 0.633559
+  type: 'test'
+  ...
+# Subtest: same-origin Resonance settings migrate to Vsualize without deleting the original
+ok 130 - same-origin Resonance settings migrate to Vsualize without deleting the original
+  ---
+  duration_ms: 0.599855
+  type: 'test'
+  ...
+# Subtest: current Vsualize settings take precedence over legacy preferences
+ok 131 - current Vsualize settings take precedence over legacy preferences
+  ---
+  duration_ms: 0.354253
+  type: 'test'
+  ...
+# Subtest: legacy preferences remain readable when storage refuses migration writes
+ok 132 - legacy preferences remain readable when storage refuses migration writes
+  ---
+  duration_ms: 0.446564
+  type: 'test'
+  ...
+# Subtest: desktop uses live sources, never a saved demo session; preview starts disconnected
+ok 133 - desktop uses live sources, never a saved demo session; preview starts disconnected
+  ---
+  duration_ms: 2.139957
+  type: 'test'
+  ...
+# Subtest: 0.2.2 settings migrate once while preserving custom sources and visuals
+ok 134 - 0.2.2 settings migrate once while preserving custom sources and visuals
+  ---
+  duration_ms: 1.681056
+  type: 'test'
+  ...
+# Subtest: an open endpoint with silence is QUIET, never LIVE
+ok 135 - an open endpoint with silence is QUIET, never LIVE
+  ---
+  duration_ms: 1.014631
+  type: 'test'
+  ...
+# Subtest: demo never claims to be live even when its energy is nonzero
+ok 136 - demo never claims to be live even when its energy is nonzero
+  ---
+  duration_ms: 0.492317
+  type: 'test'
+  ...
+# Subtest: capture failures and partially failed combined sources have distinct states
+ok 137 - capture failures and partially failed combined sources have distinct states
+  ---
+  duration_ms: 2.521296
+  type: 'test'
+  ...
+# Subtest: diagnostics distinguish gated input from zero gain
+ok 138 - diagnostics distinguish gated input from zero gain
+  ---
+  duration_ms: 0.290655
+  type: 'test'
+  ...
+# Subtest: raw dBFS meters are zero in silence and finite for usable input
+ok 139 - raw dBFS meters are zero in silence and finite for usable input
+  ---
+  duration_ms: 0.588052
+  type: 'test'
+  ...
+# Subtest: native packet shape checks and numeric sanitation reject malformed data
+ok 140 - native packet shape checks and numeric sanitation reject malformed data
+  ---
+  duration_ms: 0.53184
+  type: 'test'
+  ...
+# Subtest: music-only mode settles fully and never rewinds; resumes on new music
+ok 141 - music-only mode settles fully and never rewinds; resumes on new music
+  ---
+  duration_ms: 141.48956
+  type: 'test'
+  ...
+# Subtest: ambient drift remains opt-in and does not create fake audio energy
+ok 142 - ambient drift remains opt-in and does not create fake audio energy
+  ---
+  duration_ms: 15.672427
+  type: 'test'
+  ...
+# Subtest: Ripple Classic: exact screenshot defaults, including zeros and Randomize
+ok 143 - Ripple Classic: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 4.623673
+  type: 'test'
+  ...
+# Subtest: Liquid Glass: exact screenshot defaults, including zeros and Randomize
+ok 144 - Liquid Glass: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.650722
+  type: 'test'
+  ...
+# Subtest: Mandelbrot Dive: exact screenshot defaults, including zeros and Randomize
+ok 145 - Mandelbrot Dive: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.521855
+  type: 'test'
+  ...
+# Subtest: Spectrum Field: exact screenshot defaults, including zeros and Randomize
+ok 146 - Spectrum Field: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.301069
+  type: 'test'
+  ...
+# Subtest: Acid Organism: exact screenshot defaults, including zeros and Randomize
+ok 147 - Acid Organism: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.386679
+  type: 'test'
+  ...
+# Subtest: Neon Overdrive: exact screenshot defaults, including zeros and Randomize
+ok 148 - Neon Overdrive: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.160238
+  type: 'test'
+  ...
+# Subtest: Dissolution: exact screenshot defaults, including zeros and Randomize
+ok 149 - Dissolution: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.25018
+  type: 'test'
+  ...
+# Subtest: Energy Mandala: exact screenshot defaults, including zeros and Randomize
+ok 150 - Energy Mandala: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.133938
+  type: 'test'
+  ...
+# Subtest: Cosmic Kaleidoscope: exact screenshot defaults, including zeros and Randomize
+ok 151 - Cosmic Kaleidoscope: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.684388
+  type: 'test'
+  ...
+# Subtest: Groove Current: exact screenshot defaults, including zeros and Randomize
+ok 152 - Groove Current: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.660984
+  type: 'test'
+  ...
+# Subtest: Lava Forms: exact screenshot defaults, including zeros and Randomize
+ok 153 - Lava Forms: exact screenshot defaults, including zeros and Randomize
+  ---
+  duration_ms: 0.363185
+  type: 'test'
+  ...
+# Subtest: all eleven screenshot profiles adopt once on a 0.2.10 installation without resetting global settings
+ok 154 - all eleven screenshot profiles adopt once on a 0.2.10 installation without resetting global settings
+  ---
+  duration_ms: 5.908529
+  type: 'test'
+  ...
+# Subtest: each preset remembers changes independently, including palette and zero values
+ok 155 - each preset remembers changes independently, including palette and zero values
+  ---
+  duration_ms: 0.775273
+  type: 'test'
+  ...
+# Subtest: navigation snapshots even an unsaved active slider change
+ok 156 - navigation snapshots even an unsaved active slider change
+  ---
+  duration_ms: 0.198449
+  type: 'test'
+  ...
+# Subtest: selecting the same visual does not reset its custom tuning
+ok 157 - selecting the same visual does not reset its custom tuning
+  ---
+  duration_ms: 0.700943
+  type: 'test'
+  ...
+# Subtest: reset restores all six fields only for the active effect
+ok 158 - reset restores all six fields only for the active effect
+  ---
+  duration_ms: 0.548066
+  type: 'test'
+  ...
+# Subtest: explicit reset all restores every screenshot profile and selects Ripple
+ok 159 - explicit reset all restores every screenshot profile and selects Ripple
+  ---
+  duration_ms: 0.32267
+  type: 'test'
+  ...
+# Subtest: map copies and preset defaults never share mutable child settings
+ok 160 - map copies and preset defaults never share mutable child settings
+  ---
+  duration_ms: 0.414241
+  type: 'test'
+  ...
+# Subtest: preset schema clamps safely and ignores malformed numbers, colors and unknown keys
+ok 161 - preset schema clamps safely and ignores malformed numbers, colors and unknown keys
+  ---
+  duration_ms: 0.252986
+  type: 'test'
+  ...
+# Subtest: malformed profile maps are reconstructed and unknown/removed IDs cannot persist
+ok 162 - malformed profile maps are reconstructed and unknown/removed IDs cannot persist
+  ---
+  duration_ms: 1.945034
+  type: 'test'
+  ...
+# Subtest: retired active effect does not overwrite a previously customized Ripple profile
+ok 163 - retired active effect does not overwrite a previously customized Ripple profile
+  ---
+  duration_ms: 0.205264
+  type: 'test'
+  ...
+# Subtest: save/reload preserves independent edits and stops the one-time adoption from repeating
+ok 164 - save/reload preserves independent edits and stops the one-time adoption from repeating
+  ---
+  duration_ms: 0.899405
+  type: 'test'
+  ...
+# Subtest: one local backup preserves the original shared settings without being overwritten later
+ok 165 - one local backup preserves the original shared settings without being overwritten later
+  ---
+  duration_ms: 0.558499
+  type: 'test'
+  ...
+# Subtest: optional backup storage failure does not erase usable source choices
+ok 166 - optional backup storage failure does not erase usable source choices
+  ---
+  duration_ms: 0.41346
+  type: 'test'
+  ...
+# Subtest: all UI navigation and resets call the per-effect settings helpers
+ok 167 - all UI navigation and resets call the per-effect settings helpers
+  ---
+  duration_ms: 0.516164
+  type: 'test'
+  ...
+# Subtest: there is exactly one app-drawn window control row
+ok 168 - there is exactly one app-drawn window control row
+  ---
+  duration_ms: 3.117375
+  type: 'test'
+  ...
+# Subtest: working custom minimize/fullscreen/quit actions are kept
+ok 169 - working custom minimize/fullscreen/quit actions are kept
+  ---
+  duration_ms: 0.592998
+  type: 'test'
+  ...
+# Subtest: the transparent resizable window is protected before first show
+ok 170 - the transparent resizable window is protected before first show
+  ---
+  duration_ms: 1.219192
+  type: 'test'
+  ...
+# Subtest: frame refreshes dispatch to the owning UI thread
+ok 171 - frame refreshes dispatch to the owning UI thread
+  ---
+  duration_ms: 0.716072
+  type: 'test'
+  ...
+# Subtest: a persistent scoped guard blocks caption paint and removes itself on destruction
+ok 172 - a persistent scoped guard blocks caption paint and removes itself on destruction
+  ---
+  duration_ms: 0.761532
+  type: 'test'
+  ...
+# Subtest: package, native, and UI version identifiers agree
+ok 173 - package, native, and UI version identifiers agree
+  ---
+  duration_ms: 0.8168
+  type: 'test'
+  ...
+# Subtest: the whole application defaults to an 8px outer corner clip
+ok 174 - the whole application defaults to an 8px outer corner clip
+  ---
+  duration_ms: 2.349385
+  type: 'test'
+  ...
+# Subtest: the canvas and drag toolbar remain descendants of the clipped surface
+ok 175 - the canvas and drag toolbar remain descendants of the clipped surface
+  ---
+  duration_ms: 6.765397
+  type: 'test'
+  ...
+# Subtest: both distributed frontend forms include the corner clip
+ok 176 - both distributed frontend forms include the corner clip
+  ---
+  duration_ms: 7.975437
+  type: 'test'
+  ...
+# Subtest: fullscreen removes only the outer corner radius
+ok 177 - fullscreen removes only the outer corner radius
+  ---
+  duration_ms: 1.593109
+  type: 'test'
+  ...
+# Subtest: windowed startup keeps the 8px CSS default
+ok 178 - windowed startup keeps the 8px CSS default
+  ---
+  duration_ms: 6.178919
+  type: 'test'
+  ...
+# Subtest: successful native fullscreen action reads real state and removes rounding
+ok 179 - successful native fullscreen action reads real state and removes rounding
+  ---
+  duration_ms: 2.116659
+  type: 'test'
+  ...
+# Subtest: exit fullscreen and recovery restore the windowed radius
+ok 180 - exit fullscreen and recovery restore the windowed radius
+  ---
+  duration_ms: 0.723471
+  type: 'test'
+  ...
+# Subtest: ready syncs restored state without requesting fullscreen
+ok 181 - ready syncs restored state without requesting fullscreen
+  ---
+  duration_ms: 0.821166
+  type: 'test'
+  ...
+# Subtest: failed fullscreen command does not change the clip
+ok 182 - failed fullscreen command does not change the clip
+  ---
+  duration_ms: 1.873137
+  type: 'test'
+  ...
+# Subtest: cosmetic getter failure preserves last state without breaking commands
+ok 183 - cosmetic getter failure preserves last state without breaking commands
+  ---
+  duration_ms: 0.988204
+  type: 'test'
+  ...
+# Subtest: late stale fullscreen query cannot overwrite a newer result
+ok 184 - late stale fullscreen query cannot overwrite a newer result
+  ---
+  duration_ms: 0.810942
+  type: 'test'
+  ...
+# Subtest: missing fullscreen getter is cosmetic and does not break startup
+ok 185 - missing fullscreen getter is cosmetic and does not break startup
+  ---
+  duration_ms: 0.442535
+  type: 'test'
+  ...
+# Subtest: unrelated window actions remain unchanged and do not query fullscreen
+ok 186 - unrelated window actions remain unchanged and do not query fullscreen
+  ---
+  duration_ms: 0.961919
+  type: 'test'
+  ...
+1..186
+# tests 186
+# suites 0
+# pass 185
+# fail 0
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 2747.987365

@@ -1,0 +1,293 @@
+{
+  "visuals": [
+    {
+      "id": "ripple",
+      "audioPixelDifference": 31.847115885416667,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 247,
+      "alphaMean": 46.954921875,
+      "fadedAlphaMean": 19.3680859375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "glass",
+      "audioPixelDifference": 18.553919270833333,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 247,
+      "alphaMean": 44.11412109375,
+      "fadedAlphaMean": 17.860078125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "mandelbrot",
+      "audioPixelDifference": 6.15361328125,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 224,
+      "alphaMean": 13.58998046875,
+      "fadedAlphaMean": 5.96208984375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "spectrum",
+      "audioPixelDifference": 11.82033203125,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 247,
+      "alphaMean": 26.91412109375,
+      "fadedAlphaMean": 11.2062109375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "prism",
+      "audioPixelDifference": 12.359388020833334,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 23.76873046875,
+      "fadedAlphaMean": 9.9431640625,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "lattice",
+      "audioPixelDifference": 23.199283854166666,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 40.18962890625,
+      "fadedAlphaMean": 16.4266796875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "orbital",
+      "audioPixelDifference": 9.110266927083334,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 19.08001953125,
+      "fadedAlphaMean": 8.08578125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "julia",
+      "audioPixelDifference": 38.4882421875,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 247,
+      "alphaMean": 131.82931640625,
+      "fadedAlphaMean": 52.95439453125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "neural",
+      "audioPixelDifference": 19.239303385416665,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 31.88376953125,
+      "fadedAlphaMean": 12.79498046875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "starflight",
+      "audioPixelDifference": 12.695221354166666,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 16.98876953125,
+      "fadedAlphaMean": 6.93671875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "organism",
+      "audioPixelDifference": 45.259440104166664,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 62.04369140625,
+      "fadedAlphaMean": 25.0220703125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "audioPixelDifference": 20.7775,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 29.68421875,
+      "fadedAlphaMean": 12.0145703125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "overdrive",
+      "audioPixelDifference": 28.877975260416665,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 59.179140625,
+      "fadedAlphaMean": 23.66533203125,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "cube",
+      "audioPixelDifference": 6.345169270833333,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 40.55451171875,
+      "fadedAlphaMean": 16.58169921875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "dissolution",
+      "audioPixelDifference": 48.47193359375,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 125.10353515625,
+      "fadedAlphaMean": 50.0418359375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "mandala",
+      "audioPixelDifference": 23.41466796875,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 40.590390625,
+      "fadedAlphaMean": 16.52625,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "petals",
+      "audioPixelDifference": 46.88854817708334,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 99.3293359375,
+      "fadedAlphaMean": 39.824375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "bloom",
+      "audioPixelDifference": 19.689778645833332,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 242,
+      "alphaMean": 195.6385546875,
+      "fadedAlphaMean": 78.2838671875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "kaleidoscope",
+      "audioPixelDifference": 59.31439453125,
+      "solidAlpha": true,
+      "alphaMin": 4,
+      "alphaMax": 255,
+      "alphaMean": 154.65666015625,
+      "fadedAlphaMean": 61.86177734375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "groove",
+      "audioPixelDifference": 7.815240885416666,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 14.58361328125,
+      "fadedAlphaMean": 6.3440234375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "lava",
+      "audioPixelDifference": 20.863190104166666,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 242,
+      "alphaMean": 37.56892578125,
+      "fadedAlphaMean": 15.566875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "cascade",
+      "audioPixelDifference": 32.115481770833334,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 71.88716796875,
+      "fadedAlphaMean": 29.0374609375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "pulse",
+      "audioPixelDifference": 25.1475390625,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 250,
+      "alphaMean": 29.5475,
+      "fadedAlphaMean": 12.07443359375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "highway",
+      "audioPixelDifference": 13.681634114583334,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 71.867734375,
+      "fadedAlphaMean": 29.00552734375,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "chaos",
+      "audioPixelDifference": 18.089375,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 247,
+      "alphaMean": 100.0836328125,
+      "fadedAlphaMean": 40.5038671875,
+      "glError": 0,
+      "passed": true
+    },
+    {
+      "id": "weaver",
+      "audioPixelDifference": 21.444479166666667,
+      "solidAlpha": true,
+      "alphaMin": 1,
+      "alphaMax": 255,
+      "alphaMean": 26.9437109375,
+      "fadedAlphaMean": 10.80619140625,
+      "glError": 0,
+      "passed": true
+    }
+  ],
+  "jsErrors": [],
+  "nativeTested": false,
+  "description": "Synthetic frames, fixed initial state, 12 draws per condition. Four conditions per visual: silence/active, solid/transparent, full/faded alpha."
+}

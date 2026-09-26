@@ -1,0 +1,236 @@
+{
+  "checks": [
+    {
+      "check": "26 visualizer cards",
+      "passed": true
+    },
+    {
+      "check": "one window control row only",
+      "passed": true
+    },
+    {
+      "check": "music response adjusts transport setting",
+      "passed": true
+    },
+    {
+      "check": "preview explicitly labels synthetic audio",
+      "passed": true
+    },
+    {
+      "check": "native desktop capture is not pretended in browser",
+      "passed": true
+    },
+    {
+      "check": "native combined capture is disabled in browser",
+      "passed": true
+    },
+    {
+      "check": "ripple selected",
+      "passed": true
+    },
+    {
+      "check": "glass selected",
+      "passed": true
+    },
+    {
+      "check": "mandelbrot selected",
+      "passed": true
+    },
+    {
+      "check": "spectrum selected",
+      "passed": true
+    },
+    {
+      "check": "all thumbnails embedded and loaded",
+      "passed": true
+    },
+    {
+      "check": "search resolves Hpno+Vortex+Illusio",
+      "passed": true
+    },
+    {
+      "check": "search resolves volumetric-led-field",
+      "passed": true
+    },
+    {
+      "check": "search resolves disolve",
+      "passed": true
+    },
+    {
+      "check": "search resolves fractal-orbit-film",
+      "passed": true
+    },
+    {
+      "check": "search resolves sound-weaver",
+      "passed": true
+    },
+    {
+      "check": "empty search displays a helpful state",
+      "passed": true
+    },
+    {
+      "check": "shuffle disabled for empty search",
+      "passed": true
+    },
+    {
+      "check": "fractal category filters list",
+      "passed": true
+    },
+    {
+      "check": "favorites and category intersect",
+      "passed": true
+    },
+    {
+      "check": "shuffle selects different visual in filtered pool",
+      "passed": true
+    },
+    {
+      "check": "next navigation wraps filtered pool",
+      "passed": true
+    },
+    {
+      "check": "previous navigation wraps filtered pool",
+      "passed": true
+    },
+    {
+      "check": "favorite settings saved",
+      "passed": true
+    },
+    {
+      "check": "reset filters restores all 26",
+      "passed": true
+    },
+    {
+      "check": "idle hides both menu and drag gradient",
+      "passed": true
+    },
+    {
+      "check": "click reveals controls",
+      "passed": true
+    },
+    {
+      "check": "pause stops frame drawing",
+      "passed": true
+    },
+    {
+      "check": "resume restarts drawing",
+      "passed": true
+    },
+    {
+      "check": "transparent preview has an explicit sample-backdrop label",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at bottom-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at bottom-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at bottom-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at top-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at top-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at top-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (960, 720) at center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at bottom-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at bottom-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at bottom-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at top-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at top-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at top-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (300, 240) at center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at bottom-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at bottom-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at bottom-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at top-right",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at top-center",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at top-left",
+      "passed": true
+    },
+    {
+      "check": "menu fits (1200, 320) at center",
+      "passed": true
+    },
+    {
+      "check": "inactivity hides controls",
+      "passed": true
+    },
+    {
+      "check": "keyboard can reveal controls",
+      "passed": true
+    },
+    {
+      "check": "Escape dismisses controls",
+      "passed": true
+    },
+    {
+      "check": "stop capture produces zero spectrum",
+      "passed": true
+    },
+    {
+      "check": "failed microphone capture never silently enables demo",
+      "passed": true
+    },
+    {
+      "check": "no uncaught JavaScript errors",
+      "passed": true
+    }
+  ],
+  "count": 57,
+  "errors": [],
+  "nativeTested": false,
+  "storage": "in-memory stub for an originless document; persistence logic separately unit-tested"
+}

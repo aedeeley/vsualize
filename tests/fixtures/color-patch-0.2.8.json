@@ -1,0 +1,9 @@
+{
+  "description": "Approved generative multicolor changes on top of 8px corners. Shared palette sampler/renderer/UI only; native audio/window code, motion and all individual effect bodies remain unchanged.",
+  "files": {
+    "src/settings.ts": "17294c01f9504c3de8909f2d201e6270e631d0cf30d31214b319434a126bdb90",
+    "src/renderer.ts": "6ffbcc806edbd69cb03ae5ec6a7056027c3595b2a1d41c5f0dadfac7d429fb07",
+    "static/style.css": "e7d7a0e17353655549d0b055eb480f0460c0e75fd481b3ff9d97316ff5c73379",
+    "src/visuals/common.ts": "06613b1af6cbbd57ccd1ed419a7f98a5e6d717afa2c3de9e50acc21da874df29"
+  }
+}

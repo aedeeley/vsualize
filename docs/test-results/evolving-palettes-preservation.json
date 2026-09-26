@@ -1,0 +1,255 @@
+{
+  "baseline": "0.2.8 with Randomize Colors and 8px corner patches",
+  "changed": [
+    {
+      "file": "src/renderer.ts",
+      "sha256": "6ffbcc806edbd69cb03ae5ec6a7056027c3595b2a1d41c5f0dadfac7d429fb07"
+    },
+    {
+      "file": "src/main.ts",
+      "sha256": "fdfc007a485727f8cff90d5e1cdad4e25066915dcf5a0eaaf934bb574835d6ca"
+    },
+    {
+      "file": "src/colors.ts",
+      "sha256": "0a60cf5bb703bf331ef848c64e3ed67defaee09406fef9aad4314dd8d4319d11"
+    },
+    {
+      "file": "src/visuals/common.ts",
+      "sha256": "06613b1af6cbbd57ccd1ed419a7f98a5e6d717afa2c3de9e50acc21da874df29"
+    },
+    {
+      "file": "static/index.html",
+      "sha256": "1d817f5ad57f7566e46b201f81d8c3acb9adf0d66f4d8ba1460b740735ba16a2"
+    },
+    {
+      "file": "static/style.css",
+      "sha256": "e7d7a0e17353655549d0b055eb480f0460c0e75fd481b3ff9d97316ff5c73379"
+    }
+  ],
+  "unchanged": [
+    {
+      "file": "src/settings.ts",
+      "sha256": "17294c01f9504c3de8909f2d201e6270e631d0cf30d31214b319434a126bdb90"
+    },
+    {
+      "file": "src/audio.ts",
+      "sha256": "18d50b618d682ff54ed7ed1556f6c30729c7c426d77ddfd68a7549886dd2b6eb"
+    },
+    {
+      "file": "src/inertia.ts",
+      "sha256": "1d2f9ce517c3a5b37c81ade60cb2fbd92560392b54b3111279de08dc0f851516"
+    },
+    {
+      "file": "src/response.ts",
+      "sha256": "0d27d96b777a0dda72b3fb4202e9ffbd8b8a8674fca8cab780bd5e0b235ada56"
+    },
+    {
+      "file": "src/catalog.ts",
+      "sha256": "f0c795c4817aae69ac08384c51f00b37d733d7ae1869e5cfd93d2452c2a55553"
+    },
+    {
+      "file": "src/native.ts",
+      "sha256": "6bfc4a78da4a7d6b129d2ac466ef93b7345ac594c8676757be24db3f6bc8b415"
+    },
+    {
+      "file": "src/signal.ts",
+      "sha256": "8b0a9263ac9036dafb34f66afcafed40515bf730c6aa6f467894a9d0b692eb62"
+    },
+    {
+      "file": "src/library.ts",
+      "sha256": "e61a99ec21a96a6e3e962986d881f0486de68030d18a204ab60530f1f0f545fa"
+    },
+    {
+      "file": "src/motion.ts",
+      "sha256": "e0cc8c434a31163e52ce22a51812df4ff957df1645ca530b1bfc00dbfa65fecc"
+    },
+    {
+      "file": "src/types.ts",
+      "sha256": "1294e0d147710363ed659a2e2257eba78471d8b0b9f249cd5fb7ecbcc9a4e612"
+    },
+    {
+      "file": "src/visuals/starflight.ts",
+      "sha256": "46723fbc3484c5603519cb19f0e4cf7c4d28fcbe73bc66c7d3bc85027164f915"
+    },
+    {
+      "file": "src/visuals/kaleidoscope.ts",
+      "sha256": "132759c789b806b5856f2ab8fe3fa7300487629a69fc956334c74c816935f974"
+    },
+    {
+      "file": "src/visuals/lattice.ts",
+      "sha256": "90e6fc4e3711199c2c6bf3b924723f49a0e3f7fbbd79089d0203fecfa57ea38d"
+    },
+    {
+      "file": "src/visuals/prism.ts",
+      "sha256": "cb1a8cb08aef41f090edb2c45930c6be251b25bcd65f0d2e0c4aae8a195da0dd"
+    },
+    {
+      "file": "src/visuals/lava.ts",
+      "sha256": "313937d3685f20662d4867e616391068e2ac3028998521941d3bf63e9b7b153a"
+    },
+    {
+      "file": "src/visuals/cascade.ts",
+      "sha256": "c352be1ff1711710fb5b0e229326fb10054afefab872fdd60360e1e6a950d13b"
+    },
+    {
+      "file": "src/visuals/neural.ts",
+      "sha256": "4fc748973f32f03940d16307df0075204b56ac068721fe77ac934556f99f45b7"
+    },
+    {
+      "file": "src/visuals/index.ts",
+      "sha256": "e8af20b43e6edcdf9340e320325c2c2b4148bd66761a25664e6f248a3e19652c"
+    },
+    {
+      "file": "src/visuals/organism.ts",
+      "sha256": "6c22ea834c058785597795d68450d091d338d3c2579c3ca7ccb5d99df1479fbc"
+    },
+    {
+      "file": "src/visuals/glass.ts",
+      "sha256": "80c332a62876e006defabb7b25ded40f30e56134aa0350835a0780ca1fcdbddb"
+    },
+    {
+      "file": "src/visuals/ripple.ts",
+      "sha256": "9658562baf83d5e78192e3889cc53ae7388012b6e77971996c66e3e386cd9aed"
+    },
+    {
+      "file": "src/visuals/julia.ts",
+      "sha256": "a1c7fb9a92e946f057ecfcff5050e5f203089e5e037b7af6fd1aa48222848ec2"
+    },
+    {
+      "file": "src/visuals/dissolution.ts",
+      "sha256": "e2b1ed4183f397e7b79f949e7dfa250876919d19788492e8191ae4072dcf9646"
+    },
+    {
+      "file": "src/visuals/overdrive.ts",
+      "sha256": "91d486487b9200cf43b8c3e2704d3782c1ddf927cb71846ca8fc5d1c3afa0eaf"
+    },
+    {
+      "file": "src/visuals/fractal-flight.ts",
+      "sha256": "5dcdbf8c6750794a2f5bdd8721f9c2f8f9b55cbe159e216e395989a594a2bf31"
+    },
+    {
+      "file": "src/visuals/petals.ts",
+      "sha256": "fd527c3eb38d5445d5f6bfb0b214eb8e8fcea7aebcbcfd69d5b7c497f56468fe"
+    },
+    {
+      "file": "src/visuals/spectrum.ts",
+      "sha256": "2789be40bc30d3339e669cd6593fd490c149d84a62a96b464f6ac580cdb7c6f2"
+    },
+    {
+      "file": "src/visuals/thumbnails.ts",
+      "sha256": "813719bb3033763a85b795efc348d85681445c2368822ce3ff71a03daa7ba7ee"
+    },
+    {
+      "file": "src/visuals/mandelbrot.ts",
+      "sha256": "f97967d4b5e128037881f5f04bfe277260782912c420faad25e0288cc659160d"
+    },
+    {
+      "file": "src/visuals/mandala.ts",
+      "sha256": "1c8a9de3f6351ef071e11fedee33dffbbd5f15671aecc669f7160eac3c0af628"
+    },
+    {
+      "file": "src/visuals/bloom.ts",
+      "sha256": "66efc47bd9a7ae3f87778e9991c6ad45bac3ce193856ec2fe40311f044ee5343"
+    },
+    {
+      "file": "src/visuals/collection-common.ts",
+      "sha256": "894a07bcb4af42fc51037c2a3a0352cdd393804e319afaeeb6aa2a8c2afe7ba3"
+    },
+    {
+      "file": "src/visuals/highway.ts",
+      "sha256": "fe009ad9a0342290ee81c6a22d62d2388fa1cefdb71fa963bca405b6f721f61b"
+    },
+    {
+      "file": "src/visuals/groove.ts",
+      "sha256": "1d7fcb182874d61b6f860626a381a8c6229c3d2293c61556581f884f1475676d"
+    },
+    {
+      "file": "src/visuals/cube.ts",
+      "sha256": "d8ca0b08c0849a21523c6d4b9a52913e1ce2078769dec15a058e565ac71bd629"
+    },
+    {
+      "file": "src-tauri/Cargo.toml",
+      "sha256": "4bd18cb3720cb595d5fcf7c34f67e22d7d86309011536bd8e5a0c27dfa39689d"
+    },
+    {
+      "file": "src-tauri/tauri.conf.json",
+      "sha256": "b1ad642045734af365021724a8e71ebd7fc3cbb6d0492aeef02e24776df364b7"
+    },
+    {
+      "file": "src-tauri/build.rs",
+      "sha256": "6aeeab41bc35efde4e3c2b644a6248f7fc06d24ae30b75c0d33491cbb0c1fa31"
+    },
+    {
+      "file": "src-tauri/capabilities/main.json",
+      "sha256": "42e39aedb6623edf3c8597925358ec9f4158c1e4a605361ec4899839a8b3f8ed"
+    },
+    {
+      "file": "src-tauri/src/native_frame.rs",
+      "sha256": "8095dfeaf8a2825e2dccb2bece7ab821e0ab2a35fb04df23c5f54efd5847be37"
+    },
+    {
+      "file": "src-tauri/src/main.rs",
+      "sha256": "198c8c2e46b252064ec812a2382a4b33db585179cbc914531754901f658b5247"
+    },
+    {
+      "file": "src-tauri/icons/icon.png",
+      "sha256": "35df40d6c2f2fe352a44492f5f5d54e1eeff086a484d33132bd6036daff36b9b"
+    },
+    {
+      "file": "src-tauri/icons/icon.ico",
+      "sha256": "58d36aefba852f6fb32ec294f7cb41cac75ee5856956e3a6c8713a30d3337f69"
+    },
+    {
+      "file": "src-tauri/src/audio/windows.rs",
+      "sha256": "9f310c02d70c1c6388398d458d2bc1e22e3f4ecd685124eaed5a8212cb0fe4ec"
+    },
+    {
+      "file": "src-tauri/src/audio/mod.rs",
+      "sha256": "3df6b0aa4932e8414dc39c76918b4307cd396f434138dc7aef94bf1de1bdd0c1"
+    },
+    {
+      "file": "src-tauri/src/audio/analyzer.rs",
+      "sha256": "81528f10b9d32d37363e2f4d4e97fcebaab4e2c1128ad0b521fb2c546abf2d80"
+    },
+    {
+      "file": "src-tauri/src/native_frame/windows.rs",
+      "sha256": "02f6f8593d986eb4de2f0b029bfd5c2aa977adb73ab3ae60fc1ce045bfea493c"
+    },
+    {
+      "file": "src-tauri/src/native_frame/windows/tests.rs",
+      "sha256": "4d982f858069e0fab9d0db70f6c4f5657a92e479080fe678ca28f1cdc9e896d0"
+    },
+    {
+      "file": "scripts/dev.mjs",
+      "sha256": "af157a23bc4b621b151d25301133cd0068f7f7b781a9f440f07dadf141d8bdaf"
+    },
+    {
+      "file": "scripts/prune-retired-visuals.mjs",
+      "sha256": "ccc59567225516a8acb8e1bcbe1ff756d4fd51d6d6c561f64b26f33beb41e090"
+    },
+    {
+      "file": "scripts/check-desktop-config.mjs",
+      "sha256": "0a230af1708bd19cb8927fa98dd043514aaef980a10e1b72c304405373b56de9"
+    },
+    {
+      "file": "scripts/windows-common.ps1",
+      "sha256": "57fd3c9e82b396ffc423db5aaa02f81a2796190b132a0c67b5bed44910d3655e"
+    },
+    {
+      "file": "scripts/build.mjs",
+      "sha256": "295f19316d6231feffbbaba17b4882a83086d26e02f5c28d9622496068e472aa"
+    },
+    {
+      "file": "scripts/generate-thumbnails.py",
+      "sha256": "9267ec950594e4ed7a8a0d86c1ac9676a450d20883dcc2f78d59d5d83fbb94de"
+    },
+    {
+      "file": "scripts/start-windows.ps1",
+      "sha256": "72b12a7f632cfa6b8b1dfffa901ccbdc4538815901da7e0a5d9d498d781933b1"
+    },
+    {
+      "file": "scripts/setup-windows.ps1",
+      "sha256": "8e188a2c5e0a65262c455ef57d6326639164474c5eadff1d46876b006f92deaf"
+    }
+  ]
+}

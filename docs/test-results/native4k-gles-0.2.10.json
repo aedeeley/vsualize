@@ -1,0 +1,151 @@
+{
+  "backend": "OpenGL ES 3.2 Mesa 25.0.7-2",
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "input": "synthetic fixed multi-band snapshot",
+  "checks": [
+    {
+      "name": "actual EGL surface is 3840 x 2160",
+      "passed": true,
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "name": "ripple unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "glass unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "mandelbrot unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "spectrum unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "prism unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "lattice unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "julia unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "neural unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "starflight unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "organism unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "overdrive unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "cube unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "dissolution unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "mandala unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "petals unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "bloom unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "kaleidoscope unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "groove unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "lava unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "cascade unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "highway unmodified shader compiles",
+      "passed": true
+    },
+    {
+      "name": "ripple has actual 4K pixel output",
+      "passed": true
+    },
+    {
+      "name": "Ripple transparency survives native 4K",
+      "passed": true
+    },
+    {
+      "name": "julia has actual 4K pixel output",
+      "passed": true
+    },
+    {
+      "name": "spectrum has actual 4K pixel output",
+      "passed": true
+    },
+    {
+      "name": "groove has actual 4K pixel output",
+      "passed": true
+    }
+  ],
+  "renders": [
+    {
+      "visual": "ripple",
+      "width": 3840,
+      "height": 2160,
+      "glErrors": 0,
+      "nonUniform": true
+    },
+    {
+      "visual": "julia",
+      "width": 3840,
+      "height": 2160,
+      "glErrors": 0,
+      "nonUniform": true
+    },
+    {
+      "visual": "spectrum",
+      "width": 3840,
+      "height": 2160,
+      "glErrors": 0,
+      "nonUniform": true
+    },
+    {
+      "visual": "groove",
+      "width": 3840,
+      "height": 2160,
+      "glErrors": 0,
+      "nonUniform": true
+    }
+  ],
+  "windowsTested": false,
+  "webglTested": false,
+  "nativeAudioTested": false,
+  "performanceClaim": "Software offscreen render/readback only; no target-GPU frame-rate claim."
+}

@@ -1,0 +1,270 @@
+{
+  "backend": "OpenGL ES 3.2 Mesa 25.0.7-2",
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "input": "synthetic multi-band timeline",
+  "nativeCaptureTested": false,
+  "reports": [
+    {
+      "visual": "ripple",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 8.270840644836426,
+      "maxFrameChange": 10.488702774047852,
+      "glErrors": 0
+    },
+    {
+      "visual": "glass",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 9.859867095947266,
+      "maxFrameChange": 11.764455795288086,
+      "glErrors": 0
+    },
+    {
+      "visual": "mandelbrot",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 3.8492860794067383,
+      "maxFrameChange": 6.1534528732299805,
+      "glErrors": 0
+    },
+    {
+      "visual": "spectrum",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 3.642979621887207,
+      "maxFrameChange": 4.639455318450928,
+      "glErrors": 0
+    },
+    {
+      "visual": "prism",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 1.2350980043411255,
+      "maxFrameChange": 5.502363204956055,
+      "glErrors": 0
+    },
+    {
+      "visual": "lattice",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 1.4377691745758057,
+      "maxFrameChange": 11.299153327941895,
+      "glErrors": 0
+    },
+    {
+      "visual": "orbital",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 0.7547118067741394,
+      "maxFrameChange": 1.6748287677764893,
+      "glErrors": 0
+    },
+    {
+      "visual": "julia",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 13.320330619812012,
+      "maxFrameChange": 19.902935028076172,
+      "glErrors": 0
+    },
+    {
+      "visual": "neural",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 2.0719704627990723,
+      "maxFrameChange": 6.72645378112793,
+      "glErrors": 0
+    },
+    {
+      "visual": "starflight",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 2.0111725330352783,
+      "maxFrameChange": 4.535120010375977,
+      "glErrors": 0
+    },
+    {
+      "visual": "organism",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 9.572078704833984,
+      "maxFrameChange": 12.725296974182129,
+      "glErrors": 0
+    },
+    {
+      "visual": "vortex",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 0.5521528124809265,
+      "maxFrameChange": 1.1669560670852661,
+      "glErrors": 0
+    },
+    {
+      "visual": "overdrive",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 15.929296493530273,
+      "maxFrameChange": 23.85866355895996,
+      "glErrors": 0
+    },
+    {
+      "visual": "cube",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 0.9342156052589417,
+      "maxFrameChange": 2.905538558959961,
+      "glErrors": 0
+    },
+    {
+      "visual": "dissolution",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 7.736654758453369,
+      "maxFrameChange": 10.117247581481934,
+      "glErrors": 0
+    },
+    {
+      "visual": "mandala",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 2.351486921310425,
+      "maxFrameChange": 4.703908443450928,
+      "glErrors": 0
+    },
+    {
+      "visual": "petals",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 3.830075263977051,
+      "maxFrameChange": 8.799756050109863,
+      "glErrors": 0
+    },
+    {
+      "visual": "bloom",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 9.568914413452148,
+      "maxFrameChange": 14.331717491149902,
+      "glErrors": 0
+    },
+    {
+      "visual": "kaleidoscope",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 2.1367123126983643,
+      "maxFrameChange": 8.727575302124023,
+      "glErrors": 0
+    },
+    {
+      "visual": "groove",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 0.43449124693870544,
+      "maxFrameChange": 0.9480975270271301,
+      "glErrors": 0
+    },
+    {
+      "visual": "lava",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 1.5229007005691528,
+      "maxFrameChange": 2.305495262145996,
+      "glErrors": 0
+    },
+    {
+      "visual": "cascade",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 3.674999475479126,
+      "maxFrameChange": 4.675347328186035,
+      "glErrors": 0
+    },
+    {
+      "visual": "pulse",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 16.890472412109375,
+      "maxFrameChange": 18.910446166992188,
+      "glErrors": 0
+    },
+    {
+      "visual": "highway",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 1.2420426607131958,
+      "maxFrameChange": 3.1804471015930176,
+      "glErrors": 0
+    },
+    {
+      "visual": "chaos",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 2.9990782737731934,
+      "maxFrameChange": 5.591591835021973,
+      "glErrors": 0
+    },
+    {
+      "visual": "weaver",
+      "frames": 90,
+      "compiled": true,
+      "moving": true,
+      "meanFrameChange": 5.709839820861816,
+      "maxFrameChange": 8.659083366394043,
+      "glErrors": 0
+    }
+  ],
+  "checks": [
+    {
+      "name": "julia geometry does not jump with band changes at fixed camera",
+      "passed": true
+    },
+    {
+      "name": "julia journey crossfade joins without a reset",
+      "visibleDifference": 2.748329383113199,
+      "adjacentOrdinaryStepDifference": 2.9843012791053924,
+      "passed": true
+    },
+    {
+      "name": "bloom geometry does not jump with band changes at fixed camera",
+      "passed": true
+    },
+    {
+      "name": "bloom journey crossfade joins without a reset",
+      "visibleDifference": 1.4260785803036493,
+      "adjacentOrdinaryStepDifference": 1.4017691241716594,
+      "passed": true
+    },
+    {
+      "name": "mandelbrot journey crossfade joins without a reset",
+      "visibleDifference": 0.5912293765885984,
+      "adjacentOrdinaryStepDifference": 0.46826079679557003,
+      "passed": true
+    }
+  ]
+}

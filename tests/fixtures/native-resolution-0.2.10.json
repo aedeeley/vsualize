@@ -1,0 +1,12 @@
+{
+  "purpose": "Reviewed sizing/readout/default-quality and version changes ONLY. No effect, corner, capture or audio changes.",
+  "files": {
+    "src/renderer.ts": "c132198b5758385b885298a6501ddeda7afa162948fb9ac5d3ec69a1328f105e",
+    "src/settings.ts": "66fda5fc1f90403f9e38c5beab22f2186d9e82aa750a81d1cb8c24009796aae5",
+    "src/main.ts": "a3fbf8aee95205734ab03dfe5b6baedae6da19e7192d27b9822386ebf661dd12",
+    "static/index.html": "1326932a59de108896fd48531b7fbb23aa767b143c7122d0bd26e77bf8d4cfdf",
+    "package.json": "2768e781a750926506c2aa186bc8aca5ec52f68c62abb332718b1685067b2f79",
+    "src-tauri/Cargo.toml": "c057df93130e9317f7bf8d55c068cf8a2292b21c870d126b1d32e57e6d19cc94",
+    "src-tauri/tauri.conf.json": "d383a0f503ea79bb07c43a1403bfa4e4c17f39b4cf2189400d1c59da43904d02"
+  }
+}
