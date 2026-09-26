@@ -97,7 +97,9 @@ test('generated preview contains only curated effect modules and shows 12 / 12',
   const html = read('Vsualize-Preview.html');
   for (const id of RETIRED_VISUAL_IDS) assert.ok(!html.includes(`"visuals/${id}.js":function`), id);
   for (const name of removedNames) assert.ok(!html.includes(name), name);
-  assert.match(html, /12 \/ 12/); assert.match(html, /Vsualize 0\.3\.0/);
+  assert.match(html, /12 \/ 12/);
+  const { version } = JSON.parse(read('package.json'));
+  assert.ok(html.includes(`Vsualize ${version}`));
 });
 
 test('folder-merge cleanup removes only retired files and can run repeatedly', async () => {

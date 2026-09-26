@@ -1,6 +1,6 @@
 {
   "name": "vsualize",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "type": "module",
   "description": "An unobtrusive, audio-reactive desktop canvas.",
@@ -14,7 +14,9 @@
     "build:windows": "node scripts/check-desktop-config.mjs --require-cli && tauri build --no-bundle",
     "installer": "node scripts/check-desktop-config.mjs --require-cli && tauri build --bundles nsis",
     "check:desktop": "node scripts/check-desktop-config.mjs --require-cli",
-    "release:manifest": "node scripts/release-manifest.mjs"
+    "release:manifest": "node scripts/release-manifest.mjs",
+    "brand:generate": "node scripts/generate-branding.mjs",
+    "test:branding": "node --test tests/branding.test.mjs"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.10.0",

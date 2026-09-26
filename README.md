@@ -1,10 +1,19 @@
+<!-- VSUALIZE BRAND START -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/logo-horizontal-light.svg">
+    <img src="assets/brand/logo-horizontal-dark.svg" alt="vsualize" width="480" height="126">
+  </picture>
+</p>
+<!-- VSUALIZE BRAND END -->
+
 # Vsualize
 
 A borderless, audio-reactive Windows widget. Play music in your usual player and let Vsualize respond to the desktop audio. Audio stays on your device.
 
 ## Install
 
-Download **Vsualize_0.3.0_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest). Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
+Download **Vsualize_0.3.1_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest). Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
 
 The installer has a cryptographic **update signature**. It does not yet have a Windows Authenticode publisher certificate, so Windows may show an unknown-publisher or SmartScreen prompt. These are separate signing systems.
 
@@ -44,4 +53,8 @@ The last command builds a development installer without an update signature. Off
 
 `npm run build` creates `dist/` and a standalone `Vsualize-Preview.html`. That preview supports microphone and synthetic Demo mode; native desktop capture and updates require the installed app.
 
-Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.3.0 release notes](docs/RELEASE-0.3.0.md) describe the current release.
+Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.3.1 release notes](docs/RELEASE-0.3.1.md) describe the current release.
+
+## Branding
+
+The ripple identity includes scalable logos, monochrome variants, Windows app/tray icons and browser favicons. See [branding assets and regeneration](docs/BRANDING.md).

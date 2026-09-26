@@ -1,0 +1,34 @@
+{
+  "name": "vsualize",
+  "revision": 1,
+  "viewBox": 256,
+  "center": 128,
+  "gradient": [
+    { "offset": 0, "color": "#00BDF2" },
+    { "offset": 0.48, "color": "#6450FF" },
+    { "offset": 1, "color": "#D91AF2" }
+  ],
+  "gradientTop": 10,
+  "gradientBottom": 246,
+  "ink": "#111722",
+  "paper": "#FFFFFF",
+  "night": "#091221",
+  "profiles": {
+    "full": { "rings": [43, 66, 89, 112], "stroke": 12, "dot": 26 },
+    "small": { "rings": [52, 82, 112], "stroke": 14, "dot": 28 },
+    "micro": { "rings": [61, 112], "stroke": 20, "dot": 26 }
+  },
+  "wordmark": {
+    "stroke": 3.6,
+    "glyphs": [
+      { "x": 0, "path": "M4 24 L22 59 L40 24" },
+      { "x": 64, "path": "M40 24 H14 Q4 24 4 33 Q4 41 14 41 H30 Q40 41 40 50 Q40 59 30 59 H4" },
+      { "x": 128, "path": "M4 24 V46 Q4 59 17 59 H27 Q40 59 40 46 V24" },
+      { "x": 192, "path": "M6 24 H27 Q40 24 40 37 V59 H16 Q4 59 4 49 Q4 40 16 40 H40" },
+      { "x": 259, "path": "M12 8 V59" },
+      { "x": 303, "path": "M12 25 V59", "dot": [12, 11, 3.2] },
+      { "x": 346, "path": "M4 24 H40 L4 59 H40" },
+      { "x": 410, "path": "M4 41 H40 V36 Q40 24 28 24 H16 Q4 24 4 36 V47 Q4 59 16 59 H40" }
+    ]
+  }
+}

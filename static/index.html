@@ -6,6 +6,15 @@
   <meta name="color-scheme" content="dark">
   <title>Vsualize · Audio Visualizer</title>
   <link rel="stylesheet" href="./style.css">
+  <!-- VSUALIZE BRAND START -->
+  <meta name="application-name" content="Vsualize">
+  <meta name="theme-color" content="#091221">
+  <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./brand.css">
+  <!-- VSUALIZE BRAND END -->
 </head>
 <body>
   <div id="app-surface">
@@ -17,7 +26,7 @@
   </button>
   <div id="chrome" class="chrome" aria-hidden="true" inert>
     <div id="drag-zone" aria-label="Drag this area to move the window">
-      <div class="wordmark"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="6"/><ellipse cx="12" cy="12" rx="6.5" ry="3.8"/><ellipse cx="12" cy="12" rx="2.5" ry="1.5"/></svg><span>vsualize</span></div>
+      <div class="wordmark"><img class="brand-lockup" src="./brand-logo.svg" alt="vsualize" width="132" height="35" draggable="false"></div>
       <span class="drag-hint">DRAG TO MOVE</span>
     </div>
     <div class="window-actions">
@@ -119,7 +128,7 @@
       <p class="panel-note">Move your effect settings between Browser Studio and the Windows app.</p>
       <div id="app-updates"><div class="button-row"><button id="check-updates" class="secondary-button">Check for updates</button><button id="install-update" class="secondary-button" hidden>Install update and restart</button></div><p id="update-status" class="source-status" role="status" aria-live="polite"></p></div>
       <div class="button-row"><button id="reset-settings" class="secondary-button">Reset appearance</button><button id="center-window" class="secondary-button">Center window</button></div>
-      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.3.0</p>
+      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.3.1</p>
     </div>
   </section>
   <div class="resize-edge north" data-resize="North"></div><div class="resize-edge south" data-resize="South"></div><div class="resize-edge west" data-resize="West"></div><div class="resize-edge east" data-resize="East"></div>

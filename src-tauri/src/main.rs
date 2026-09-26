@@ -128,7 +128,7 @@ fn main() {
             let stop = MenuItem::with_id(app, "stop", "Stop audio capture", true, None::<&str>)?;
             let quit = MenuItem::with_id(app, "quit", "Quit Vsualize", true, None::<&str>)?;
             let menu = Menu::with_items(app, &[&show, &recover, &stop, &quit])?;
-            let icon = tauri::image::Image::from_bytes(include_bytes!("../icons/icon.png"))?;
+            let icon = tauri::image::Image::from_bytes(include_bytes!("../icons/tray-icon.png"))?;
             match TrayIconBuilder::with_id("vsualize-tray")
                 .tooltip("Vsualize")
                 .icon(icon)

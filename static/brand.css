@@ -1,0 +1,16 @@
+/* Brand images are isolated from the app's global action-icon SVG rules. */
+.wordmark .brand-lockup {
+  display: block;
+  width: 132px;
+  height: auto;
+  max-width: 100%;
+  flex: none;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* Keep room for the window buttons at the existing 300px minimum width. */
+@media (max-width: 420px) {
+  #drag-zone { padding-left: 16px; gap: 12px; }
+  #drag-zone .drag-hint { display: none; }
+}
