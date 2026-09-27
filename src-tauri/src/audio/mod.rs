@@ -122,6 +122,7 @@ impl AudioState {
         if let Some(session) = current.take() {
             session.cancel.store(true, Ordering::Release);
             let _ = session.thread.join();
+            crate::diagnostics::event("audio-workers-joined", &());
         }
         Ok(())
     }
@@ -195,6 +196,7 @@ fn combine(desktop: &Analysis, mic: &Analysis, config: &AudioConfig, desktop_sta
 
 #[cfg(windows)]
 fn controller(config: AudioConfig, channel: Channel<AudioFrame>, cancel: Arc<AtomicBool>) {
+    crate::diagnostics::event("audio-controller-start", &());
     let desktop_selected = matches!(config.mode.as_str(), "desktop" | "both");
     let microphone_selected = matches!(config.mode.as_str(), "microphone" | "both");
     let desktop = Arc::new(Mutex::new(Snapshot::new(desktop_selected)));
@@ -229,6 +231,7 @@ fn controller(config: AudioConfig, channel: Channel<AudioFrame>, cancel: Arc<Ato
     }
     cancel.store(true, Ordering::Release);
     for worker in workers { let _ = worker.join(); }
+    crate::diagnostics::event("audio-controller-exit", &());
 }
 
 pub fn devices() -> Result<Vec<DeviceInfo>, String> {

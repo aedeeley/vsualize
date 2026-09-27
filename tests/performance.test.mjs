@@ -90,6 +90,19 @@ function recordingGL() {
   return {renderer,calls,listeners,complete:()=>complete=true};
 }
 
+test('stop cancels prewarming and drawing; resume cannot replay a retained feedback image', () => {
+  const r=recordingGL();
+  try {
+    r.complete();r.renderer.render(demoFrame(1),DEFAULTS,1/60);
+    r.renderer.stop();const draws=r.calls.draws,links=r.calls.links;
+    r.renderer.warmAll();r.renderer.prewarm('lava');
+    for(let i=0;i<90;i++)r.renderer.render(demoFrame(i),DEFAULTS,1/60);
+    assert.equal(r.calls.draws,draws);assert.equal(r.calls.links,links);
+    assert.equal(r.renderer.feedbackDrawn,false);assert.equal(r.renderer.feedbackContentKey,'');
+    r.renderer.resume();r.renderer.render(demoFrame(2),DEFAULTS,1/60);assert.equal(r.calls.draws,draws+1);
+  } finally {r.renderer.destroy();delete globalThis.window;}
+});
+
 test('reaction extremes preserve renderer audio-history sampling and impulse timestamps', () => {
   const snapshots = [0, 3].map(motion => {
     const r = recordingGL();

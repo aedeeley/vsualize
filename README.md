@@ -11,9 +11,19 @@
 
 A borderless, audio-reactive Windows widget. Play music in your usual player and let Vsualize respond to the desktop audio. Audio stays on your device.
 
+## Health, display care and automatic stop
+
+**Flashing light and moving patterns may cause discomfort, headaches, dizziness or seizures. Stop immediately if symptoms occur**, including visual trails or afterimages. Seek medical advice for persistent or recurring visual disturbances. Read [Health, display care and resource use](docs/guides/safety.md) before viewing.
+
+Version 0.5.0 adds a **30-minute automatic stop**, adjustable to 15, 30, 60 or 120 minutes. Unlimited requires acknowledgement and is remembered. Stop replaces freeze-frame Pause: it clears the window to black and ends capture while leaving the window open in place. Resume is explicit after expiry, sleep or workstation lock.
+
+**Gentler visuals** reduces intensity, glow and reaction without changing saved artwork. **Eco: Auto/30** reduces the requested frame rate; Auto/60 remains the default. Neither is a medical safety mode. Long sessions and static images can contribute to OLED wear. Keep display sleep enabled and follow hardware care guidance. Stopping this app does not turn off your monitor or protect other onscreen content.
+
+See the [security policy](SECURITY.md) and [verification and release limitations](docs/reports/safety-verification.md). No setting guarantees prevention of symptoms, burn-in or hardware damage.
+
 ## Install
 
-Download **Vsualize_0.4.1_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest). Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
+Download **Vsualize_0.5.0_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest), or use **Settings → App → Check for updates** in an installed copy. Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
 
 The installer has a cryptographic **update signature**. It does not yet have a Windows Authenticode publisher certificate, so Windows may show an unknown-publisher or SmartScreen prompt. These are separate signing systems.
 
@@ -59,7 +69,7 @@ The last command builds a development installer without an update signature. Off
 
 `npm run build` creates `dist/` and a standalone `artifacts/preview/vsualize.html`. That preview supports microphone and synthetic Demo mode; native desktop capture and updates require the installed app.
 
-Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.4.1 release notes](docs/releases/0.4.1.md) describe the current release.
+Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.5.0 release notes](docs/releases/0.5.0.md) describe the current release.
 
 See the [development guide](docs/guides/development.md) for commands and the repository layout, or browse the [documentation index](docs/README.md).
 

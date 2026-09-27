@@ -51,6 +51,10 @@ export interface VisualTuning {
 }
 
 export interface Settings extends AudioConfig, VisualTuning {
+  sessionMinutes: import('./session.js').SessionDuration;
+  safetyNoticeVersion: number;
+  unlimitedAcknowledged: boolean;
+  gentlerVisuals: boolean;
   /** Simplified per-effect controls, migrated from earlier profiles. */
   visualTuningVersion: 2;
   visualTunings: Record<VisualId, VisualTuning>;

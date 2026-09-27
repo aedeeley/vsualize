@@ -3,6 +3,8 @@ mod audio;
 mod native_frame;
 mod updater;
 mod now_playing;
+mod session;
+mod diagnostics;
 
 use audio::{AudioConfig, AudioFrame, AudioState, DeviceInfo};
 use serde_json::Value;
@@ -19,8 +21,9 @@ use tauri_plugin_window_state::StateFlags;
 struct TrayAvailable(AtomicBool);
 
 #[tauri::command]
-async fn start_audio(config: AudioConfig, on_frame: Channel<AudioFrame>, state: State<'_, AudioState>) -> Result<(), String> {
-    state.start(config, on_frame)
+async fn start_audio(window: Window, config: AudioConfig, on_frame: Channel<AudioFrame>, state: State<'_, AudioState>, session: State<'_, session::SessionState>) -> Result<(), String> {
+    if window.label() != "main" { return Err("Only the main window may capture audio".into()); }
+    session.start_audio(config, on_frame, &state)
 }
 #[tauri::command]
 async fn stop_audio(state: State<'_, AudioState>) -> Result<(), String> { state.stop() }
@@ -115,18 +118,32 @@ fn window_action(window: Window, action: String, value: Option<Value>, tray: Sta
 }
 
 fn main() {
+    let context = tauri::generate_context!();
+    #[cfg(feature = "safety-diagnostics")]
+    let context = {
+        let mut context = context;
+        if let Ok(target) = std::env::var("VSUALIZE_NAVIGATION_TEST_URL") {
+            let url = tauri::Url::parse(&target).expect("Invalid navigation probe URL");
+            assert!(url.scheme() == "http" && url.host_str() == Some("127.0.0.1") && url.path() == "/probe", "Navigation probe requires a loopback /probe URL");
+            // Load the untrusted probe from the start; never run saved local UI/capture first.
+            context.config_mut().app.windows[0].url = tauri::WebviewUrl::External(url);
+        }
+        context
+    };
     let app = tauri::Builder::default()
         .plugin(tauri_plugin_single_instance::init(|app, _args, _cwd| reveal(app, false)))
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_window_state::Builder::new().with_state_flags(StateFlags::POSITION | StateFlags::SIZE).build())
         .manage(AudioState::default())
+        .manage(session::SessionState::default())
         .manage(TrayAvailable::default())
         .manage(updater::UpdateState::default())
-        .invoke_handler(tauri::generate_handler![start_audio, stop_audio, list_audio_devices, window_action, now_playing::get_now_playing, updater::check_update, updater::install_update, updater::open_update_changelog])
+        .invoke_handler(tauri::generate_handler![start_audio, stop_audio, list_audio_devices, window_action, session::session_control, session::session_status, diagnostics::safety_diagnostics, now_playing::get_now_playing, updater::check_update, updater::install_update, updater::open_update_changelog])
         .setup(|app| {
+            diagnostics::event("startup", &serde_json::json!({"version":env!("CARGO_PKG_VERSION"),"diagnosticBuild":cfg!(feature="safety-diagnostics")}));
             let show = MenuItem::with_id(app, "show", "Show controls", true, None::<&str>)?;
             let recover = MenuItem::with_id(app, "recover", "Recover window / center", true, None::<&str>)?;
-            let stop = MenuItem::with_id(app, "stop", "Stop audio capture", true, None::<&str>)?;
+            let stop = MenuItem::with_id(app, "stop", "Stop visuals and capture", true, None::<&str>)?;
             let quit = MenuItem::with_id(app, "quit", "Quit Vsualize", true, None::<&str>)?;
             let menu = Menu::with_items(app, &[&show, &recover, &stop, &quit])?;
             let icon = tauri::image::Image::from_bytes(include_bytes!("../icons/tray-icon.png"))?;
@@ -139,8 +156,7 @@ fn main() {
                     "show" => reveal(app, false),
                     "recover" => reveal(app, true),
                     "stop" => {
-                        let _ = app.state::<AudioState>().stop();
-                        if let Some(window) = app.get_webview_window("main") { let _ = window.emit("audio-stopped", ()); }
+                        session::stop(app, "manual");
                     }
                     "quit" => {
                         if let Some(window) = app.get_webview_window("main") { let _ = window.close(); }
@@ -152,11 +168,17 @@ fn main() {
                 Err(error) => eprintln!("Tray unavailable; taskbar hiding is disabled: {error}"),
             }
             if let Some(window) = app.get_webview_window("main") {
+                if cfg!(feature = "safety-diagnostics") { window.set_title("Vsualize Safety Test")?; }
                 restore_visible_area(&window);
                 // Install the native paint guard before the first visible frame.
+                session::install(&window).map_err(std::io::Error::other)?;
                 native_frame::initialize_webview(&window);
+                #[cfg(feature = "safety-diagnostics")]
+                if std::env::var_os("VSUALIZE_NAVIGATION_TEST_URL").is_none() { window.show()?; }
+                #[cfg(not(feature = "safety-diagnostics"))]
                 window.show()?;
             }
+            session::monitor(app.handle().clone());
             Ok(())
         })
         .on_window_event(|window, event| {
@@ -171,7 +193,7 @@ fn main() {
                 let _ = window.emit("window-minimized", window.is_minimized().unwrap_or(false));
             }
         })
-        .build(tauri::generate_context!())
+        .build(context)
         .expect("Vsualize could not initialize its desktop shell");
     app.run(|handle, event| {
         if let tauri::RunEvent::Exit = event { let _ = handle.state::<AudioState>().stop(); }

@@ -16,9 +16,15 @@
   <link rel="stylesheet" href="./brand.css">
   <!-- VSUALIZE BRAND END -->
 </head>
-<body>
+<body class="session-stopped">
   <div id="app-surface">
   <canvas id="visualizer" tabindex="0" aria-label="Audio visualizer. Click or press Enter to show controls."></canvas>
+  <div id="session-shield" aria-hidden="true"></div>
+  <section id="session-rest" aria-label="Session controls" hidden>
+    <p id="session-message" role="status">Visuals stopped</p>
+    <button id="session-resume" type="button">Resume</button>
+    <button id="session-controls" type="button">Settings</button>
+  </section>
   <div id="preview-label" hidden>Browser preview · No audio connected</div>
   <button id="signal-monitor" class="signal-monitor" hidden title="Open audio controls">
     <span id="monitor-dot" class="signal-dot"></span><span id="monitor-label">No audio connected</span>
@@ -44,7 +50,7 @@
       <div><div class="eyebrow">YOUR SOUND, IN MOTION</div><h1 id="visual-name">Soundform Ripple</h1></div>
       <button id="dismiss" class="icon-button" aria-label="Hide controls" title="Hide controls (Esc)"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
     </header>
-    <div class="signal-line"><span id="signal-dot" class="signal-dot"></span><span id="signal-summary">Connecting to audio…</span><button id="pause" class="text-button" title="Pause animation (Space)" aria-label="Pause animation">Pause</button></div>
+    <div class="signal-line"><span id="signal-dot" class="signal-dot"></span><span id="signal-summary">Visuals stopped</span><button id="pause" class="text-button" title="Stop visuals and capture (Space)" aria-label="Stop visuals and capture">Stop</button></div>
     <nav class="tabs" role="tablist" aria-label="Control sections">
       <button id="tab-visuals" role="tab" aria-selected="true" aria-controls="page-visuals" data-tab="visuals">Visuals</button>
       <button id="tab-audio" role="tab" aria-selected="false" aria-controls="page-audio" data-tab="audio" tabindex="-1">Audio</button>
@@ -111,6 +117,14 @@
       <p class="panel-note">Audio stays on this device. Nothing is recorded, uploaded, or played back. Both combines visual energy, not speaker output.</p>
     </div>
     <div id="page-settings" class="page" role="tabpanel" aria-labelledby="tab-settings" hidden>
+      <section id="safety-settings" aria-labelledby="safety-settings-title">
+        <h3 id="safety-settings-title">Safety &amp; performance</h3>
+        <label class="field inline" for="session-minutes"><span>Automatic stop</span><select id="session-minutes"><option value="15">15 minutes</option><option value="30" selected>30 minutes</option><option value="60">1 hour</option><option value="120">2 hours</option><option value="0">Unlimited…</option></select></label>
+        <p id="session-status" class="source-status" role="status"></p>
+        <label class="toggle-row" for="gentler-visuals"><span>Gentler visuals<small>Lower intensity and glow, softer reaction, held palette. Not a medical safety mode.</small></span><input id="gentler-visuals" data-setting="gentlerVisuals" type="checkbox" role="switch"></label>
+        <div class="button-row"><button id="eco-mode" type="button" class="secondary-button">Eco: Auto/30</button><button id="safety-help" type="button" class="secondary-button">Health &amp; hardware guidance</button></div>
+        <p class="panel-note">Session limits are precautions, not safe viewing limits. Stop immediately if symptoms occur. Stopping this window does not turn off your monitor.</p>
+      </section>
       <div class="row-label"><span>Background</span></div>
       <div class="segmented two" role="group" aria-label="Background mode"><button data-background="solid">Solid</button><button data-background="transparent">Desktop</button></div>
       <div id="solid-color-control" class="control color-control"><label for="background-color">Background color</label><input id="background-color" data-setting="backgroundColor" type="color" value="#07080d"></div>
@@ -133,7 +147,7 @@
       <p class="panel-note">Move your effect settings between Browser Studio and the Windows app.</p>
       <div id="app-updates"><div class="button-row"><button id="check-updates" class="secondary-button">Check for updates</button><button id="install-update" class="secondary-button" hidden>Install update and restart</button></div><p id="update-status" class="source-status" role="status" aria-live="polite"></p></div>
       <div class="button-row"><button id="reset-settings" class="secondary-button">Reset appearance</button><button id="center-window" class="secondary-button">Center window</button></div>
-      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.4.1</p>
+      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.5.0</p>
     </div>
   </section>
   <div class="resize-edge north" data-resize="North"></div><div class="resize-edge south" data-resize="South"></div><div class="resize-edge west" data-resize="West"></div><div class="resize-edge east" data-resize="East"></div>
@@ -145,6 +159,24 @@
     <a id="update-changelog" href="https://github.com/aedeeley/vsualize/releases" target="_blank" rel="noopener noreferrer">What’s new ↗</a>
     <p id="update-dialog-status" role="status" aria-live="polite"></p>
     <div class="update-dialog-actions"><button id="update-dialog-later" type="button" autofocus>Later</button><button id="update-dialog-install" type="button">Update and restart</button></div>
+  </dialog>
+  <dialog id="safety-dialog" class="safety-dialog" aria-labelledby="safety-title" aria-describedby="safety-intro">
+    <h2 id="safety-title" tabindex="-1">Before starting visuals</h2>
+    <p id="safety-intro">Flashing light, moving patterns and high contrast may cause discomfort, headaches, dizziness or seizures, including in people with no known history.</p>
+    <p>Stop immediately if you notice symptoms, including visual trails or afterimages. Seek medical advice for persistent or recurring visual disturbances. Seek urgent care for sudden vision changes, eye pain or vision loss.</p>
+    <p>Use comfortable screen brightness, keep room lighting on and take breaks. Gentler visuals and Eco reduce stimulation or workload; neither guarantees safety.</p>
+    <p>Long sessions and static images can contribute to OLED image retention or burn-in. Follow your display manufacturer's care guidance and keep Windows display sleep enabled. The app cannot protect other content on your screen.</p>
+    <p>Rendering uses GPU resources. Eco uses Auto quality at 30 fps. This app does not monitor hardware temperature or guarantee protection against overheating.</p>
+    <p>Automatic stop defaults to 30 minutes. This is a precaution, not an established safe viewing duration. Stop clears this window to black and ends capture; it does not turn the monitor off.</p>
+    <label class="toggle-row" for="notice-gentler"><span>Use Gentler visuals</span><input id="notice-gentler" type="checkbox"></label>
+    <div class="button-row"><button id="safety-stay" type="button" autofocus>Keep stopped</button><button id="safety-start" type="button">Start visuals</button></div>
+  </dialog>
+  <dialog id="unlimited-dialog" class="safety-dialog" aria-labelledby="unlimited-title">
+    <h2 id="unlimited-title">Disable automatic stop?</h2>
+    <p>Unlimited operation can leave visuals running for hours. Longer exposure may increase discomfort, GPU workload and OLED wear. Take breaks, follow display care guidance, and stop if symptoms occur.</p>
+    <p>This choice is remembered on this device, including after restarting the app. You can restore a finite limit in Safety &amp; performance.</p>
+    <label class="toggle-row" for="unlimited-confirm"><span>I understand automatic stop will be disabled.</span><input id="unlimited-confirm" type="checkbox"></label>
+    <div class="button-row"><button id="unlimited-cancel" type="button" autofocus>Keep timer</button><button id="unlimited-enable" type="button" disabled>Enable Unlimited</button></div>
   </dialog>
   <div id="toast" role="status" aria-live="polite" hidden></div>
   </div>

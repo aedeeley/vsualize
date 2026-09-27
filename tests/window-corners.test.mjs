@@ -14,7 +14,7 @@ test('the whole application defaults to an 8px outer corner clip', () => {
 });
 
 test('the canvas and drag toolbar remain descendants of the clipped surface', () => {
-  const bodyHtml = read('static/index.html').split('<body>')[1]?.split('</body>')[0];
+  const bodyHtml = read('static/index.html').split(/<body\b[^>]*>/)[1]?.split('</body>')[0];
   assert.ok(bodyHtml);
   assert.match(bodyHtml, /id="app-surface"/);
   assert.match(bodyHtml, /id="visualizer"/);

@@ -16,6 +16,8 @@ import { isNative, nativeDevices, syncWindowCorners, windowAction } from './nati
 import { initializePreviewMenu } from './preview-menu.js';
 import type { PreviewMenu } from './preview-menu.js';
 import { initializeNowPlaying } from './now-playing.js';
+import { initializeSafety } from './safety.js';
+import { initializeSafetyDiagnostics } from './safety-diagnostics.js';
 
 const byId = <T extends HTMLElement = HTMLElement>(id: string): T => {
   const element = document.getElementById(id);
@@ -32,6 +34,7 @@ const canvas = byId<HTMLCanvasElement>('visualizer');
 const panel = byId('panel');
 const chrome = byId('chrome');
 const nowPlaying = initializeNowPlaying();
+let safety: ReturnType<typeof initializeSafety> | undefined;
 // The root clip also covers the canvas, translucent backdrop, and drag gradient.
 let cornerSyncTimer = 0;
 function scheduleCornerSync() {
@@ -70,7 +73,7 @@ function show(keyboard = false): void {
   panel.classList.add('visible'); chrome.classList.add('visible');
   panel.setAttribute('aria-hidden', 'false'); chrome.setAttribute('aria-hidden', 'false');
   previewMenu?.show();
-  nowPlaying.show();
+  if (safety?.canRun()) nowPlaying.show();
   if (keyboard) (previewMenu ? byId('study-settings-card') : panel.querySelector<HTMLButtonElement>('[role=tab][aria-selected=true]'))?.focus();
 }
 function hide(): void {
@@ -253,9 +256,10 @@ function syncUI(): void {
 const audioKeys = ['mode', 'desktopDevice', 'microphoneDevice', 'desktopGain', 'microphoneGain', 'sensitivity', 'noiseGate'];
 function restartAudio(): void {
   clearTimeout(restartTimer);
+  if (!safety?.canRun()) return;
   audio.invalidateForRestart(settings);
   comparing = false; syncComparison(); hasHeardAudio = false; sessionStarted = performance.now();
-  restartTimer = window.setTimeout(async () => { renderer.motion.resetAudio(); await audio.start(settings); if (audio.error) toast(audio.error); }, 220);
+  restartTimer = window.setTimeout(() => { void safety?.restartAudio(); }, 220);
 }
 async function changeSetting(key: keyof Settings, value: unknown): Promise<void> {
   const old = settings[key];
@@ -317,7 +321,7 @@ byId('signal-monitor').addEventListener('click', () => { show(); setTab('audio')
 byId('copy-diagnostics').addEventListener('click', async () => {
   const f = audio.frame;
   const data = {
-    app: 'Vsualize 0.4.1', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
+    app: 'Vsualize 0.5.0', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
     rendering: renderer.resolution, performance: { ...renderer.performance, frames: renderer.frames },
     status: describeSignal(settings, f, audio.error), responseDisabledForComparison: comparing,
     volume: f.volume, bass: f.bass, mid: f.mid, treble: f.treble, beat: f.beat,
@@ -393,11 +397,6 @@ profileFile.addEventListener('change', async () => {
 });
 byId('reconnect').addEventListener('click', restartAudio);
 byId('refresh-devices').addEventListener('click', () => void refreshDevices());
-byId('pause').addEventListener('click', () => {
-  renderer.paused = !renderer.paused;
-  byId('pause').textContent = renderer.paused ? 'Resume' : 'Pause';
-  byId('pause').setAttribute('aria-label', renderer.paused ? 'Resume animation' : 'Pause animation');
-});
 for (const [id, action] of [['fullscreen', 'fullscreen'], ['minimize', 'minimize'], ['close-app', 'quit'], ['center-window', 'center']] as const) byId(id).addEventListener('click', () => void windowAction(action).catch(error => toast(String(error))));
 byId('reset-settings').addEventListener('click', () => {
   resetAllVisualTunings(settings);
@@ -406,8 +405,9 @@ byId('reset-settings').addEventListener('click', () => {
 });
 window.addEventListener('keydown', event => {
   lastInteraction = performance.now();
+  if (document.querySelector('dialog[open]')) return;
   const target = event.target as HTMLElement;
-  const editing = target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement;
+  const editing = target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement || target.isContentEditable;
   if (event.key === 'Escape') { event.preventDefault(); if (visible) hide(); else void windowAction('exit-fullscreen').catch(() => {}); return; }
   if (event.key === 'F11') { event.preventDefault(); void windowAction('fullscreen').catch(error => toast(String(error))); return; }
   if (editing || event.altKey || event.ctrlKey || event.metaKey) return;
@@ -426,15 +426,21 @@ window.setInterval(() => {
   if (performance.now() - lastInteraction > settings.controlsTimeout * 1000) hide();
 }, 400);
 
-let minimized = false;
 const pacer = new FramePacer();
 let lastDiagnostics = 0;
+let animationFrame = 0;
+function startLoop(): void {
+  cancelAnimationFrame(animationFrame); pacer.reset();
+  animationFrame = requestAnimationFrame(loop);
+}
 function loop(now: number): void {
-  requestAnimationFrame(loop);
-  const dt = pacer.next(now, settings.fps, document.hidden || minimized);
+  if (!safety?.canRun()) return;
+  animationFrame = requestAnimationFrame(loop);
+  const dt = pacer.next(now, settings.fps, document.hidden);
   if (dt === null) return;
   const frame = audio.tick(now, dt);
   renderer.render(comparing ? comparisonFrame : frame, comparing ? { ...settings, idleMotion: true } : settings, dt);
+  if (renderer.paused) { safety.stop('error'); return; }
   if (now - lastDiagnostics > 70) {
     lastDiagnostics = now;
     if (validationContext) canvas.dataset.validation = JSON.stringify({ time: now, frames: renderer.frames,
@@ -454,9 +460,6 @@ function loop(now: number): void {
       byId('render-resolution').title = resolution.detail;
       byId('render-resolution').dataset.limited = String(resolution.limited);
       byId('render-resolution-detail').textContent = resolution.detail;
-      // An allocation error pauses rendering; make the recovery button honest.
-      byId('pause').textContent = renderer.paused ? 'Resume' : 'Pause';
-      byId('pause').setAttribute('aria-label', renderer.paused ? 'Resume animation' : 'Pause animation');
       syncPalettePreview();
       byId('signal-summary').textContent = comparing ? 'COMPARISON · response off' : status.title;
       byId('signal-summary').title = status.detail;
@@ -484,27 +487,33 @@ function loop(now: number): void {
     }
   }
 }
-requestAnimationFrame(loop);
-renderer.warmAll();
 initializeUpdater();
 void refreshDevices();
 persist();
-void audio.start(settings).then(() => { if (audio.error) { show(); setTab('audio'); toast(audio.error); } });
 if (isNative) {
   // These settings are restored only after a tray icon is available on the Rust side.
   void windowAction('layer', settings.layer).catch(error => { settings.layer = 'normal'; syncUI(); toast(String(error)); });
   if (settings.hideTaskbar) void windowAction('taskbar', true).catch(error => { settings.hideTaskbar = false; syncUI(); toast(String(error)); });
-  void window.__TAURI__!.event.listen('ui-reveal', () => { minimized = false; show(); });
-  void window.__TAURI__!.event.listen<boolean>('window-minimized', event => { minimized = event.payload; });
+  void window.__TAURI__!.event.listen('ui-reveal', () => { safety?.visibility(false); show(); });
+  void window.__TAURI__!.event.listen<boolean>('window-minimized', event => { safety?.visibility(event.payload); });
   void window.__TAURI__!.event.listen('window-recovered', () => {
     document.body.classList.remove('window-fullscreen'); void syncWindowCorners();
-    settings.layer = 'normal'; settings.hideTaskbar = false; minimized = false; syncUI(); persist(); show();
+    settings.layer = 'normal'; settings.hideTaskbar = false; safety?.visibility(false); syncUI(); persist(); show();
   });
   void window.__TAURI__!.event.listen('audio-stopped', () => {
-    settings.mode = 'off'; void audio.start(settings); syncUI(); persist(); show(); setTab('audio');
+    safety?.stop();
   });
   void windowAction('ready').catch(error => toast(String(error)));
 }
 if (menuStudy) previewMenu = initializePreviewMenu(settings, renderer, selectVisual, toast);
+safety = initializeSafety(settings, audio, renderer, {
+  persist, sync: syncUI, show: () => { show(); if (previewMenu) previewMenu.openSettings(); else setTab('settings'); }, hide, toast, running: startLoop,
+  stopped: () => {
+    clearTimeout(restartTimer); cancelAnimationFrame(animationFrame); nowPlaying.hide();
+    byId('signal-monitor').hidden = true; byId('signal-summary').textContent = 'Visuals and capture stopped';
+    document.querySelectorAll('meter').forEach(meter => { meter.value = 0; });
+  },
+});
+void initializeSafetyDiagnostics(safety.session, renderer, audio, settings);
 if ((!isNative && query.get('ui') !== 'hidden') || query.get('ui') === 'visible') show();
 window.addEventListener('beforeunload', () => { saveSettings(settings); renderer.destroy(); void audio.destroy(); });

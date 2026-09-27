@@ -40,7 +40,7 @@ function button(label: string, markup?: string) {
   if (markup) { el.innerHTML = markup; el.title = label; } return el;
 }
 export interface PreviewMenu {
-  sync(): void; close(): void; show(): void; openAudio(): void; isOpen(): boolean;
+  sync(): void; close(): void; show(): void; openAudio(): void; openSettings(): void; isOpen(): boolean;
 }
 
 export function initializePreviewMenu(settings: Settings, renderer: Renderer, selectVisual: (id: VisualId) => void, toast: (message: string) => void): PreviewMenu {
@@ -115,6 +115,7 @@ export function initializePreviewMenu(settings: Settings, renderer: Renderer, se
   }
   function move(parent: HTMLElement, id: string) { parent.append($(id).closest('.control, .field, .toggle-row') ?? $(id)); }
   const appArchive = node('div'); appArchive.hidden = true; appArchive.append(...Array.from(appPage.children)); appPage.append(appArchive);
+  appPage.append($('safety-settings'));
   appPage.append(node('h3', '', 'Appearance'));
   appPage.append(appArchive.querySelector('[aria-label="Background mode"]')!);
   move(appPage, 'solid-color-control'); appPage.append($('transparency-options'));
@@ -290,5 +291,6 @@ export function initializePreviewMenu(settings: Settings, renderer: Renderer, se
     sync, close, isOpen: () => open !== null,
     show: () => { close(); requestAnimationFrame(() => { revealSelected(); scrollState(); }); },
     openAudio: () => { setPage('audio'); if (open === 'settings') close(); openBox('settings', settingsCard); },
+    openSettings: () => { setPage('app'); if (open === 'settings') close(); openBox('settings', settingsCard); },
   };
 }

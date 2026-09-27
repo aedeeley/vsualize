@@ -1,8 +1,10 @@
 import { VISUAL_IDS as IDS } from './catalog.js';
 import { PALETTE_IDS, createVisualTunings, defaultVisualTuning, sanitizeVisualTuning, migrateLegacyTuning } from './visual-presets.js';
 import type { Settings, PaletteId, Palette, AudioFrame, VisualId } from './types.js';
+import { SAFETY_NOTICE_VERSION, SESSION_DURATIONS } from './session.js';
 
 export const DEFAULTS: Settings = {
+  sessionMinutes: 30, safetyNoticeVersion: 0, unlimitedAcknowledged: false, gentlerVisuals: false,
   version: 1, audioBehavior: 2, colorBehavior: 1, visualTuningVersion: 2, visualTunings: createVisualTunings(),
   showSignal: false, visual: 'soundform', favorites: [], ...defaultVisualTuning('soundform'),
   background: 'solid', backgroundColor: '#07080d', opacity: 0.94,
@@ -40,6 +42,11 @@ export function sanitizeSettings(value: unknown): Settings {
   choice('background', ['solid', 'transparent']);
   choice('menuPosition', ['bottom-right', 'bottom-center', 'bottom-left', 'top-right', 'top-center', 'top-left', 'center']);
   choice('fps', [30, 60, 120]); choice('quality', ['auto', 'low', 'medium', 'high']); choice('layer', ['normal', 'top', 'bottom']);
+  choice('sessionMinutes', SESSION_DURATIONS);
+  s.safetyNoticeVersion = v.safetyNoticeVersion === SAFETY_NOTICE_VERSION ? SAFETY_NOTICE_VERSION : 0;
+  s.unlimitedAcknowledged = v.unlimitedAcknowledged === true;
+  s.gentlerVisuals = v.gentlerVisuals === true;
+  if (s.sessionMinutes === 0 && !s.unlimitedAcknowledged) s.sessionMinutes = 30;
   const limits: Partial<Record<keyof Settings, [number, number]>> = {
     opacity: [0.1, 1],
     controlsTimeout: [0, 30], desktopGain: [0, 3], microphoneGain: [0, 3],

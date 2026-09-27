@@ -1,6 +1,6 @@
 [package]
 name = "vsualize"
-version = "0.4.1"
+version = "0.5.0"
 edition = "2021"
 description = "A quiet, borderless desktop audio visualizer"
 publish = false
@@ -27,6 +27,7 @@ windows-future = { version = "0.2.1", features = ["std"] }
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
+safety-diagnostics = []
 
 [profile.release]
 codegen-units = 1

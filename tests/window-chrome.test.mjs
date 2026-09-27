@@ -32,7 +32,7 @@ test('the transparent resizable window is protected before first show', () => {
   assert.equal(win.transparent, true);
   assert.equal(win.resizable, true);
   assert.equal(win.visible, false);
-  assert.match(rust, /native_frame::initialize_webview\(&window\);\s*window.show\(\)\?;/);
+  assert.match(rust, /native_frame::initialize_webview\(&window\);[\s\S]*?#\[cfg\(not\(feature = "safety-diagnostics"\)\)\]\s*window.show\(\)\?;/);
 });
 test('frame refreshes dispatch to the owning UI thread', () => {
   assert.equal((frame.match(/run_on_main_thread\(/g) || []).length, 2);

@@ -56,6 +56,7 @@ pub fn open_update_changelog(version: String) -> Result<(), String> {
 
 #[tauri::command]
 pub async fn check_update(app: AppHandle, state: State<'_, UpdateState>) -> Result<UpdateInfo, String> {
+    if cfg!(feature = "safety-diagnostics") { return Ok(UpdateInfo { current_version: app.package_info().version.to_string(), version: None, notes: None }); }
     let _operation = state.begin()?;
     let update = app.updater_builder().timeout(Duration::from_secs(30)).build()
         .map_err(|e| e.to_string())?.check().await.map_err(|e| e.to_string())?;
@@ -70,6 +71,7 @@ pub async fn check_update(app: AppHandle, state: State<'_, UpdateState>) -> Resu
 
 #[tauri::command]
 pub async fn install_update(app: AppHandle, version: String, state: State<'_, UpdateState>) -> Result<(), String> {
+    if cfg!(feature = "safety-diagnostics") { return Err("Updates are disabled in the isolated safety test build.".into()); }
     let _operation = state.begin()?;
     // Install exactly the release the user reviewed. Do not silently substitute
     // a newer release if the feed changes between checking and clicking Install.

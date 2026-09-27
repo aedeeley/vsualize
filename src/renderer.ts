@@ -12,6 +12,7 @@ import { makeRippleField } from './ripple-field.js';
 import { FIXED_SMOOTHNESS, resolveVisualControls } from './visual-presets.js';
 import { previewFragment, PreviewSpin } from './preview-tuning.js';
 import type { PreviewTuning } from './preview-tuning.js';
+import { gentleSettings } from './safety-appearance.js';
 
 interface Program { value: WebGLProgram; uniforms: Map<string, WebGLUniformLocation | null> }
 interface PendingProgram { value: WebGLProgram; fragment: WebGLShader }
@@ -28,6 +29,7 @@ export class Renderer {
   previewTuning: PreviewTuning = { spin: 1, variety: 1 };
   private previewSpin = new PreviewSpin();
   frames = 0;
+  readonly diagnostics = { draws: 0, compiles: 0 };
   paused = false;
   private gl: WebGL2RenderingContext;
   private programs = new Map<VisualId, Program>();
@@ -45,6 +47,7 @@ export class Renderer {
   private performanceKey = '';
   private sleepingFrameKey = '';
   private warmTimer = 0;
+  private sessionStopped = false;
   private destroyed = false;
   private spectrum: WebGLTexture;
   private waveform: WebGLTexture;
@@ -179,12 +182,12 @@ export class Renderer {
     const gl = this.gl;
     const shader = gl.createShader(type);
     if (!shader) throw new Error('Could not allocate shader.');
-    gl.shaderSource(shader, source); gl.compileShader(shader);
+    gl.shaderSource(shader, source); gl.compileShader(shader); this.diagnostics.compiles++;
     return shader;
   }
   /** Start compilation without reading a blocking status or uniform location. */
   prewarm(id: VisualId): void {
-    if (this.destroyed || this.lost || this.programs.has(id) || this.pendingPrograms.has(id)) return;
+    if (this.sessionStopped || this.destroyed || this.lost || this.programs.has(id) || this.pendingPrograms.has(id)) return;
     const gl = this.gl;
     this.vertex ??= this.compile(VERTEX, gl.VERTEX_SHADER);
     const fragment = this.compile(this.menuStudy ? previewFragment(id, VISUALS[id].fragment) : VISUALS[id].fragment, gl.FRAGMENT_SHADER);
@@ -196,12 +199,12 @@ export class Renderer {
   /** Compile one effect at a time so the driver can populate its shader cache.
    * Without parallel compilation, warm only on intent or first selection. */
   warmAll(): void {
-    if (!this.parallel || this.destroyed) return;
+    if (this.sessionStopped || !this.parallel || this.destroyed) return;
     window.clearTimeout(this.warmTimer);
     const ids = Object.keys(VISUALS) as VisualId[];
     let index = 0;
     const next = (): void => {
-      if (this.destroyed || this.lost || index >= ids.length) return;
+      if (this.sessionStopped || this.destroyed || this.lost || index >= ids.length) return;
       if (typeof document !== 'undefined' && document.hidden) { this.warmTimer = window.setTimeout(next, 1000); return; }
       const id = ids[index]!;
       try { if (this.program(id)) index++; }
@@ -228,6 +231,22 @@ export class Renderer {
   }
   /** Preflight each real shader, so a bad preset cannot hide until after delivery. */
   validateAll(): void { for (const id of Object.keys(VISUALS) as VisualId[]) this.program(id, true); }
+
+  /** Clear once and stop all shader scheduling. CSS also covers context loss/resize. */
+  stop(): void {
+    this.sessionStopped = true; this.paused = true;
+    window.clearTimeout(this.warmTimer);
+    this.motion.resetAudio(); this.inertia.reset(); this.sleepingFrameKey = '';
+    this.feedbackContentKey = ''; this.feedbackDrawn = false;
+    if (!this.lost && !this.destroyed) {
+      this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+      this.gl.clearColor(0, 0, 0, 1); this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+    }
+  }
+  resume(): void {
+    this.sessionStopped = false; this.paused = false;
+    this.sleepingFrameKey = ''; this.motion.resetAudio(); this.warmAll();
+  }
 
   render(audio: AudioFrame, settings: Settings, dt: number): void {
     if (this.lost || this.paused) return;
@@ -256,6 +275,7 @@ export class Renderer {
     }
   }
   private draw(audio: AudioFrame, settings: Settings, dt: number): void {
+    settings = gentleSettings(settings);
     const gl = this.gl;
     const program = this.program(settings.visual);
     // Keep the previous image until asynchronous compilation finishes.
@@ -395,7 +415,7 @@ export class Renderer {
     const randomize = paletteId === 'randomize';
     gl.uniform1f(u('uMulticolor'), randomize ? 1 : 0);
     if (randomize) {
-      const colors = this.colorCycle.advance(sceneDt);
+      const colors = this.colorCycle.advance(settings.gentlerVisuals ? 0 : sceneDt);
       gl.uniform1f(u('uPalettePhase'), this.colorCycle.phase);
       // Keep A/B/C as separated low/mid/highlight accents. D/E fill the two
       // additional stops in the five-color spatial gradient.
@@ -416,7 +436,7 @@ export class Renderer {
     gl.uniform4fv(u('uImpulses[0]'), this.impulses);
     const measure = settings.quality === 'auto' && this.timer && this.query && !this.queryPending && ++this.timingFrames >= 12;
     if (measure) { this.timingFrames = 0; this.queryKey = this.performanceKey; gl.beginQuery(this.timer!.TIME_ELAPSED_EXT, this.query!); }
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    gl.drawArrays(gl.TRIANGLES, 0, 3); this.diagnostics.draws++;
     if (visual.feedback) {
       gl.bindFramebuffer(gl.READ_FRAMEBUFFER, this.feedback[this.feedbackIndex]!.framebuffer);
       gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER, null);

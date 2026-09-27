@@ -8,6 +8,7 @@ export class AudioEngine {
   frame = silentFrame();
   mode: AudioMode = 'off';
   error = '';
+  ticks = 0;
   private generation = 0;
   private pending: Promise<void> = Promise.resolve();
   private lastNativeFrame = 0;
@@ -53,6 +54,7 @@ export class AudioEngine {
             if (!frame) { this.error = 'Invalid audio packet. Rebuild the desktop app, then reconnect.'; this.clearEnergy(); return; }
             this.error = ''; this.frame = frame; this.lastNativeFrame = performance.now();
           });
+          if (token !== this.generation) await stopNativeAudio();
         } else if (selected.mode === 'microphone') {
           if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone access needs a supported browser. Use the Windows app for desktop audio.');
           const stream = await navigator.mediaDevices.getUserMedia({ audio: { deviceId: selected.microphoneDevice ? { exact: selected.microphoneDevice } : undefined, echoCancellation: false, noiseSuppression: false, autoGainControl: false }, video: false });
@@ -96,6 +98,7 @@ export class AudioEngine {
   }
 
   tick(now: number, dt: number): AudioFrame {
+    this.ticks++;
     if (this.mode === 'demo') return this.frame = demoFrame(now / 1000);
     if (this.mode === 'off' || this.error) { this.clearEnergy(); return this.frame; }
     if (this.analyser && this.frequencies && this.samples && this.context && this.config) {
@@ -140,5 +143,10 @@ export class AudioEngine {
     if (this.context) { try { await this.context.close(); } catch { /* Already closed. */ } }
     this.context = undefined; this.analyser = undefined;
   }
-  async destroy(): Promise<void> { this.generation++; await this.pending; await this.closeBrowser(); await stopNativeAudio(); }
+  /** Invalidate immediately; never wait for a pending microphone permission dialog. */
+  async stop(): Promise<void> {
+    this.generation++; this.mode = 'off'; this.error = ''; this.frame = silentFrame();
+    await Promise.all([this.closeBrowser(), stopNativeAudio()]);
+  }
+  async destroy(): Promise<void> { await this.stop(); }
 }

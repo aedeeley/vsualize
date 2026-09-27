@@ -1,0 +1,5 @@
+{
+  "productName": "Vsualize Safety Test",
+  "identifier": "app.vsualize.safety-test",
+  "bundle": { "createUpdaterArtifacts": false }
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 — safety and performance controls
+
+- New and existing installations default to a 30-minute session; 15/60/120-minute limits and acknowledged, remembered Unlimited are available.
+- Stop replaces freeze-frame Pause: clear the window to black, stop capture and drawing, and keep the window in place. Resume is explicit after expiry, sleep or lock. Hidden/minimized sessions suspend capture as well as rendering.
+- Add a first-run/upgrade health notice, Safety & performance settings, a non-destructive Gentler overlay and Eco: Auto/30. Existing presets and the Auto/60 default remain.
+- Add native deadline and stop-generation guards, regression tests, dependency advisory checks, README guidance and prepared website safety copy.
+- Private vulnerability reporting is enabled. Verification results and remaining follow-up work are documented in docs/reports/safety-verification.md. No health or hardware-protection certification is claimed.
+
 ## 0.3.0 — Windows installer and signed updates
 
 See [release notes](docs/releases/0.3.0.md). Ports the twelve r5 effects and four controls, adds adaptive GPU workload, reduces audio delivery intervals, provides a per-user NSIS installer, and publishes version-bound signed updates through GitHub Releases.

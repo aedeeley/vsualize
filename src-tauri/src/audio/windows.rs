@@ -32,7 +32,10 @@ pub fn devices() -> Result<Vec<DeviceInfo>> {
 
 pub(super) fn capture(desktop: bool, id: String, source: SharedSnapshot, cancel: Arc<AtomicBool>) {
     while !cancel.load(Ordering::Acquire) {
-        if let Err(message) = capture_once(desktop, &id, &source, &cancel) {
+        let result = capture_once(desktop, &id, &source, &cancel);
+        // capture_once has returned: its COM/client/device locals have been dropped.
+        crate::diagnostics::event("capture-resources-released", &desktop);
+        if let Err(message) = result {
             if let Ok(mut state) = source.lock() {
                 state.updated = None;
                 state.status = format!("Error: {message}. Retrying…");
@@ -81,6 +84,7 @@ fn capture_once(desktop: bool, id: &str, source: &SharedSnapshot, cancel: &Atomi
     let event = client.set_get_eventhandle().map_err(err)?;
     let capture = client.get_audiocaptureclient().map_err(err)?;
     client.start_stream().map_err(err)?;
+    crate::diagnostics::event("capture-stream-start", &desktop);
     if let Ok(mut state) = source.lock() {
         state.status = format!("Listening: {name}"); state.updated = None;
         state.packets = 0; state.sample_rate = pcm.sample_rate; state.channels = pcm.channels;
@@ -104,9 +108,11 @@ fn capture_once(desktop: bool, id: &str, source: &SharedSnapshot, cancel: &Atomi
                 if size > 16 * 1024 * 1024 { return Err("Capture packet exceeds the safety limit".into()); }
                 buffer.resize(size, 0);
                 let (read_frames, info) = capture.read_from_device(&mut buffer).map_err(err)?;
+                crate::diagnostics::packet();
                 if let Ok(mut state) = source.lock() { state.packets = state.packets.saturating_add(1); }
                 if info.flags.data_discontinuity { analyzer.reset(); }
                 if let Some(analysis) = analyzer.push(&buffer, read_frames as usize, info.flags.silent) {
+                    crate::diagnostics::analysis();
                     if let Ok(mut state) = source.lock() { state.analysis = analysis; state.updated = Some(Instant::now()); }
                 }
             }

@@ -210,3 +210,21 @@ body.preview .resize-edge { display:none; }
 
 /* Compact contextual control help. */
 .control-note {font-size:9px;line-height:1.5;color:var(--muted);margin:-2px 0 14px;}
+/* The cover exists before JavaScript: first-run, resize and context loss stay black. */
+#session-shield { display: none; position: fixed; inset: 0; background: #000; z-index: 1; pointer-events: none; }
+body.session-stopped #session-shield { display: block; }
+body.session-stopped, body.session-stopped #app-surface { background: #000 !important; }
+body.session-stopped #visualizer { visibility: hidden; }
+body.session-stopped #preview-label, body.session-stopped #signal-monitor { display: none !important; }
+body.session-stopped *, body.session-stopped *::before, body.session-stopped *::after { animation: none !important; transition: none !important; }
+#session-rest { position: fixed; inset: 35% 16px auto; z-index: 3; text-align: center; color: #969ba5; }
+#session-rest button { margin: 5px; padding: 9px 16px; background: #121419; color: #b8bdc7; border: 1px solid #343842; border-radius: 8px; }
+.safety-dialog { background: #121419; color: #cdd1da; border: 1px solid #414650; border-radius: 14px; padding: 22px; width: min(520px, calc(100vw - 36px)); max-height: calc(100dvh - 32px); overflow: auto; line-height: 1.5; }
+.safety-dialog::backdrop { background: #000; }
+.safety-dialog h2 { margin-top: 0; }
+.safety-dialog p { font-size: 13px; }
+.safety-dialog button { padding: 10px 14px; border: 1px solid #454b56; background: #22262e; color: #e1e4eb; border-radius: 8px; }
+.safety-dialog button:disabled { opacity: .4; }
+.safety-dialog :focus-visible, #session-rest :focus-visible { outline: 2px solid #aab4ca; outline-offset: 3px; }
+#safety-settings { margin-bottom: 18px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -102,6 +102,7 @@ export class MotionDriver {
     const coast = settings.idleMotion ? 1 : 1 - clamp((this.silentFor - 0.65) / 0.95);
     for (const key of Object.keys(targets) as (keyof typeof targets)[]) targets[key] *= coast;
     for (const key of ['time', 'travel', 'turn', 'flow', 'colorShift'] as const) {
+      if (key === 'colorShift' && settings.gentlerVisuals) { this.velocities.colorShift = 0; continue; }
       const old = this.velocities[key], target = targets[key];
       // Every attack responds promptly; Reaction changes how quickly movement
       // catches and releases the sound without multiplying its musical clock.

@@ -50,3 +50,10 @@ test('source-selection debounce cannot label old audio as the newly selected inp
  await a.start({...DEFAULTS,mode:'microphone'});channels.at(-1).onmessage({...music(),microphoneStatus:'Listening: Mic'});
  assert.equal(a.frame.volume,.6);await a.destroy();
 });
+
+test('stop immediately rejects old native packets and clears analysis',async()=>{
+ const a=new AudioEngine();await a.start(DEFAULTS);const old=channels.at(-1);old.onmessage(music());
+ await a.stop();old.onmessage(music());assert.equal(a.mode,'off');assert.equal(a.frame.volume,0);
+ assert.equal(a.tick(1000,.016).volume,0);
+ await a.start(DEFAULTS);old.onmessage(music());assert.equal(a.frame.volume,0);await a.stop();
+});
