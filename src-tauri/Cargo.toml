@@ -1,6 +1,6 @@
 [package]
 name = "vsualize"
-version = "0.4.0"
+version = "0.4.1"
 edition = "2021"
 description = "A quiet, borderless desktop audio visualizer"
 publish = false
@@ -22,7 +22,7 @@ rustfft = "6"
 
 [target.'cfg(windows)'.dependencies]
 wasapi = "=0.24.0"
-windows = { version = "0.61.3", features = ["Media_Control"] }
+windows = { version = "0.61.3", features = ["Media_Control", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging"] }
 windows-future = { version = "0.2.1", features = ["std"] }
 
 [features]

@@ -30,6 +30,30 @@ pub struct UpdateInfo { current_version: String, version: Option<String>, notes:
 #[serde(rename_all = "camelCase")]
 struct Progress { downloaded: usize, total: Option<u64>, phase: &'static str }
 
+fn changelog_url(version: &str) -> Result<String, String> {
+    let parts: Vec<_> = version.split('.').collect();
+    if version.len() > 64 || parts.len() != 3
+        || parts.iter().any(|part| part.is_empty() || !part.bytes().all(|c| c.is_ascii_digit())) {
+        return Err("Invalid release version".into());
+    }
+    Ok(format!("https://github.com/aedeeley/vsualize/releases/tag/v{version}"))
+}
+
+/// Open only this app's release page, never an arbitrary URL from the feed.
+#[tauri::command]
+pub fn open_update_changelog(version: String) -> Result<(), String> {
+    let url = changelog_url(&version)?;
+    #[cfg(windows)]
+    {
+        use windows::{core::{w, HSTRING, PCWSTR}, Win32::UI::{Shell::ShellExecuteW, WindowsAndMessaging::SW_SHOWNORMAL}};
+        let result = unsafe { ShellExecuteW(None, w!("open"), &HSTRING::from(url), PCWSTR::null(), PCWSTR::null(), SW_SHOWNORMAL) };
+        if result.0 as isize <= 32 { return Err("Could not open the default browser".into()); }
+        Ok(())
+    }
+    #[cfg(not(windows))]
+    { let _ = url; Err("Opening release notes requires the Windows app".into()) }
+}
+
 #[tauri::command]
 pub async fn check_update(app: AppHandle, state: State<'_, UpdateState>) -> Result<UpdateInfo, String> {
     let _operation = state.begin()?;
@@ -74,6 +98,13 @@ pub async fn install_update(app: AppHandle, version: String, state: State<'_, Up
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn changelog_links_are_limited_to_stable_vsualize_releases() {
+        assert_eq!(changelog_url("0.4.1").unwrap(), "https://github.com/aedeeley/vsualize/releases/tag/v0.4.1");
+        for version in ["", "0.4", "0.4.1/../../other", "0.4.1?url=evil", "https://example.com", "0.4.1\0", "0..1"] {
+            assert!(changelog_url(version).is_err());
+        }
+    }
     #[test]
     fn update_operations_are_exclusive_and_unlock_on_error() {
         let state = UpdateState::default();

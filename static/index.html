@@ -133,11 +133,19 @@
       <p class="panel-note">Move your effect settings between Browser Studio and the Windows app.</p>
       <div id="app-updates"><div class="button-row"><button id="check-updates" class="secondary-button">Check for updates</button><button id="install-update" class="secondary-button" hidden>Install update and restart</button></div><p id="update-status" class="source-status" role="status" aria-live="polite"></p></div>
       <div class="button-row"><button id="reset-settings" class="secondary-button">Reset appearance</button><button id="center-window" class="secondary-button">Center window</button></div>
-      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.4.0</p>
+      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.4.1</p>
     </div>
   </section>
   <div class="resize-edge north" data-resize="North"></div><div class="resize-edge south" data-resize="South"></div><div class="resize-edge west" data-resize="West"></div><div class="resize-edge east" data-resize="East"></div>
   <div class="resize-edge northwest" data-resize="NorthWest"></div><div class="resize-edge northeast" data-resize="NorthEast"></div><div class="resize-edge southwest" data-resize="SouthWest"></div><div class="resize-edge southeast" data-resize="SouthEast"></div>
+  <dialog id="update-dialog" aria-labelledby="update-dialog-title" aria-describedby="update-dialog-message">
+    <p class="update-eyebrow">A fresh version is here</p>
+    <h2 id="update-dialog-title">Update available</h2>
+    <p id="update-dialog-message"></p>
+    <a id="update-changelog" href="https://github.com/aedeeley/vsualize/releases" target="_blank" rel="noopener noreferrer">What’s new ↗</a>
+    <p id="update-dialog-status" role="status" aria-live="polite"></p>
+    <div class="update-dialog-actions"><button id="update-dialog-later" type="button" autofocus>Later</button><button id="update-dialog-install" type="button">Update and restart</button></div>
+  </dialog>
   <div id="toast" role="status" aria-live="polite" hidden></div>
   </div>
   <script type="module" src="./main.js"></script>

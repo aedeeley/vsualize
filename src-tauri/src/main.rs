@@ -122,7 +122,7 @@ fn main() {
         .manage(AudioState::default())
         .manage(TrayAvailable::default())
         .manage(updater::UpdateState::default())
-        .invoke_handler(tauri::generate_handler![start_audio, stop_audio, list_audio_devices, window_action, now_playing::get_now_playing, updater::check_update, updater::install_update])
+        .invoke_handler(tauri::generate_handler![start_audio, stop_audio, list_audio_devices, window_action, now_playing::get_now_playing, updater::check_update, updater::install_update, updater::open_update_changelog])
         .setup(|app| {
             let show = MenuItem::with_id(app, "show", "Show controls", true, None::<&str>)?;
             let recover = MenuItem::with_id(app, "recover", "Recover window / center", true, None::<&str>)?;

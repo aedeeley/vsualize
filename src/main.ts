@@ -317,7 +317,7 @@ byId('signal-monitor').addEventListener('click', () => { show(); setTab('audio')
 byId('copy-diagnostics').addEventListener('click', async () => {
   const f = audio.frame;
   const data = {
-    app: 'Vsualize 0.4.0', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
+    app: 'Vsualize 0.4.1', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
     rendering: renderer.resolution, performance: { ...renderer.performance, frames: renderer.frames },
     status: describeSignal(settings, f, audio.error), responseDisabledForComparison: comparing,
     volume: f.volume, bass: f.bass, mid: f.mid, treble: f.treble, beat: f.beat,
@@ -419,6 +419,7 @@ window.addEventListener('keydown', event => {
 });
 
 window.setInterval(() => {
+  if (byId<HTMLDialogElement>('update-dialog').open) return;
   if (previewMenu?.isOpen() || (previewMenu && panel.contains(document.activeElement))) return;
   if (!visible || settings.controlsTimeout === 0 || interacting || panel.matches(':hover') || chrome.matches(':hover')) return;
   if (document.activeElement instanceof HTMLInputElement || document.activeElement instanceof HTMLSelectElement) return;

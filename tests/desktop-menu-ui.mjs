@@ -33,6 +33,16 @@ try {
   await page.goto(pathToFileURL(path.resolve('Vsualize-Preview.html')).href + '?validate&ui=visible');
   await page.waitForFunction(() => window.__vsualize?.renderer.frames > 2);
   assert.equal(await page.locator('body.menu-study').count(), 1, 'native frontend uses the new menu');
+  await page.waitForFunction(() => document.querySelector('#update-dialog').open);
+  assert.equal(await page.locator('#update-dialog-later').evaluate(el => el === document.activeElement), true);
+  await mkdir('artifacts', { recursive: true });
+  await page.screenshot({ path: 'artifacts/update-dialog.png' });
+  await page.locator('#update-changelog').click();
+  assert.deepEqual(await page.evaluate(() => nativeCalls.find(c => c.command === 'open_update_changelog').args), { version: '0.4.1' });
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#update-dialog').evaluate(el => el.open), false);
+  assert.ok(await page.locator('#study-settings-card').isVisible(), 'Escape dismisses only the update dialog');
+  assert.equal(await page.evaluate(() => nativeCalls.filter(c => c.command === 'install_update').length), 0);
   await page.locator('#study-settings-card').click();
   await page.getByText('Devices & capture', { exact: true }).click();
   assert.ok(await page.locator('#desktop-device').isVisible(), 'native device selector remains accessible');
@@ -41,10 +51,11 @@ try {
   await page.locator('#check-updates').click();
   await page.waitForFunction(() => document.querySelector('#update-status').textContent.includes('0.4.1'));
   assert.equal(await page.evaluate(() => nativeCalls.filter(c => c.command === 'install_update').length), 0);
-  await page.locator('#install-update').click();
+  await page.locator('#update-dialog-install').click();
   await page.waitForFunction(() => document.querySelector('#update-status').textContent.includes('try again'));
   assert.deepEqual(await page.evaluate(() => nativeCalls.find(c => c.command === 'install_update').args), { version: '0.4.1' });
   assert.ok(await page.locator('#install-update').isEnabled(), 'failed download permits retry');
+  await page.keyboard.press('Escape');
   await page.keyboard.press('Escape');
   await page.locator('[data-adjust="kaleidoscope"]').click();
   assert.ok(await page.getByText('Pattern variety', { exact: true }).isVisible());
@@ -56,6 +67,14 @@ try {
     await page.locator('#check-updates').scrollIntoViewIfNeeded();
     const rect = await page.locator('#check-updates').boundingBox();
     assert.ok(rect && rect.x >= 0 && rect.y >= 0 && rect.x + rect.width <= width && rect.y + rect.height <= height);
+    await page.locator('#check-updates').click();
+    await page.waitForFunction(() => document.querySelector('#update-dialog').open);
+    await page.locator('#update-dialog-install').scrollIntoViewIfNeeded();
+    const action = await page.locator('#update-dialog-install').boundingBox();
+    assert.ok(action && action.x >= 0 && action.y >= 0 && action.x + action.width <= width && action.y + action.height <= height);
+    await page.screenshot({ path: `artifacts/update-dialog-${width}.png` });
+    await page.locator('#update-dialog-later').click();
+    assert.equal(await page.locator('#update-dialog').evaluate(el => el.open), false);
     await page.keyboard.press('Escape');
   }
   assert.deepEqual(errors, []);
@@ -64,7 +83,7 @@ try {
   await page.locator('#study-settings-card').click();
   await page.locator('#study-tab-app').click();
   await page.screenshot({ path: 'artifacts/desktop-menu.png' });
-  console.log('PASS: native menu, device selection, update discovery/install retry, shader compilation, and small-window access. Windows IPC was mocked.');
+  console.log('PASS: native menu, startup update prompt, changelog, Later/Escape, install retry, shader compilation, and small-window access. Windows IPC was mocked.');
 } finally {
   await browser.close();
 }
