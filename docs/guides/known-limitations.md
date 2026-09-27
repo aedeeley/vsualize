@@ -1,6 +1,6 @@
 ## Current 0.3.0 release
 
-Twelve r5 effects, four controls, adaptive rendering and signed updates are now implemented. The Windows installer and native tests passed; real RX 6800 XT shader rendering and live desktop capture were observed. See [current validation](TEST-REPORT-0.3.0.md) for the precise checks and limits. Physical end-to-end latency, sustained FPS and future-version update installation are not claimed as measured. The installer lacks a Windows Authenticode certificate.
+Twelve r5 effects, four controls, adaptive rendering and signed updates are now implemented. The Windows installer and native tests passed; real RX 6800 XT shader rendering and live desktop capture were observed. See [current validation](../archive/reports/test-report-0.3.0.md) for the precise checks and limits. Physical end-to-end latency, sustained FPS and future-version update installation are not claimed as measured. The installer lacks a Windows Authenticode certificate.
 
 All sections below describe historical versions.
 

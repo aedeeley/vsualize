@@ -2,7 +2,7 @@
 
 ## 0.3.0 — Windows installer and signed updates
 
-See [release notes](docs/RELEASE-0.3.0.md). Ports the twelve r5 effects and four controls, adds adaptive GPU workload, reduces audio delivery intervals, provides a per-user NSIS installer, and publishes version-bound signed updates through GitHub Releases.
+See [release notes](docs/releases/0.3.0.md). Ports the twelve r5 effects and four controls, adds adaptive GPU workload, reduces audio delivery intervals, provides a per-user NSIS installer, and publishes version-bound signed updates through GitHub Releases.
 
 # 0.2.11 - Curated effect defaults
 
@@ -12,18 +12,18 @@ See [release notes](docs/RELEASE-0.3.0.md). Ports the twelve r5 effects and four
 - Rename the response reset to Reset this effect; restore all five sliders and palette for this effect only.
 - Prune exact retired source filenames during in-place updates and sanitize retired selections/favorites.
 - Preserve native 4K, evolving palettes, retained shaders, audio/native-window code and build dependencies.
-- See CURATED-DEFAULTS-UPDATE.md and docs/TEST-REPORT-0.2.11.md.
+- See docs/archive/patches/curated-defaults-update.md and docs/archive/reports/test-report-0.2.11.md.
 
 # 0.2.10 - Native 4K
 
 - Detailed now means true Native (100%), with no app pixel budget or heavy-effect penalty.
 - Settings and copied diagnostics report the actual drawing buffer, including size limits.
 - No changes to effect shaders, audio, colors, window code or glow.
-- See NATIVE-4K-UPDATE.md and docs/TEST-REPORT-0.2.10.md.
+- See docs/archive/patches/native-4k-update.md and docs/archive/reports/test-report-0.2.10.md.
 
 # 0.2.9: native + client corner clipping
 
-See CLEAN-CORNERS-UPDATE.md. Includes all prior palette/corner patches.
+See docs/archive/patches/clean-corners-update.md. Includes all prior palette/corner patches.
 
 # Changelog
 
@@ -88,7 +88,7 @@ See CLEAN-CORNERS-UPDATE.md. Includes all prior palette/corner patches.
 Live input diagnostics; music-only silence behavior; explicit demo selection;
 A/B scene-response comparison; faster transients and bounded exposure accents;
 serialized capture restarts and stale data clearing; source-aware Windows update
-launcher. See docs/0.2.3-CHANGES.md. Windows build/device validation remains pending.
+launcher. See docs/releases/0.2.3.md. Windows build/device validation remains pending.
 
 
 ## 0.2.2 - Continuous musical motion

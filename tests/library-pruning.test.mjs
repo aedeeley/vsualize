@@ -10,7 +10,7 @@ import { THUMBNAILS } from '../dist/visuals/thumbnails.js';
 import { DEFAULTS, sanitizeSettings, loadSettings, saveSettings } from '../dist/settings.js';
 import { VISUAL_DEFAULTS, defaultVisualTuning } from '../dist/visual-presets.js';
 import { matchesVisual, nextVisual } from '../dist/library.js';
-import { RETIRED_VISUAL_IDS, pruneRetiredVisuals } from '../scripts/prune-retired-visuals.mjs';
+import { RETIRED_VISUAL_IDS, pruneRetiredVisuals } from '../scripts/maintenance/prune-retired-visuals.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = relative => readFileSync(path.join(root, relative), 'utf8');
@@ -94,7 +94,7 @@ test('navigation visits only retained effects and wraps at Lava Forms', () => {
 });
 
 test('generated preview contains only curated effect modules and shows 12 / 12', () => {
-  const html = read('Vsualize-Preview.html');
+  const html = read('artifacts/preview/vsualize.html');
   for (const id of RETIRED_VISUAL_IDS) assert.ok(!html.includes(`"visuals/${id}.js":function`), id);
   for (const name of removedNames) assert.ok(!html.includes(name), name);
   assert.match(html, /12 \/ 12/);

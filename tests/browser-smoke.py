@@ -9,7 +9,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path(os.environ.get('VSUALIZE_TEST_OUTPUT', ROOT / 'artifacts' / 'browser'))
 OUT.mkdir(parents=True, exist_ok=True)
-html = (ROOT / 'Vsualize-Preview.html').read_text(encoding='utf-8')
+html = (ROOT / 'artifacts/preview/vsualize.html').read_text(encoding='utf-8')
 storage = """<script>const testStorage=new Map();Object.defineProperty(window,'localStorage',{value:{getItem:k=>testStorage.get(k)??null,setItem:(k,v)=>testStorage.set(k,v)}});</script>"""
 results=[]
 def check(name, truth):

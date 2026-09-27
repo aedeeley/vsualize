@@ -1,6 +1,6 @@
 """Render actual current shaders for the local picker using Mesa GLES.
 Input is synthetic; this is not desktop capture or a Windows rendering test.
-Run export-motion-scenes.mjs first, then scripts/generate-thumbnails.py.
+Run export-motion-scenes.mjs first, then scripts/maintenance/generate-thumbnails.py.
 """
 from pathlib import Path
 import json

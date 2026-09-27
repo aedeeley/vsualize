@@ -30,7 +30,7 @@ await page.addInitScript(() => {
   };
 });
 try {
-  await page.goto(pathToFileURL(path.resolve('Vsualize-Preview.html')).href + '?validate&ui=visible');
+  await page.goto(pathToFileURL(path.resolve('artifacts/preview/vsualize.html')).href + '?validate&ui=visible');
   await page.waitForFunction(() => window.__vsualize?.renderer.frames > 2);
   assert.equal(await page.locator('body.menu-study').count(), 1, 'native frontend uses the new menu');
   await page.waitForFunction(() => document.querySelector('#update-dialog').open);

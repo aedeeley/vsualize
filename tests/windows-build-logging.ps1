@@ -5,13 +5,13 @@ $root = Split-Path $PSScriptRoot -Parent
 $temporary = Join-Path ([IO.Path]::GetTempPath()) ('Vsualize logger test ' + [Guid]::NewGuid().ToString('N'))
 $code = 0
 try {
-    foreach ($script in Get-ChildItem -LiteralPath (Join-Path $root 'scripts') -Filter '*.ps1') {
+    foreach ($script in Get-ChildItem -LiteralPath (Join-Path $root 'scripts') -Filter '*.ps1' -Recurse) {
         $tokens = $null; $errors = $null
         $null = [Management.Automation.Language.Parser]::ParseFile($script.FullName, [ref]$tokens, [ref]$errors)
         if ($errors.Count -ne 0) { throw ($script.Name + ': ' + ($errors | Out-String)) }
     }
     $null = New-Item -ItemType Directory -Path $temporary
-    . (Join-Path $root 'scripts/windows-common.ps1')
+    . (Join-Path $root 'scripts/windows/windows-common.ps1')
     $log = Join-Path $temporary 'test.log'
     Open-VsualizeLog -Path $log
     $result = Invoke-VsualizeCommand 'cmd.exe /d /c "(echo STDOUT_TOKEN) & (echo STDERR_TOKEN 1>&2) & exit /b 0"'

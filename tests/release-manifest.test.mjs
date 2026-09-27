@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { makeManifest } from '../scripts/release-manifest.mjs';
+import { makeManifest } from '../scripts/release/release-manifest.mjs';
 const signature = Buffer.from('untrusted comment: test\nplaceholder\ntrusted comment: timestamp:123\tversion:0.3.0\nplaceholder').toString('base64');
 test('update manifest points at an immutable tagged Windows release', () => {
   const manifest = makeManifest('0.3.0', 'Vsualize_0.3.0_x64-setup.exe', signature, 'Changes', '2026-09-26T00:00:00Z');

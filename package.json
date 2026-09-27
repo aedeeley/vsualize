@@ -11,11 +11,11 @@
     "check": "tsc --noEmit",
     "tauri": "tauri",
     "desktop": "tauri dev",
-    "build:windows": "node scripts/check-desktop-config.mjs --require-cli && tauri build --no-bundle",
-    "installer": "node scripts/check-desktop-config.mjs --require-cli && tauri build --bundles nsis",
-    "check:desktop": "node scripts/check-desktop-config.mjs --require-cli",
-    "release:manifest": "node scripts/release-manifest.mjs",
-    "brand:generate": "node scripts/generate-branding.mjs",
+    "build:windows": "node scripts/windows/check-desktop-config.mjs --require-cli && tauri build --no-bundle",
+    "installer": "node scripts/windows/check-desktop-config.mjs --require-cli && tauri build --bundles nsis",
+    "check:desktop": "node scripts/windows/check-desktop-config.mjs --require-cli",
+    "release:manifest": "node scripts/release/release-manifest.mjs",
+    "brand:generate": "node scripts/branding/generate-branding.mjs",
     "test:branding": "node --test tests/branding.test.mjs"
   },
   "devDependencies": {

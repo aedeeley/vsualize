@@ -6,7 +6,7 @@ import os,json
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'artifacts'/'progression';OUT.mkdir(parents=True,exist_ok=True)
-html=(ROOT/'Vsualize-Preview.html').read_text()
+html=(ROOT/'artifacts/preview/vsualize.html').read_text()
 store="""<script>const store=new Map();Object.defineProperty(window,'localStorage',{value:{getItem:k=>store.get(k)??null,setItem:(k,v)=>store.set(k,v)}});</script>"""
 with sync_playwright() as pw:
     browser=pw.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader'])

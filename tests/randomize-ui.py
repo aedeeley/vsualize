@@ -6,7 +6,7 @@ import json, os
 from playwright.sync_api import sync_playwright
 root=Path(__file__).resolve().parents[1]
 out=root/'artifacts/colors';out.mkdir(parents=True,exist_ok=True)
-html=(root/'Vsualize-Preview.html').read_text()
+html=(root/'artifacts/preview/vsualize.html').read_text()
 native=(root/'tests/live-desktop-ui.py').read_text().split("stub='''",1)[1].split("'''",1)[0]
 gl=(root/'tests/response-ui-mocked.py').read_text().split("gl_stub='''",1)[1].split("'''",1)[0]
 checks=[]

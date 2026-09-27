@@ -1,7 +1,7 @@
 # Vsualize 0.2.11 visual collection
 
 **11 active effects.** Metadata below is generated from the current runtime catalog.
-Each effect has its own tuning profile; see [the screenshot defaults](../CURATED-DEFAULTS-UPDATE.md).
+Each effect has its own tuning profile; see [the screenshot defaults](../archive/patches/curated-defaults-update.md).
 Shader bodies are unchanged from 0.2.10. Removed entries and aliases no longer occur
 in the application picker, search, favorites, navigation or shuffle.
 

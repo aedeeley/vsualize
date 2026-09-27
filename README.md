@@ -37,11 +37,15 @@ Vsualize checks for updates at startup and every 12 hours while running, with a 
 
 You can also use **Settings → App → Check for updates** (older versions: **Settings → Check for updates**). Downloads and installation always require your click. The native updater verifies the installer signature and signed version before installation. Settings and window preferences use the existing `app.vsualize.desktop` identity.
 
-Updates are served by GitHub Releases. [Release maintenance](docs/RELEASING.md) covers automated publication and moving the feed to your own HTTPS server. The planned website at **vsualize.app** can link to the stable installer and release notes; website work is separate.
+Updates are served by GitHub Releases. [Release maintenance](docs/guides/releasing.md) covers automated publication and moving the feed to your own HTTPS server. The planned website at **vsualize.app** can link to the stable installer and release notes; website work is separate.
 
 ## Build from source
 
 Requires Windows x64, Node 22+, Rust stable MSVC, Microsoft C++ Build Tools with a Windows SDK, and WebView2. See [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/).
+
+Double-click **`vsualize.cmd`** for the development menu, or run `./vsualize.cmd start`, `./vsualize.cmd rebuild`, or `./vsualize.cmd installer`. Use `./vsualize.cmd setup` if developer tools are missing. This replaces the separate setup, start, update, rebuild and installer launchers. Logs are saved in `artifacts/logs/`.
+
+For individual build and verification steps:
 
 ```powershell
 npm ci
@@ -53,10 +57,12 @@ npm run installer -- --ci --config src-tauri/tauri.test.conf.json
 
 The last command builds a development installer without an update signature. Official releases require the private signing key and must use the release workflow. Never commit the key or put it in a browser build.
 
-`npm run build` creates `dist/` and a standalone `Vsualize-Preview.html`. That preview supports microphone and synthetic Demo mode; native desktop capture and updates require the installed app.
+`npm run build` creates `dist/` and a standalone `artifacts/preview/vsualize.html`. That preview supports microphone and synthetic Demo mode; native desktop capture and updates require the installed app.
 
-Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.4.1 release notes](docs/RELEASE-0.4.1.md) describe the current release.
+Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.4.1 release notes](docs/releases/0.4.1.md) describe the current release.
+
+See the [development guide](docs/guides/development.md) for commands and the repository layout, or browse the [documentation index](docs/README.md).
 
 ## Branding
 
-The ripple identity includes scalable logos, monochrome variants, Windows app/tray icons and browser favicons. See [branding assets and regeneration](docs/BRANDING.md).
+The ripple identity includes scalable logos, monochrome variants, Windows app/tray icons and browser favicons. See [branding assets and regeneration](docs/guides/branding.md).

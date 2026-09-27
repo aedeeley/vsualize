@@ -73,7 +73,7 @@ export function checkDesktopConfig(root, { requireCli = false } = {}) {
 const entry = process.argv[1] && path.resolve(process.argv[1]);
 if (entry === fileURLToPath(import.meta.url)) {
   try {
-    const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+    const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
     const result = checkDesktopConfig(root, { requireCli: process.argv.includes('--require-cli') });
     console.log(`Vsualize ${result.version}: window keys match the released runtime${result.cliSchemaChecked ? ' and installed CLI schema' : ' baseline (CLI not checked)'}.`);
   } catch (error) {

@@ -11,4 +11,4 @@ Auto quality / 60 fps is the new-install default. Native (100%) is available for
 full-resolution rendering. Existing explicit quality settings are retained.
 
 The source-build launchers in this folder are for development. See README.md
-and docs/RELEASING.md for build, test, signing and release instructions.
+and docs/guides/releasing.md for build, test, signing and release instructions.

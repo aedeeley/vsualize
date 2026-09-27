@@ -4,7 +4,7 @@ Approved direction: concentric circular ripples around a filled center, a cyan-t
 
 ## Source and regeneration
 
-`assets/brand/identity.json` is the geometry and palette source. `scripts/generate-branding.mjs` produces the vector marks, path-based wordmarks, Windows icons and browser icons using Node alone. No font files, image service, network calls or added npm dependencies are required.
+`assets/brand/identity.json` is the geometry and palette source. `scripts/branding/generate-branding.mjs` produces the vector marks, path-based wordmarks, Windows icons and browser icons using Node alone. No font files, image service, network calls or added npm dependencies are required.
 
 ```sh
 npm run brand:generate
@@ -42,7 +42,7 @@ Use the icon without the wordmark for taskbar, tray and favicon sizes. Preserve 
 
 The patch changes only branding assets, a few HTML/build integration points and the native tray image path. It preserves `app.vsualize.desktop`, updater keys/endpoints, version, window configuration, audio code, settings storage and release workflow.
 
-`static/index.html` references the favicon, manifest and wordmark. `scripts/brand-preview.mjs` embeds SVGs and branding CSS in the standalone `Vsualize-Preview.html` and removes install-only links there, preserving the existing zero-network preview. Development serving includes MIME types for `.ico` and `.webmanifest`.
+`static/index.html` references the favicon, manifest and wordmark. `scripts/branding/brand-preview.mjs` embeds SVGs and branding CSS in the standalone `artifacts/preview/vsualize.html` and removes install-only links there, preserving the existing zero-network preview. Development serving includes MIME types for `.ico` and `.webmanifest`.
 
 The GitHub README uses a `<picture>` element to switch between light and dark wordmark variants.
 

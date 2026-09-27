@@ -36,4 +36,4 @@ jobs:
             src-tauri/target/release/vsualize.exe
             src-tauri/target/release/bundle/nsis/*-setup.exe
             README.md
-            docs/KNOWN-LIMITATIONS.md
+            docs/guides/known-limitations.md

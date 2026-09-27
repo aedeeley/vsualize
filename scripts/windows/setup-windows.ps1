@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop'
-$root = Split-Path $PSScriptRoot -Parent
+$root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location -LiteralPath $root
 . (Join-Path $PSScriptRoot 'windows-common.ps1')
 $exitCode = 0
 try {
-    Open-VsualizeLog -Path (Join-Path $root 'setup.log')
+    Open-VsualizeLog -Path (Join-Path $root 'artifacts/logs/setup.log')
     Write-VsualizeLog @'
 Vsualize build prerequisites
 
@@ -16,10 +16,10 @@ This OPTIONAL helper installs developer tools through Microsoft's winget:
 
 The C++ tools can require several gigabytes and administrator approval.
 If the frontend tests already pass and the launcher reaches the native build,
-start with UPDATE-WINDOWS.cmd, not this installer. A source error is not fixed
+start with vsualize.cmd rebuild. A source error is not fixed
 by reinstalling developer tools.
 
-Review scripts/setup-windows.ps1 before approving. No app data is uploaded.
+Review scripts/windows/setup-windows.ps1 before approving. No app data is uploaded.
 '@
     if (-not (Get-Command winget.exe -ErrorAction SilentlyContinue)) { throw 'winget was not found. See the official Tauri prerequisites documentation.' }
     $answer = Read-Host 'Install/check these prerequisites? Type YES to continue'
@@ -43,7 +43,7 @@ Review scripts/setup-windows.ps1 before approving. No app data is uploaded.
         }
         Write-VsualizeLog @'
 
-Setup completed. Close this window and reopen UPDATE-WINDOWS.cmd.
+Setup completed. Open a new terminal and run vsualize.cmd rebuild.
 Restart Windows first if an installer requests it. If Rustup needs its first
 initialization, run: rustup default stable-msvc
 '@
@@ -52,7 +52,7 @@ initialization, run: rustup default stable-msvc
     $exitCode = 1
     Write-VsualizeLog ("`nSETUP STOPPED: " + $_.Exception.Message)
     if ($_.InvocationInfo.PositionMessage) { Write-VsualizeLog $_.InvocationInfo.PositionMessage }
-    Write-VsualizeLog 'See setup.log. No assumption is made that a failed install succeeded.'
+    Write-VsualizeLog 'See artifacts/logs/setup.log. No assumption is made that a failed install succeeded.'
 } finally {
     Write-VsualizeLog ('Finished: ' + (Get-Date -Format o) + ' | Exit code: ' + $exitCode)
     Close-VsualizeLog

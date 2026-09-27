@@ -4,7 +4,7 @@ import { deflateSync } from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-export const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 const CRC = Uint32Array.from({ length: 256 }, (_, i) => {
   let c = i;

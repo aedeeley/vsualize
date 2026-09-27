@@ -4,7 +4,7 @@ The public update feed is `https://github.com/aedeeley/vsualize/releases/latest/
 
 ## Publish the next version
 
-1. Update the same numeric version in `package.json`, `package-lock.json`, `src-tauri/Cargo.toml`, `src-tauri/Cargo.lock`, `src-tauri/tauri.conf.json`, and the Settings version label. Add `docs/RELEASE-X.Y.Z.md`.
+1. Update the same numeric version in `package.json`, `package-lock.json`, `src-tauri/Cargo.toml`, `src-tauri/Cargo.lock`, `src-tauri/tauri.conf.json`, and the Settings version label. Add `docs/releases/X.Y.Z.md`.
 2. Run `npm ci`, `npm test`, `npm run check:desktop`, and `cargo test --locked --manifest-path src-tauri/Cargo.toml --release`. Check the installed app on Windows, especially live audio, heavy visuals and fullscreen.
 3. Commit and push the source, then create and push the matching `vX.Y.Z` tag. **Publish Windows release** builds/tests the app, signs the installer, generates the feed and SHA-256 checksums, stages a draft, and publishes only after every step succeeds.
 4. Check that the release contains exactly the intended installer, its `.sig`, `latest.json`, and `SHA256SUMS.txt`. Verify an older installed app can find and install it. Do not replace a published installer in place; fix forward with a higher version.

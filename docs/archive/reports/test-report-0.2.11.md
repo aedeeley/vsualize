@@ -4,7 +4,7 @@
 
 - `npm run check`: TypeScript 5.8.3 strict no-emit check.
 - `npm test`: frontend ES-module build, self-contained HTML build, and 186 test cases: **185 passed, 0 failed, 1 skipped**. The skipped test requires Windows PowerShell native-process logging.
-- `node scripts/check-desktop-config.mjs`: config matches the released runtime baseline. **Installed Tauri CLI schema was not checked here** because the CLI was unavailable in this environment.
+- `node scripts/windows/check-desktop-config.mjs`: config matches the released runtime baseline. **Installed Tauri CLI schema was not checked here** because the CLI was unavailable in this environment.
 - `python tests/curated-defaults-ui.py`: **192 passing Chromium interface checks** using explicit WebGL/native IPC mocks. Actual production compiled HTML/JS, DOM controls, decoded thumbnails, and settings code were tested.
 - Existing real offscreen GLES spatial/alpha suite: **all 11 retained shaders compiled and rendered**, with low/mid/high controlled inputs and alpha response checks. Mesa GLES 3.2 / llvmpipe at 256x192, not WebGL or Windows, and not a target-GPU benchmark.
 

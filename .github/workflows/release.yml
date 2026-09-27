@@ -68,7 +68,7 @@ jobs:
           if ($LASTEXITCODE -eq 0) {
             if ($existing -ne 'true') { throw 'Release already published; never overwrite a published update.' }
           } else {
-            gh release create $tag --verify-tag --draft --title "Vsualize $version" --notes-file "docs/RELEASE-$version.md"
+            gh release create $tag --verify-tag --draft --title "Vsualize $version" --notes-file "docs/releases/$version.md"
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
           $assets = Get-ChildItem src-tauri/target/release/bundle/nsis -File | Where-Object { $_.Name -match '-setup.exe(\.sig)?$|^latest.json$|^SHA256SUMS.txt$' }

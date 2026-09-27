@@ -50,7 +50,7 @@ as reduced in the menu. Native never silently switches to those choices.
 
 ## Verification and limits
 
-See docs/TEST-REPORT-0.2.10.md. Real offscreen GLSL renders at 3840 x 2160 were
+See docs/archive/reports/test-report-0.2.10.md. Real offscreen GLSL renders at 3840 x 2160 were
 produced here, but Windows compilation, WebView2, native device capture, and your
 GPU's live frame rate have not been tested. No Windows execution is claimed.
 

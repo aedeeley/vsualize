@@ -20,7 +20,7 @@ export function makeManifest(version, filename, signature, notes = '', date = ne
 }
 
 async function main() {
-  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
   const { version } = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
   if (process.env.GITHUB_REF_NAME && process.env.GITHUB_REF_NAME !== `v${version}`) throw new Error('Git tag must match all source versions.');
   const dir = path.resolve(root, process.argv[2] ?? 'src-tauri/target/release/bundle/nsis');
@@ -28,7 +28,7 @@ async function main() {
   if (files.length !== 1) throw new Error('Expected exactly one installer in the release directory.');
   const filename = files[0];
   const signature = await readFile(path.join(dir, `${filename}.sig`), 'utf8');
-  const notes = await readFile(path.join(root, 'docs', `RELEASE-${version}.md`), 'utf8');
+  const notes = await readFile(path.join(root, 'docs', 'releases', `${version}.md`), 'utf8');
   const manifest = makeManifest(version, filename, signature, notes);
   await writeFile(path.join(dir, 'latest.json'), JSON.stringify(manifest, null, 2) + '\n');
   const checksums = [];

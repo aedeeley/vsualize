@@ -1,7 +1,7 @@
 # Vsualize: 8px outer corners
 
 Source patch for Vsualize 0.2.8. The app version remains 0.2.8.
-This supersedes the older 4PX-CORNER-PATCH.txt instructions.
+This supersedes the older docs/archive/patches/4px-corner-patch.txt instructions.
 
 ## Result
 

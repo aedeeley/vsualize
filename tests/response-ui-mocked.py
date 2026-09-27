@@ -6,7 +6,7 @@ import json, os
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'artifacts'/'response'; OUT.mkdir(parents=True,exist_ok=True)
-html=(ROOT/'Vsualize-Preview.html').read_text()
+html=(ROOT/'artifacts/preview/vsualize.html').read_text()
 # Reuse only the explicit native test fixture, not its browser test runner.
 fixture=(ROOT/'tests/live-desktop-ui.py').read_text().split("stub='''",1)[1].split("'''",1)[0]
 gl_stub='''<script>

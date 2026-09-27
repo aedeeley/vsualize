@@ -27,3 +27,6 @@ __pycache__/
 
 # Local, reversible branding-patch backups
 /.vsualize-branding-backups/
+
+# Original local branding patch package (current assets are tracked separately).
+/references/branding-package/

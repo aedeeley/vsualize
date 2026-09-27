@@ -68,6 +68,6 @@ new setup executable. Rebuilding source alone does not replace that installed co
 
 ## Verification and limitations
 
-See `docs/TEST-REPORT-0.2.11.md`. Browser interaction checks use explicit WebGL/native
+See `docs/archive/reports/test-report-0.2.11.md`. Browser interaction checks use explicit WebGL/native
 IPC mocks. Real offscreen GLES checks are separate. No Windows compilation, WASAPI
 device test, Windows-corner test or target-GPU performance claim is made here.

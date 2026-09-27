@@ -6,6 +6,7 @@ $script:VsualizeLogPath = $null
 
 function Open-VsualizeLog {
     param([Parameter(Mandatory=$true)][string]$Path)
+    $null = New-Item -ItemType Directory -Path (Split-Path $Path -Parent) -Force
     $script:VsualizeLogPath = $Path
     if (Test-Path -LiteralPath $Path) {
         $previous = [IO.Path]::ChangeExtension($Path, 'previous.log')

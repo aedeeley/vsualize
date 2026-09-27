@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { checkWindowKeys, checkDesktopConfig, RELEASED_WINDOW_KEYS } from '../scripts/check-desktop-config.mjs';
+import { checkWindowKeys, checkDesktopConfig, RELEASED_WINDOW_KEYS } from '../scripts/windows/check-desktop-config.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = name => readFileSync(path.join(root, name), 'utf8');
 const config = JSON.parse(read('src-tauri/tauri.conf.json'));
@@ -56,8 +56,8 @@ test('source versions agree and missing CLI is not reported as validated', () =>
   } finally { rmSync(temporary, { recursive: true, force: true }); }
 });
 test('launcher captures stderr inside CMD and records native exit status rather than relying on transcription', () => {
-  const common = read('scripts/windows-common.ps1');
-  const start = read('scripts/start-windows.ps1');
+  const common = read('scripts/windows/windows-common.ps1');
+  const start = read('scripts/windows/start-windows.ps1');
   assert.match(common, /\$Command \+ ' 2>&1'/);
   assert.match(common, /\$code = \$LASTEXITCODE/);
   assert.match(common, /WriteLine\(\$Text\)/);

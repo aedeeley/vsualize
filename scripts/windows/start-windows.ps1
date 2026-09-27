@@ -1,6 +1,6 @@
 param([switch]$Rebuild, [switch]$Installer)
 $ErrorActionPreference = 'Stop'
-$root = Split-Path $PSScriptRoot -Parent
+$root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location -LiteralPath $root
 . (Join-Path $PSScriptRoot 'windows-common.ps1')
 
@@ -23,7 +23,7 @@ function Get-SourceFingerprint {
 
 $exitCode = 0
 try {
-    Open-VsualizeLog -Path (Join-Path $root 'build.log')
+    Open-VsualizeLog -Path (Join-Path $root 'artifacts/logs/build.log')
     $version = (Get-Content -LiteralPath (Join-Path $root 'package.json') -Raw | ConvertFrom-Json).version
     Write-VsualizeLog ("`nVsualize " + $version + ' | Windows build repair')
     Write-VsualizeLog ('Project: ' + $root)
@@ -31,7 +31,7 @@ try {
     $binary = Join-Path $root 'src-tauri\target\release\vsualize.exe'
     $running = Get-Process -Name 'vsualize' -ErrorAction SilentlyContinue
     if ($running) { throw 'Vsualize is still running. Quit it from its tray icon, then run this launcher again.' }
-    $stamp = Join-Path $root '.vsualize-build.sha256'
+    $stamp = Join-Path $root 'artifacts/cache/windows-build.sha256'
     $matchesSource = (Test-Path -LiteralPath $stamp) -and ((Get-Content -LiteralPath $stamp -Raw).Trim() -eq (Get-SourceFingerprint))
     if ((Test-Path -LiteralPath $binary) -and $matchesSource -and -not $Rebuild -and -not $Installer) {
         Write-VsualizeLog ('Launching the build verified against this source: ' + $binary)
@@ -43,7 +43,7 @@ try {
             if (-not (Get-Command $tool -ErrorAction SilentlyContinue)) { $missing += $tool }
         }
         if ($missing.Count -gt 0) {
-            throw ('Missing tools: ' + ($missing -join ', ') + '. Reopen the terminal after installation. Only run SETUP-WINDOWS.cmd if tools are actually missing.')
+            throw ('Missing tools: ' + ($missing -join ', ') + '. Reopen the terminal after installation. Only run vsualize.cmd setup if tools are actually missing.')
         }
         Write-VsualizeLog "`nTool versions:"
         $null = Invoke-VsualizeCommand 'node.exe --version'
@@ -80,10 +80,11 @@ try {
         Write-VsualizeLog "`nRunning native audio-analysis and window-guard tests..."
         $null = Invoke-VsualizeCommand 'cargo.exe test --manifest-path src-tauri/Cargo.toml --release'
         if (-not (Test-Path -LiteralPath $binary)) { throw 'Build completed but vsualize.exe was not found in the expected output folder.' }
+        $null = New-Item -ItemType Directory -Path (Split-Path $stamp -Parent) -Force
         (Get-SourceFingerprint) | Set-Content -LiteralPath $stamp -Encoding ASCII
         if ($Installer) {
             Write-VsualizeLog "`nBuilding an unsigned Windows installer..."
-            $null = Invoke-VsualizeCommand 'npm.cmd run installer -- --verbose'
+            $null = Invoke-VsualizeCommand 'npm.cmd run installer -- --verbose --config src-tauri/tauri.test.conf.json'
             $installerDirectory = Join-Path $root 'src-tauri\target\release\bundle\nsis'
             Write-VsualizeLog ('Run the new ' + $version + ' setup executable from: ' + $installerDirectory)
             Start-Process explorer.exe -ArgumentList ('"' + $installerDirectory + '"')
@@ -97,7 +98,7 @@ try {
     Write-VsualizeLog ("`nBUILD STOPPED: " + $_.Exception.Message)
     if ($_.InvocationInfo.PositionMessage) { Write-VsualizeLog $_.InvocationInfo.PositionMessage }
     if ($_.ScriptStackTrace) { Write-VsualizeLog $_.ScriptStackTrace }
-    Write-VsualizeLog 'Do not reinstall the toolchain for an ordinary compiler/configuration error. Send the new build.log.'
+    Write-VsualizeLog 'Do not reinstall the toolchain for an ordinary compiler/configuration error. See artifacts/logs/build.log.'
 } finally {
     Write-VsualizeLog ('Finished: ' + (Get-Date -Format o) + ' | Exit code: ' + $exitCode)
     Close-VsualizeLog

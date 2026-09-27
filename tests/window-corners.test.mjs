@@ -28,7 +28,7 @@ test('the canvas and drag toolbar remain descendants of the clipped surface', ()
 
 test('both distributed frontend forms include the corner clip', () => {
   assert.equal(read('dist/style.css'), css);
-  const preview = read('Vsualize-Preview.html');
+  const preview = read('artifacts/preview/vsualize.html');
   assert.ok(preview.includes(body));
   assert.ok(preview.includes(surface));
 });

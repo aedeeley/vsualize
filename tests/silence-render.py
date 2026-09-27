@@ -3,7 +3,7 @@ from pathlib import Path
 import os,json
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts'/'silence';OUT.mkdir(parents=True,exist_ok=True)
-html=(ROOT/'Vsualize-Preview.html').read_text()
+html=(ROOT/'artifacts/preview/vsualize.html').read_text()
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH','/usr/bin/chromium'),headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
  page=b.new_page(viewport={'width':160,'height':112});page.set_content(html)

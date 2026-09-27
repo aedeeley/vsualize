@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import { inflateSync } from 'node:zlib';
 import path from 'node:path';
-import { DEFAULT_ROOT as root, renderIcon, makeLogo, encodeIco } from '../scripts/generate-branding.mjs';
-import { inlineBrandPreview } from '../scripts/brand-preview.mjs';
+import { DEFAULT_ROOT as root, renderIcon, makeLogo, encodeIco } from '../scripts/branding/generate-branding.mjs';
+import { inlineBrandPreview } from '../scripts/branding/brand-preview.mjs';
 const brand = JSON.parse(await readFile(path.join(root, 'assets/brand/identity.json'), 'utf8'));
 const read = (name) => readFile(path.join(root, name));
 function decodePng(bytes) {

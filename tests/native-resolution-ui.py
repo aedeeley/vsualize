@@ -5,7 +5,7 @@ from pathlib import Path
 import json
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'artifacts/native4k';OUT.mkdir(parents=True,exist_ok=True)
-html=(ROOT/'Vsualize-Preview.html').read_text()
+html=(ROOT/'artifacts/preview/vsualize.html').read_text()
 stub='''<script>
 const storage=new Map();Object.defineProperty(window,'localStorage',{value:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)}});
 window.mockBufferScale=1;
