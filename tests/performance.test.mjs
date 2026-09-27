@@ -89,6 +89,20 @@ function recordingGL() {
   const renderer=new Renderer(canvas,m=>calls.errors.push(m));
   return {renderer,calls,listeners,complete:()=>complete=true};
 }
+
+test('reaction extremes preserve renderer audio-history sampling and impulse timestamps', () => {
+  const snapshots = [0, 3].map(motion => {
+    const r = recordingGL();
+    try {
+      r.complete();
+      for (let i=0; i<180; i++) r.renderer.render(demoFrame(i/60), {...DEFAULTS, motion}, 1/60);
+      return {head:r.renderer.historyHead, phase:r.renderer.historyElapsed, clock:r.renderer.motion.state.clock,
+        impulses:[...r.renderer.impulseHistory.data], uploads:r.calls.uploads.length};
+    } finally { r.renderer.destroy(); delete globalThis.window; }
+  });
+  assert.deepEqual(snapshots[0], snapshots[1]);
+  assert.ok(snapshots[0].head > 0);
+});
 test('parallel shader prewarming never reads blocking link status until completion and caches effects', () => {
   const r=recordingGL();
   try {
@@ -119,7 +133,8 @@ test('silence with idle motion disabled stops GPU draws, while edits and new sou
     for(let i=0;i<120;i++)r.renderer.render(silentFrame(),settings,1/60);
     assert.equal(r.calls.draws,resting);
     r.renderer.render(silentFrame(),{...settings,glow:.9},1/60);assert.equal(r.calls.draws,resting+1);
-    r.renderer.render(demoFrame(1),settings,1/60);assert.equal(r.calls.draws,resting+2);
+    r.renderer.render(silentFrame(),{...settings,glow:.9,zoom:1.5},1/60);assert.equal(r.calls.draws,resting+2);
+    r.renderer.render(demoFrame(1),settings,1/60);assert.equal(r.calls.draws,resting+3);
   } finally {r.renderer.destroy();delete globalThis.window;}
 });
 test('bilinear repeated history coordinates match manual adjacent-row interpolation across seam', () => {

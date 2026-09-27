@@ -48,7 +48,7 @@ test('each preset remembers changes independently, including palette and zero va
   }
   for (const [n, id] of VISUAL_IDS.entries()) {
     activateVisual(s, id);
-    assert.deepEqual(tuningOf(s), { intensity: .2+n*.1, motion: n*.1, lineWidth: .5, glow: 0, palette: 'ember' });
+    assert.deepEqual(tuningOf(s), { intensity: .2+n*.1, motion: n*.1, lineWidth: .5, glow: 0, zoom: 1, palette: 'ember' });
   }
 });
 
@@ -63,7 +63,7 @@ test('selecting the same visual does not reset its custom tuning', () => {
   const before=structuredClone(s); activateVisual(s, 'julia'); assert.deepEqual(s,before);
 });
 
-test('reset restores all five fields only for the active effect', () => {
+test('reset restores every tuning field only for the active effect', () => {
   const s = sanitizeSettings({ ...DEFAULTS, mode:'both', desktopDevice:'custom', idleMotion:true, quality:'high', favorites:['lava'] });
   s.glow=.9; s.motion=1.7; rememberVisualTuning(s);
   activateVisual(s,'glass'); s.glow=0; s.motion=0; s.intensity=.3; s.palette='ice';
@@ -91,7 +91,7 @@ test('map copies and preset defaults never share mutable child settings', () => 
 
 test('preset schema clamps safely and ignores malformed numbers, colors and unknown keys', () => {
   const p=sanitizeVisualTuning('glass',{intensity:999,lineWidth:-1,motion:Infinity,glow:0,palette:'bad',malicious:1});
-  assert.deepEqual(p,{intensity:3,lineWidth:.35,motion:.6,glow:0,palette:'randomize'});
+  assert.deepEqual(p,{intensity:3,lineWidth:.35,motion:.6,glow:0,zoom:1,palette:'randomize'});
   for(const x of [null,[],true,10,'bad'])assert.deepEqual(sanitizeVisualTuning('lava',x),defaultVisualTuning('lava'));
   assert.equal(isVisualTuningKey('glow'),true);assert.equal(isVisualTuningKey('quality'),false);
 });

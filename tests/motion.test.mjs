@@ -60,11 +60,12 @@ test('gentle peaks limits flashes without reducing forward momentum',()=>{
   assert.equal(a.state.travel,b.state.travel);assert.ok(a.state.beat<=b.state.beat);
  }
 });
-test('zero flow speed freezes positions and changing it never jumps the phase',()=>{
+test('softest reaction still follows music and changing it never jumps the phase',()=>{
  const d=new MotionDriver();advance(d,music(.7),2);const before={...d.state};
  advance(d,music(.8),4,options({motion:0}));
- for(const k of lanes)assert.equal(d.state[k],before[k]);
- d.update(music(.5),options({motion:2}),1/120);assert.ok(d.state.travel-before.travel<.15);
+ for(const k of lanes)assert.ok(d.state[k]>before[k]);
+ const travel=d.state.travel;
+ d.update(music(.5),options({motion:2}),1/120);assert.ok(d.state.travel-travel<.15);
 });
 test('silence and gated noise generate no fabricated beat events',()=>{
  const d=new MotionDriver();for(let i=0;i<1000;i++){

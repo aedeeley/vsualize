@@ -3,9 +3,9 @@ import type { PaletteId, Settings, VisualId, VisualTuning } from './types.js';
 
 export const FIXED_SMOOTHNESS = 0.80;
 export const PALETTE_IDS: readonly PaletteId[] = ['randomize', 'auto', 'iris', 'aurora', 'ember', 'ice', 'pearl', 'spectrum', 'neon'];
-export const VISUAL_TUNING_KEYS = ['intensity', 'lineWidth', 'motion', 'glow', 'palette'] as const;
+export const VISUAL_TUNING_KEYS = ['intensity', 'lineWidth', 'motion', 'glow', 'zoom', 'palette'] as const;
 export type VisualTuningKey = typeof VISUAL_TUNING_KEYS[number];
-export const CONTROL_LIMITS = { intensity: [0, 3], lineWidth: [0.35, 4], motion: [0, 3], glow: [0, 1] } as const;
+export const CONTROL_LIMITS = { intensity: [0, 3], lineWidth: [0.35, 4], motion: [0, 3], glow: [0, 1], zoom: [0.5, 2.5] } as const;
 /** Each effect keeps its own balance between deformation and musical drive.
  * One public intensity control scales that balance instead of two competing knobs.
  * Tuple: legacy amplitude, legacy response, speed, legacy glow. */
@@ -50,13 +50,17 @@ export function resolveVisualControls(id: VisualId, tuning: VisualTuning) {
         amplitude: base[0] * Math.pow(intensity, 0.65),
         response: base[1] * Math.sqrt(intensity),
         lineWidth: bound(finite(tuning.lineWidth, 1), 0.35, 4),
-        speed: bound(finite(tuning.motion, base[2]), 0, 3),
+        // Keep each scene's authored pace. The saved motion slider now controls
+        // response time, never playback speed or the age of recorded sound.
+        speed: base[2],
+        reactionRate: 2 ** (bound(finite(tuning.motion, base[2]), 0, 3) - 1),
         smoothness: FIXED_SMOOTHNESS,
         glow: glowStrength(tuning.glow),
+        zoom: bound(finite(tuning.zoom, 1), 0.5, 2.5),
     };
 }
 export const VISUAL_DEFAULTS: Readonly<Record<VisualId, Readonly<VisualTuning>>> = Object.freeze(Object.fromEntries(VISUAL_IDS.map(id => [id, Object.freeze({ intensity: 1, lineWidth: 1,
-        motion: RESPONSE_BASES[id][2], glow: migrateGlow(RESPONSE_BASES[id][3]), palette: 'randomize' as const })]))) as Record<VisualId, Readonly<VisualTuning>>;
+        motion: RESPONSE_BASES[id][2], glow: migrateGlow(RESPONSE_BASES[id][3]), zoom: 1, palette: 'randomize' as const })]))) as Record<VisualId, Readonly<VisualTuning>>;
 export function defaultVisualTuning(id: VisualId): VisualTuning { return { ...VISUAL_DEFAULTS[id] }; }
 export function createVisualTunings(): Record<VisualId, VisualTuning> {
     return Object.fromEntries(VISUAL_IDS.map(id => [id, defaultVisualTuning(id)])) as Record<VisualId, VisualTuning>;
@@ -69,7 +73,7 @@ export function sanitizeVisualTuning(id: VisualId, value: unknown, fallback: Vis
     if (!value || typeof value !== 'object' || Array.isArray(value))
         return tuning;
     const input = value as Record<string, unknown>;
-    for (const key of ['intensity', 'lineWidth', 'motion', 'glow'] as const) {
+    for (const key of ['intensity', 'lineWidth', 'motion', 'glow', 'zoom'] as const) {
         const n = input[key];
         if (typeof n === 'number' && Number.isFinite(n))
             tuning[key] = bound(n, CONTROL_LIMITS[key][0], CONTROL_LIMITS[key][1]);

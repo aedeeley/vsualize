@@ -21,7 +21,7 @@ test('legacy imports migrate drive and glow and retain unaffected profiles', () 
   assert.equal(importStudioProfiles(target, JSON.stringify(legacy)), 1);
   const result = resolveVisualControls('glass', target);
   assert.ok(Math.abs(result.amplitude * result.response - 1.2 * .9) < 1e-8);
-  assert.ok(Math.abs(result.glow - .8) < 1e-8); assert.equal(result.speed, 0);
+  assert.ok(Math.abs(result.glow - .8) < 1e-8); assert.equal(target.motion, 0); assert.equal(result.reactionRate, .5);
   assert.equal(target.visualTunings.soundform.intensity, .7);
 });
 

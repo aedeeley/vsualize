@@ -10,6 +10,8 @@ import type { RenderLimits, ResolutionReport } from './resolution.js';
 import { AdaptiveQuality } from './performance.js';
 import { makeRippleField } from './ripple-field.js';
 import { FIXED_SMOOTHNESS, resolveVisualControls } from './visual-presets.js';
+import { previewFragment, PreviewSpin } from './preview-tuning.js';
+import type { PreviewTuning } from './preview-tuning.js';
 
 interface Program { value: WebGLProgram; uniforms: Map<string, WebGLUniformLocation | null> }
 interface PendingProgram { value: WebGLProgram; fragment: WebGLShader }
@@ -23,6 +25,8 @@ const COLOR_NAMES = ['uColorA', 'uColorD', 'uColorB', 'uColorE', 'uColorC'] as c
 const DETAIL = { auto: 0.6, low: 0.15, medium: 0.6, high: 1 };
 const PALETTE_RGB = Object.fromEntries(Object.entries(PALETTES).map(([id, p]) => [id, p.colors.map(hexRGB)]));
 export class Renderer {
+  previewTuning: PreviewTuning = { spin: 1, variety: 1 };
+  private previewSpin = new PreviewSpin();
   frames = 0;
   paused = false;
   private gl: WebGL2RenderingContext;
@@ -91,7 +95,7 @@ export class Renderer {
   }
 
 
-  constructor(private canvas: HTMLCanvasElement, onError: (message: string) => void) {
+  constructor(private canvas: HTMLCanvasElement, onError: (message: string) => void, private menuStudy = false) {
     this.onError = onError;
     const gl = canvas.getContext('webgl2', { alpha: true, premultipliedAlpha: false, antialias: false, depth: false, stencil: false, preserveDrawingBuffer: false, powerPreference: 'high-performance' });
     if (!gl) throw new Error('WebGL 2 is not available. Enable hardware acceleration or update your graphics driver.');
@@ -183,7 +187,7 @@ export class Renderer {
     if (this.destroyed || this.lost || this.programs.has(id) || this.pendingPrograms.has(id)) return;
     const gl = this.gl;
     this.vertex ??= this.compile(VERTEX, gl.VERTEX_SHADER);
-    const fragment = this.compile(VISUALS[id].fragment, gl.FRAGMENT_SHADER);
+    const fragment = this.compile(this.menuStudy ? previewFragment(id, VISUALS[id].fragment) : VISUALS[id].fragment, gl.FRAGMENT_SHADER);
     const value = gl.createProgram();
     if (!value) { gl.deleteShader(fragment); throw new Error('Could not allocate program.'); }
     gl.attachShader(value, this.vertex); gl.attachShader(value, fragment); gl.linkProgram(value);
@@ -307,12 +311,13 @@ export class Renderer {
       gl.bindTexture(gl.TEXTURE_2D, this.rippleField);
       gl.texSubImage2D(gl.TEXTURE_2D,0,0,0,128,64,gl.RGBA,gl.FLOAT,this.emptyRipple);
     }
-    const shape = this.inertia.update(drive, this.motion.response.value.spectrum, dt, FIXED_SMOOTHNESS);
+    const shape = this.inertia.update(drive, this.motion.response.value.spectrum, dt, FIXED_SMOOTHNESS, controls.reactionRate);
     if (drive.sleeping) this.inertia.reset();
     const sceneDt = drive.sleeping ? 0 : dt;
     if (drive.sleeping) {
       const frozenKey = [settings.visual, width, height, settings.quality, settings.background, settings.backgroundColor,
-        settings.palette, settings.opacity, settings.intensity, settings.lineWidth, settings.glow].join(':');
+        settings.palette, settings.opacity, settings.intensity, settings.lineWidth, settings.glow, settings.zoom,
+        this.menuStudy ? this.previewTuning.variety : 1].join(':');
       // The compositor retains the presented canvas. Silence with idle motion
       // disabled does not need repeated shader work or feedback copies.
       if (frozenKey === this.sleepingFrameKey) return;
@@ -344,7 +349,7 @@ export class Renderer {
     gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, this.spectrum); gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 128, 1, gl.RGBA, gl.UNSIGNED_BYTE, this.spectrumBytes);
     gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, this.waveform); gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 256, 1, gl.RGBA, gl.UNSIGNED_BYTE, this.waveformBytes);
     gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, this.history);
-    this.historyElapsed += sceneDt * settings.motion / 0.65;
+    this.historyElapsed += sceneDt;
     if (this.historyElapsed >= 1 / 24) makeRippleField(this.inertia.spectrum, controls.response / 1.6, this.rippleBytes);
     while (this.historyElapsed >= 1 / 24) {
       this.historyElapsed -= 1 / 24; this.historyHead = (this.historyHead + 1) % 64;
@@ -363,11 +368,14 @@ export class Renderer {
     };
     gl.uniform2f(u('uResolution'), width, height);
     gl.uniform1f(u('uTime'), drive.time);
+    if (this.menuStudy) {
+      gl.uniform1f(u('uPreviewSpin'), this.previewSpin.update(settings.visual, drive.clock, drive.turn, this.previewTuning.spin));
+      gl.uniform1f(u('uVariety'), this.previewTuning.variety);
+    }
     for (let i = 0; i < DRIVE_UNIFORMS.length; i++) gl.uniform1f(u(DRIVE_NAMES[i]!), drive[DRIVE_UNIFORMS[i]!] * (i < 6 ? 1 : controls.response / 1.6));
     gl.uniform1f(u('uImpact'), shape.impact * controls.response / 1.6);
     gl.uniform1f(u('uDelta'), sceneDt);
     gl.uniform1f(u('uAudioAccent'), drive.accent);
-    gl.uniform1f(u('uMotion'), settings.motion);
     for (let i = 0; i < BAND_KEYS.length; i++) {
       const key = BAND_KEYS[i]!;
       const value = (key === 'beat' ? drive.beat : shape[key]) * controls.response / 1.6;
@@ -376,6 +384,7 @@ export class Renderer {
     gl.uniform1f(u('uIntensity'), controls.amplitude);
     gl.uniform1f(u('uLineWidth'), controls.lineWidth);
     gl.uniform1f(u('uGlow'), controls.glow);
+    gl.uniform1f(u('uViewZoom'), controls.zoom);
     gl.uniform1f(u('uDetail'), DETAIL[settings.quality]);
     gl.uniform1f(u('uTransparent'), settings.background === 'transparent' ? 1 : 0);
     gl.uniform1f(u('uOpacity'), settings.opacity);

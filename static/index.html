@@ -28,6 +28,10 @@
     <div id="drag-zone" aria-label="Drag this area to move the window">
       <div class="wordmark"><img class="brand-lockup" src="./brand-logo.svg" alt="vsualize" width="132" height="35" draggable="false"></div>
       <span class="drag-hint">DRAG TO MOVE</span>
+      <div id="now-playing" aria-live="polite" aria-atomic="true" hidden>
+        <div id="song-title" dir="auto"></div>
+        <div id="song-artist" dir="auto"></div>
+      </div>
     </div>
     <div class="window-actions">
       <button id="minimize" class="icon-button" title="Minimize" aria-label="Minimize"><svg viewBox="0 0 24 24"><path d="M6 16h12"/></svg></button>
@@ -56,9 +60,10 @@
       <div class="control slider-control"><label for="intensity">Intensity</label><output for="intensity" id="intensity-value"></output><input id="intensity" data-setting="intensity" type="range" min="0" max="3" step="0.05" title="One control for shape energy and music response. 100% is this effect's tuned balance; higher is more dramatic."></div>
       <div class="control slider-control"><label for="lineWidth">Line thickness</label><output for="lineWidth" id="lineWidth-value"></output><input id="lineWidth" data-setting="lineWidth" type="range" min="0.35" max="4" step="0.05" title="Fine filaments to bold ribbons, without changing resolution or zoom."></div>
       <p id="width-note" class="control-note" hidden>For this surface, thickness controls the width of luminous highlights.</p>
-      <div class="control slider-control"><label for="motion">Speed</label><output for="motion" id="motion-value"></output><input id="motion" data-setting="motion" type="range" min="0" max="3" step="0.05" title="Forward travel and pattern motion. Zero stops travel; higher values move from slow drift to rapid flight."></div>
+      <div class="control slider-control"><label for="motion">Reaction</label><output for="motion" id="motion-value"></output><input id="motion" data-setting="motion" type="range" min="0" max="3" step="0.05" title="Soft to snappy. Higher values react and settle faster; every setting follows the music's timing."></div>
       <div class="control slider-control"><label for="glow">Glow</label><output for="glow" id="glow-value"></output><input id="glow" data-setting="glow" type="range" min="0" max="1" step="0.01" title="Clean line cores at 0%; broad, saturated light halos at 100%."></div>
-      <p class="control-note">Smooth motion is built in · settings are saved per effect.</p>
+      <div class="control slider-control" data-soundform-view hidden><label for="zoom">Zoom</label><output for="zoom" id="zoom-value"></output><input id="zoom" data-setting="zoom" type="range" min="0.5" max="2.5" step="0.05" title="Zoom in or out from the ripple. 1× is the original view."></div>
+      <p class="control-note">Reaction: soft to snappy · always follows the music · saved per effect.</p>
       <button id="reset-response" class="secondary-button" title="Restore this effect's defaults. Keep audio devices, global settings and other effects.">Reset this effect</button>
       <div class="palette-section"><div class="row-label"><span>Palette</span><span id="palette-name" class="muted">Randomize</span></div><div id="palettes" class="palettes" role="group" aria-label="Color palette"></div>
         <div id="randomize-details" hidden>
@@ -128,7 +133,7 @@
       <p class="panel-note">Move your effect settings between Browser Studio and the Windows app.</p>
       <div id="app-updates"><div class="button-row"><button id="check-updates" class="secondary-button">Check for updates</button><button id="install-update" class="secondary-button" hidden>Install update and restart</button></div><p id="update-status" class="source-status" role="status" aria-live="polite"></p></div>
       <div class="button-row"><button id="reset-settings" class="secondary-button">Reset appearance</button><button id="center-window" class="secondary-button">Center window</button></div>
-      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.3.1</p>
+      <p class="panel-note">Size and position are remembered automatically.<br>Vsualize 0.4.0</p>
     </div>
   </section>
   <div class="resize-edge north" data-resize="North"></div><div class="resize-edge south" data-resize="South"></div><div class="resize-edge west" data-resize="West"></div><div class="resize-edge east" data-resize="East"></div>

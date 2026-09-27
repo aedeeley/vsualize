@@ -102,7 +102,10 @@ export class MotionDriver {
     const coast = settings.idleMotion ? 1 : 1 - clamp((this.silentFor - 0.65) / 0.95);
     for (const key of Object.keys(targets) as (keyof typeof targets)[]) targets[key] *= coast;
     for (const key of ['time', 'travel', 'turn', 'flow', 'colorShift'] as const) {
-      const old = this.velocities[key], target = targets[key], rate = rates[key];
+      const old = this.velocities[key], target = targets[key];
+      // Every attack responds promptly; Reaction changes how quickly movement
+      // catches and releases the sound without multiplying its musical clock.
+      const rate = target > old ? 40 * Math.max(1, controls.reactionRate) : rates[key] * controls.reactionRate;
       const decay = Math.exp(-rate * dt);
       // Exact integration of the eased velocity for this timestep. Importantly,
       // releasing bass never subtracts the distance gained during a bass hit.
@@ -110,7 +113,8 @@ export class MotionDriver {
       this.velocities[key] = target + (old - target) * decay;
       s[key] += Math.max(0, distance) * motion;
     }
-    s.clock += dt * motion * (settings.idleMotion ? 1 : coast);
+    // Impulse timestamps and their refractory periods are measured in seconds.
+    s.clock += dt;
     s.speed = this.velocities.travel * motion;
     return s;
   }

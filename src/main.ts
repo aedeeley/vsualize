@@ -1,4 +1,4 @@
-import type { AudioMode, DeviceInfo, Settings, VisualId } from './types.js';
+import type { AudioMode, DeviceInfo, Settings, VisualId, PaletteId } from './types.js';
 import { activateVisual, isVisualTuningKey, rememberVisualTuning, resetVisualTuning, resetAllVisualTunings } from './visual-presets.js';
 import { DEFAULTS, PALETTES, PALETTE_ORDER, VISUAL_IDS, loadSettings, saveSettings, startupMode, silentFrame } from './settings.js';
 import { describeSignal, formatRawLevel, rawMeterValue } from './signal.js';
@@ -13,6 +13,9 @@ import { matchesVisual, nextVisual } from './library.js';
 import { THUMBNAILS } from './visuals/thumbnails.js';
 import { VISUALS } from './visuals/index.js';
 import { isNative, nativeDevices, syncWindowCorners, windowAction } from './native.js';
+import { initializePreviewMenu } from './preview-menu.js';
+import type { PreviewMenu } from './preview-menu.js';
+import { initializeNowPlaying } from './now-playing.js';
 
 const byId = <T extends HTMLElement = HTMLElement>(id: string): T => {
   const element = document.getElementById(id);
@@ -21,11 +24,14 @@ const byId = <T extends HTMLElement = HTMLElement>(id: string): T => {
 };
 const settings = loadSettings();
 const query = new URLSearchParams(location.search);
+const menuStudy = query.get('layout') !== 'classic';
+let previewMenu: PreviewMenu | undefined;
 settings.mode = startupMode(settings.mode, isNative);
 if (VISUAL_IDS.includes(query.get('visual') as VisualId)) activateVisual(settings, query.get('visual') as VisualId);
 const canvas = byId<HTMLCanvasElement>('visualizer');
 const panel = byId('panel');
 const chrome = byId('chrome');
+const nowPlaying = initializeNowPlaying();
 // The root clip also covers the canvas, translucent backdrop, and drag gradient.
 let cornerSyncTimer = 0;
 function scheduleCornerSync() {
@@ -63,9 +69,13 @@ function show(keyboard = false): void {
   panel.inert = false; chrome.inert = false;
   panel.classList.add('visible'); chrome.classList.add('visible');
   panel.setAttribute('aria-hidden', 'false'); chrome.setAttribute('aria-hidden', 'false');
-  if (keyboard) panel.querySelector<HTMLButtonElement>('[role=tab][aria-selected=true]')?.focus();
+  previewMenu?.show();
+  nowPlaying.show();
+  if (keyboard) (previewMenu ? byId('study-settings-card') : panel.querySelector<HTMLButtonElement>('[role=tab][aria-selected=true]'))?.focus();
 }
 function hide(): void {
+  nowPlaying.hide();
+  previewMenu?.close();
   visible = false;
   if (panel.contains(document.activeElement) || chrome.contains(document.activeElement)) canvas.focus({ preventScroll: true });
   panel.classList.remove('visible'); chrome.classList.remove('visible');
@@ -79,11 +89,12 @@ function setTab(name: string): void {
     byId(`page-${button.dataset.tab}`).hidden = !selected;
   });
   lastInteraction = performance.now();
+  if (name === 'audio') previewMenu?.openAudio();
 }
 
 let renderer: Renderer;
 try {
-  renderer = new Renderer(canvas, toast);
+  renderer = new Renderer(canvas, toast, menuStudy);
   if (query.has('validate')) renderer.validateAll();
 } catch (error) {
   toast(`Graphics initialization failed: ${error instanceof Error ? error.message : String(error)}`);
@@ -162,20 +173,26 @@ function buildVisualPicker(): void {
     if (pool.length) selectVisual(pool[Math.floor(Math.random() * pool.length)]!);
   });
 }
+function paletteBackground(id: PaletteId): string {
+  if (id === 'spectrum' || id === 'randomize') return 'conic-gradient(#ff4679,#ffeb72,#71fbbb,#59c4ff,#7a59ff,#ff4679)';
+  return `linear-gradient(135deg,${PALETTES[id === 'auto' ? 'iris' : id].colors.join(',')})`;
+}
 function buildPalettes(): void {
   const holder = byId('palettes');
+  const modes = document.createElement('div'); modes.className = 'palette-modes';
+  const swatches = document.createElement('div'); swatches.className = 'palette-swatches';
+  holder.append(modes, swatches);
   for (const id of PALETTE_ORDER) {
     const button = document.createElement('button'); button.className = 'palette-button'; button.dataset.palette = id;
     if (id === 'randomize') {
-      button.classList.add('randomize');
+      button.classList.add('palette-mode', 'randomize');
       button.title = 'Randomize: five colors at once, continuously evolving into fresh palettes';
-      button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h2c6 0 8 12 14 12h2m-4-4 4 4-4 4M3 18h2c2 0 4-2 6-5m2-3c2-3 4-4 6-4h2m-4-4 4 4-4 4"/></svg>';
+      button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m17 3 4 4-4 4M3 17h3c4 0 6-10 10-10h5M3 7h3c1 0 2 1 3 2m6 6 1 2h5m-4-4 4 4-4 4"/></svg><span>Randomize</span>';
     }
-    else if (id === 'auto') { button.classList.add('auto'); button.textContent = '◌'; button.title = 'Visual default'; }
-    else { const p = PALETTES[id]; button.style.background = id === 'spectrum' ? 'conic-gradient(#ff4679,#ffeb72,#71fbbb,#59c4ff,#7a59ff,#ff4679)' : `linear-gradient(135deg,${p.colors.join(',')})`; button.title = p.name; }
+    else { button.style.background = paletteBackground(id); button.title = PALETTES[id].name; }
     button.setAttribute('aria-label', id === 'randomize' ? 'Randomize' : button.title);
     button.addEventListener('click', () => { settings.palette = id; rememberVisualTuning(settings); persist(); syncUI(); });
-    holder.append(button);
+    (id === 'randomize' ? modes : swatches).append(button);
   }
 }
 
@@ -189,8 +206,11 @@ function syncPalettePreview(): void {
 
 function syncUI(): void {
   byId('visual-name').textContent = VISUALS[settings.visual].name;
+  const resolvedPalette = settings.palette === 'auto' ? VISUALS[settings.visual].palette : settings.palette;
+  const activePalette = resolvedPalette === 'auto' ? 'iris' : resolvedPalette;
   byId('visual-description').textContent = VISUALS[settings.visual].subtitle;
-  byId('reset-response').title = `Restore ${VISUALS[settings.visual].name}'s intensity, line thickness, speed, glow and palette. Other effects and audio settings stay unchanged.`;
+  byId('reset-response').title = `Restore ${VISUALS[settings.visual].name}'s intensity, line thickness, reaction, glow${settings.visual === 'soundform' ? ', zoom' : ''} and palette. Other effects and audio settings stay unchanged.`;
+  document.querySelectorAll<HTMLElement>('[data-soundform-view]').forEach(control => { control.hidden = settings.visual !== 'soundform'; });
   byId('reset-response').setAttribute('aria-label', `Reset ${VISUALS[settings.visual].name} to defaults`);
   byId('width-note').hidden = !['glass', 'lava'].includes(settings.visual);
   byId('lineWidth').title = ['glass', 'lava'].includes(settings.visual) ? 'Width of luminous highlights and surface ridges; does not change object size.' : 'Fine filaments to bold ribbons. Changes stroke width, not resolution or zoom.';
@@ -203,7 +223,8 @@ function syncUI(): void {
   filterVisuals();
   panel.className = `panel ${settings.menuPosition}${visible ? ' visible' : ''}`;
   for (const selector of ['visual', 'palette', 'mode', 'background'] as const) {
-    document.querySelectorAll<HTMLButtonElement>(`[data-${selector}]`).forEach(button => button.setAttribute('aria-pressed', String(button.dataset[selector] === settings[selector])));
+    const selected = selector === 'palette' ? activePalette : settings[selector];
+    document.querySelectorAll<HTMLButtonElement>(`[data-${selector}]`).forEach(button => button.setAttribute('aria-pressed', String(button.dataset[selector] === selected)));
   }
   document.querySelectorAll<HTMLInputElement | HTMLSelectElement>('[data-setting]').forEach(input => {
     const key = input.dataset.setting as keyof Settings;
@@ -212,10 +233,10 @@ function syncUI(): void {
     if (input instanceof HTMLInputElement && input.type === 'range') {
       input.style.setProperty('--fill', `${(Number(input.value) - Number(input.min)) / (Number(input.max) - Number(input.min)) * 100}%`);
       const out = document.getElementById(`${input.id}-value`);
-      if (out) out.textContent = key === 'noiseGate' ? `${(Number(input.value) * 100).toFixed(2)}%` : key === 'opacity' || key === 'glow' || key === 'intensity' ? `${Math.round(Number(input.value) * 100)}%` : `${Number(input.value).toFixed(2)}×`;
+      if (out) out.textContent = key === 'motion' ? `${Math.round(Number(input.value) / 3 * 100)}%` : key === 'noiseGate' ? `${(Number(input.value) * 100).toFixed(2)}%` : key === 'opacity' || key === 'glow' || key === 'intensity' ? `${Math.round(Number(input.value) * 100)}%` : `${Number(input.value).toFixed(2)}×`;
     }
   });
-  byId('palette-name').textContent = settings.palette === 'randomize' ? 'Randomize' : settings.palette === 'auto' ? 'Visual default' : PALETTES[settings.palette].name;
+  byId('palette-name').textContent = activePalette === 'randomize' ? 'Randomize' : PALETTES[activePalette].name;
   byId('randomize-details').hidden = settings.palette !== 'randomize';
   syncPalettePreview();
   byId('desktop-options').hidden = !['desktop', 'both'].includes(settings.mode);
@@ -226,6 +247,7 @@ function syncUI(): void {
     document.body.classList.toggle('transparent-preview', settings.background === 'transparent');
     byId('preview-label').textContent = `Browser preview · ${settings.mode === 'demo' ? 'DEMO: not your music' : settings.mode === 'microphone' ? 'Microphone selected' : 'No audio connected; choose Mic or Demo in Audio'}${settings.background === 'transparent' ? ' · Sample backdrop' : ''}`;
   }
+  previewMenu?.sync();
 }
 
 const audioKeys = ['mode', 'desktopDevice', 'microphoneDevice', 'desktopGain', 'microphoneGain', 'sensitivity', 'noiseGate'];
@@ -295,7 +317,7 @@ byId('signal-monitor').addEventListener('click', () => { show(); setTab('audio')
 byId('copy-diagnostics').addEventListener('click', async () => {
   const f = audio.frame;
   const data = {
-    app: 'Vsualize 0.3.1', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
+    app: 'Vsualize 0.4.0', native: isNative, capturedAt: new Date().toISOString(), source: settings.mode,
     rendering: renderer.resolution, performance: { ...renderer.performance, frames: renderer.frames },
     status: describeSignal(settings, f, audio.error), responseDisabledForComparison: comparing,
     volume: f.volume, bass: f.bass, mid: f.mid, treble: f.treble, beat: f.beat,
@@ -397,6 +419,7 @@ window.addEventListener('keydown', event => {
 });
 
 window.setInterval(() => {
+  if (previewMenu?.isOpen() || (previewMenu && panel.contains(document.activeElement))) return;
   if (!visible || settings.controlsTimeout === 0 || interacting || panel.matches(':hover') || chrome.matches(':hover')) return;
   if (document.activeElement instanceof HTMLInputElement || document.activeElement instanceof HTMLSelectElement) return;
   if (performance.now() - lastInteraction > settings.controlsTimeout * 1000) hide();
@@ -481,5 +504,6 @@ if (isNative) {
   });
   void windowAction('ready').catch(error => toast(String(error)));
 }
+if (menuStudy) previewMenu = initializePreviewMenu(settings, renderer, selectVisual, toast);
 if ((!isNative && query.get('ui') !== 'hidden') || query.get('ui') === 'visible') show();
 window.addEventListener('beforeunload', () => { saveSettings(settings); renderer.destroy(); void audio.destroy(); });

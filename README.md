@@ -13,7 +13,7 @@ A borderless, audio-reactive Windows widget. Play music in your usual player and
 
 ## Install
 
-Download **Vsualize_0.3.1_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest). Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
+Download **Vsualize_0.4.0_x64-setup.exe** from [GitHub Releases](https://github.com/aedeeley/vsualize/releases/latest). Run the installer, then launch Vsualize from the Start menu. It installs for your Windows account, provides shortcuts and an uninstaller, and installs WebView2 if needed. Users do not need Node, Rust, or development tools.
 
 The installer has a cryptographic **update signature**. It does not yet have a Windows Authenticode publisher certificate, so Windows may show an unknown-publisher or SmartScreen prompt. These are separate signing systems.
 
@@ -33,7 +33,7 @@ Shader programs are cached and prewarmed, render buffers are reused, hidden/mini
 
 ## Updates
 
-Open **Settings → Check for updates**. The app also checks after startup and every six hours while visible. Downloads and installation happen only after you choose **Install update and restart**. The native updater verifies the installer signature and signed version before installation. Settings and window preferences use the existing `app.vsualize.desktop` identity.
+Open **Settings → App → Check for updates** (older versions: **Settings → Check for updates**). The app also checks after startup and every six hours while visible. Downloads and installation happen only after you choose **Install update and restart**. The native updater verifies the installer signature and signed version before installation. Settings and window preferences use the existing `app.vsualize.desktop` identity.
 
 Updates are served by GitHub Releases. [Release maintenance](docs/RELEASING.md) covers automated publication and moving the feed to your own HTTPS server. The planned website at **vsualize.app** can link to the stable installer and release notes; website work is separate.
 
@@ -53,7 +53,7 @@ The last command builds a development installer without an update signature. Off
 
 `npm run build` creates `dist/` and a standalone `Vsualize-Preview.html`. That preview supports microphone and synthetic Demo mode; native desktop capture and updates require the installed app.
 
-Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.3.1 release notes](docs/RELEASE-0.3.1.md) describe the current release.
+Source lives in `src/` (TypeScript/WebGL), `src-tauri/` (Rust/Windows/WASAPI), and `static/` (UI). Historical 0.2.x notes and fixtures document previous iterations; [0.4.0 release notes](docs/RELEASE-0.4.0.md) describe the current release.
 
 ## Branding
 

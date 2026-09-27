@@ -5,16 +5,17 @@ export const soundform: VisualDefinition = {
     reference: 'sound shaped dynamic ripple spectral surface',
     subtitle: 'Sound sculpts the surface: low notes raise broad hills, mids carve moving ridges, highs etch finer detail. Each wave carries its own spectral history.',
     fragment: ripple_family_js_1.RIPPLE_FAMILY + `
+uniform float uViewZoom;
 void main() {
-  vec2 p=sceneUV();
+  vec2 p=sceneUV()/uViewZoom;
   // Frame the same raised contour language as Classic, without its fixed lobes.
   float x=p.x*1.53, y=p.y*1.53+0.20;
-  float pixel=3.06/min(uResolution.x,uResolution.y);
+  float pixel=3.06/(min(uResolution.x,uResolution.y)*uViewZoom);
   vec3 col=vec3(0.0);
-  int rings=int(mix(36.0,76.0,uDetail));
+  int rings=int(mix(36.0,76.0,uDetail)*0.70+0.5);
   float stepR=2.32/float(rings), phase=fract(uClock*0.62);
   for(int side=0;side<2;side++) {
-    for(int i=0;i<76;i++) {
+    for(int i=0;i<53;i++) {
       if(i>=rings) break;
       float index=side==0?float(rings-1-i):float(i);
       float radius=(index+phase+1.0)*stepR;

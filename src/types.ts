@@ -43,8 +43,10 @@ export interface AudioConfig {
 export interface VisualTuning {
   intensity: number;
   lineWidth: number;
+  /** Reaction setting (0 = soft, 3 = snappy); legacy storage key retained. */
   motion: number;
   glow: number;
+  zoom: number;
   palette: PaletteId;
 }
 

@@ -65,8 +65,9 @@ with sync_playwright() as p:
  check('manual fixed palette is persisted with migration marker',page.evaluate('JSON.parse(storage.get("vsualize.settings.v1")).palette')=='ember' and page.evaluate('JSON.parse(storage.get("vsualize.settings.v1")).colorBehavior')==1)
  saved=page.evaluate('JSON.parse(storage.get("vsualize.settings.v1"))')
  check('palette choice does not restart capture',not page.evaluate('(i)=>nativeCalls.slice(i).some(c=>["start_audio","stop_audio"].includes(c.command))',calls))
- page.locator('[data-palette="auto"]').click()
- check('Visual default remains selectable',page.locator('#palette-name').inner_text()=='Visual default')
+ check('duplicate Visual default swatch is removed',page.locator('[data-palette="auto"]').count()==0)
+ page.locator('[data-palette="iris"]').click()
+ check('Iris remains selectable',page.locator('#palette-name').inner_text()=='Iris')
  page.locator('[data-palette="randomize"]').click()
  check('live palette details return for Randomize',page.locator('#randomize-details').is_visible())
  for width,height in [(300,240),(420,700),(860,850),(1024,450)]:

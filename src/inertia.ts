@@ -40,20 +40,21 @@ export class VisualInertia {
     this.spectrum.fill(0);
     for (const key of BAND_KEYS) this.value[key] = 0;
   }
-  update(state: MotionState, spectrum: Float32Array, dt: number, amount = 0.75): typeof this.value {
+  update(state: MotionState, spectrum: Float32Array, dt: number, amount = 0.75, reactionRate = 1): typeof this.value {
     const a = Number.isFinite(amount) ? clamp(amount) : 0.75;
+    const reaction = Number.isFinite(reactionRate) ? clamp(reactionRate, 0.5, 4) : 1;
     for (let i = 0; i < BAND_KEYS.length; i++) {
       const key = BAND_KEYS[i]!;
       const target = Number.isFinite(state[key]) ? clamp(state[key]) : 0;
       const seconds = target > this.value[key]
-        ? ATTACK_BASE[i]! + ATTACK_SMOOTHING[i]! * a
-        : RELEASE_BASE[i]! + RELEASE_SMOOTHING[i]! * a;
+        ? (ATTACK_BASE[i]! + ATTACK_SMOOTHING[i]! * a) / Math.max(1, reaction)
+        : (RELEASE_BASE[i]! + RELEASE_SMOOTHING[i]! * a) / reaction;
       this.value[key] = this.bands[key].update(target, dt, seconds);
     }
     for (let i = 0; i < 128; i++) {
       // Small spatial smoothing, not a broad blur that erases isolated notes.
       const target = clean(spectrum[i] ?? 0)*0.60 + clean(spectrum[Math.max(0,i-1)] ?? 0)*0.20 + clean(spectrum[Math.min(127,i+1)] ?? 0)*0.20;
-      this.spectrum[i] = this.bins[i]!.update(target, dt, target > this.spectrum[i]! ? 0.025 + a*0.018 : 0.065 + a*0.17);
+      this.spectrum[i] = this.bins[i]!.update(target, dt, target > this.spectrum[i]! ? (0.025 + a*0.018) / Math.max(1, reaction) : (0.065 + a*0.17) / reaction);
     }
     return this.value;
   }

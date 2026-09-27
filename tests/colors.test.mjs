@@ -12,8 +12,8 @@ const maxDifference = (a, b) => Math.max(...a.flat().map((v, i) => Math.abs(v - 
 test('Randomize is the first and default color option; all fixed palettes remain', () => {
   assert.equal(DEFAULTS.palette, 'randomize');
   assert.equal(DEFAULTS.colorBehavior, 1);
-  assert.deepEqual(PALETTE_ORDER, ['randomize', 'auto', ...Object.keys(PALETTES)]);
-  assert.equal(new Set(PALETTE_ORDER).size, 9);
+  assert.deepEqual(PALETTE_ORDER, ['randomize', ...Object.keys(PALETTES)]);
+  assert.equal(new Set(PALETTE_ORDER).size, 8);
   assert.deepEqual(sanitizeSettings(null), DEFAULTS);
   assert.equal(sanitizeSettings({ ...DEFAULTS, palette: 'not-a-palette' }).palette, 'randomize');
 });

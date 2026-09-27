@@ -30,6 +30,16 @@ svg { display:block; width:18px; height:18px; fill:none; stroke:currentColor; st
 .wordmark { display:flex; align-items:center; gap:9px; color:rgba(255,255,255,.7); font-size:13px; letter-spacing:.05em; }
 .wordmark svg { width:25px; height:25px; stroke-width:1; }
 .drag-hint { color:rgba(255,255,255,.24); font-size:8px; letter-spacing:.17em; }
+#now-playing { min-width:0; flex:1; line-height:1.45; text-shadow:0 1px 6px #000; }
+#song-title,#song-artist { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#song-title { font-size:14px; font-weight:600; color:#f2f0f7; }
+#song-artist { font-size:12px; color:#b8b5c3; }
+#drag-zone:has(#now-playing:not([hidden])) .drag-hint { display:none; }
+#drag-zone:has(#now-playing:not([hidden])) .wordmark { flex-shrink:0; }
+@media (max-width:440px) {
+  #drag-zone:has(#now-playing:not([hidden])) { gap:12px; padding-left:16px; }
+  #drag-zone:has(#now-playing:not([hidden])) .wordmark { display:none; }
+}
 .window-actions { position:absolute; right:14px; top:17px; display:flex; gap:4px; pointer-events:none; }
 .chrome.visible .window-actions { pointer-events:auto; }
 .icon-button { width:28px; height:28px; display:grid; place-items:center; border-radius:7px; color:#a3a2af; flex:none; transition:color .15s,background .15s; }
@@ -74,10 +84,10 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:9px; he
 input[type=range]::-moz-range-thumb { width:9px; height:9px; border:0; border-radius:50%; background:#d0c2e5; }
 .row-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
 .muted { color:var(--muted); font-size:10px; }
-.palettes { display:flex; gap:9px; align-items:center; }
-.palette-button { width:28px; height:28px; border-radius:50%; border:3px solid #19191f; box-shadow:0 0 0 1px rgba(255,255,255,.10); }
+.palettes { display:flex; flex-direction:column; gap:9px; align-items:stretch; }
+.palette-modes,.palette-swatches { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.palette-button { display:grid; place-items:center; padding:0; width:28px; height:28px; border-radius:50%; border:3px solid #19191f; box-shadow:0 0 0 1px rgba(255,255,255,.10); }
 .palette-button[aria-pressed="true"] { box-shadow:0 0 0 1.5px #e0cffa; }
-.palette-button.auto { display:grid; place-items:center; background:#36323f; font-size:13px; color:#e1d6f3; }
 .panel-note { font-size:9px; color:#85828f; line-height:1.65; margin:15px 0 0; text-align:center; }
 .panel-note.left { text-align:left; margin:0 0 14px; }
 .segmented { display:flex; padding:3px; border-radius:8px; border:1px solid var(--line); margin-bottom:16px; gap:3px; }
@@ -111,7 +121,8 @@ input[type=checkbox]:checked:after { background:#eee8f7; transform:translateX(11
 .inline-notice { padding:10px; font-size:10px; line-height:1.55; color:#dcc4ae; background:rgba(180,130,72,.08); border:1px solid rgba(202,155,95,.19); border-radius:7px; overflow-wrap:anywhere; }
 #preview-label { position:absolute; bottom:18px; left:20px; color:rgba(205,195,221,.52); font-size:9px; letter-spacing:.025em; pointer-events:none; max-width:calc(100vw - 40px); z-index:4; }
 #preview-label span { padding:0 5px; }
-#toast { position:absolute; top:78px; left:50%; transform:translateX(-50%); width:max-content; max-width:min(480px,calc(100% - 32px)); border:1px solid #514754; background:#26202bee; color:#ded2e3; padding:12px 15px; border-radius:9px; font-size:11px; line-height:1.6; z-index:40; box-shadow:0 6px 25px #0006; }
+/* Shared status popups use the settings surface and size to their message. */
+#toast { position:absolute; inset:50% auto auto 50%; transform:translate(-50%,-50%); width:max-content; max-width:min(400px,calc(100% - 32px)); max-height:calc(100% - 32px); overflow:auto; overflow-wrap:anywhere; border:1px solid #ffffff16; background:#101114fc; color:#e5e8ee; padding:18px 20px; border-radius:9px; font-size:13px; line-height:1.6; z-index:40; box-shadow:0 12px 40px #0007; }
 .resize-edge { position:absolute; z-index:30; }
 .resize-edge.north { top:0; left:9px; right:9px; height:5px; cursor:n-resize; }
 .resize-edge.south { bottom:0; left:9px; right:9px; height:5px; cursor:s-resize; }
@@ -150,11 +161,13 @@ body.preview .resize-edge { display:none; }
 .visual-item:hover .favorite-visual,.favorite-visual:focus-visible,.favorite-visual[aria-pressed=true] { opacity:1; }
 .favorite-visual:hover { background:#332840; }
 .visual-description { margin:10px 0 14px; color:#898391; line-height:1.5; font-size:9px; }
-.palettes { gap:6px; flex-wrap:wrap; }
+.palettes { gap:10px; }
 .palette-button { width:24px; height:24px; flex:none; }
 /* Randomize is a mode, not a one-shot shuffle. No independent UI animation. */
-.palette-button.randomize { display:grid; place-items:center; background:conic-gradient(#ff4679,#ffe672,#71fbbb,#59c4ff,#7a59ff,#ff4679); }
-.palette-button.randomize svg { width:14px; height:14px; padding:1px; border-radius:50%; background:#1119; color:#fff; stroke-width:2; }
+.palette-modes .palette-mode { display:inline-flex; justify-content:center; align-items:center; gap:7px; width:auto; height:30px; padding:0 10px; border:1px solid var(--line); border-radius:4px; background:#ffffff06; color:var(--muted); font-size:11px; line-height:1; }
+.palette-modes .palette-mode[aria-pressed="true"] { background:#ffffff10; color:#ebeaf1; }
+.palette-modes .palette-mode:hover { background:#ffffff14; color:#fff; }
+.palette-mode svg { width:14px; height:14px; flex:none; stroke-width:1.8; }
 @media (pointer:coarse) { .favorite-visual { opacity:1; } }
 
 /* Live capture diagnostics. Hidden with controls unless the user pins the monitor. */

@@ -21,8 +21,8 @@ export const PALETTES: Record<Exclude<PaletteId, 'auto' | 'randomize'>, Palette>
   spectrum: { name: 'Prismatic', colors: ['#ff4679', '#71fbbb', '#7a59ff'] },
   neon: { name: 'Neon', colors: ['#ff32df', '#a1ff48', '#3bead7'] }
 };
-/** The picker order is explicit: cycling first, visual default second, then fixed palettes. */
-export const PALETTE_ORDER: readonly PaletteId[] = PALETTE_IDS;
+/** Show cycling and unique fixed palettes; legacy 'auto' settings remain supported. */
+export const PALETTE_ORDER = PALETTE_IDS.filter(id => id !== 'auto');
 export const VISUAL_IDS: readonly VisualId[] = IDS;
 export const clamp = (value: number, min = 0, max = 1): number => Math.max(min, Math.min(max, value));
 export const hexRGB = (hex: string): [number, number, number] => [parseInt(hex.slice(1, 3), 16) / 255, parseInt(hex.slice(3, 5), 16) / 255, parseInt(hex.slice(5, 7), 16) / 255];

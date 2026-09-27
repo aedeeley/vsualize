@@ -35,6 +35,7 @@ const bundle = `(function(){const modules={${modules.join(',\n')}};const cache={
 let html = await readFile('static/index.html', 'utf8');
 html = await inlineBrandPreview(html, root);
 html = html.replace('<link rel="stylesheet" href="./style.css">', `<style>${await readFile('static/style.css', 'utf8')}</style>`);
+html = html.replace('</head>', `<style id="preview-menu-style">${await readFile('static/preview-menu.css', 'utf8')}</style></head>`);
 html = html.replace('<script type="module" src="./main.js"></script>', `<script>${bundle.replaceAll('</script', '<\\/script')}</script>`);
 await writeFile('Vsualize-Preview.html', html);
 await rm('.bundle', { recursive: true, force: true });

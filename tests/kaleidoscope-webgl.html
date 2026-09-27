@@ -1,0 +1,62 @@
+<!doctype html><meta charset="utf-8"><title>Kaleidoscope visual verification</title>
+<style>body{margin:0;background:#080a10;color:#d7dce9;font:13px system-ui}p{padding:10px 20px;margin:0}.gallery{position:relative;width:1200px;height:750px}canvas{width:100%;height:100%}.labels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(5,1fr);pointer-events:none}.labels span{display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;border:1px solid #ffffff08;font-size:12px}</style>
+<p id="status">Compiling drawings…</p><div class="gallery"><canvas width="1200" height="750"></canvas><div class="labels"></div></div>
+<script type="module">
+// Run npm run build, copy this file into dist/, and open it in the dev server.
+import { DRAWINGS, DRAWING_NAMES } from './visuals/kaleidoscope-drawings.js';
+import { DRAWING_LAYOUT, drawingKinds } from './visuals/kaleidoscope-layout.js';
+import { COLLECTION } from './visuals/collection-common.js';
+import { VERTEX } from './visuals/common.js';
+import { kaleidoscope } from './visuals/kaleidoscope.js';
+import { previewFragment } from './preview-tuning.js';
+const canvas=document.querySelector('canvas'), gl=canvas.getContext('webgl2',{preserveDrawingBuffer:true,antialias:false});
+const status=document.querySelector('#status');
+for (const name of DRAWING_NAMES) { const el=document.createElement('span');el.textContent=name;document.querySelector('.labels').append(el); }
+function program(source) {
+  const p=gl.createProgram();
+  for(const [type,code] of [[gl.VERTEX_SHADER,VERTEX],[gl.FRAGMENT_SHADER,source]]) {
+    const shader=gl.createShader(type);gl.shaderSource(shader,code);gl.compileShader(shader);
+    if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(shader));
+    gl.attachShader(p,shader);
+  }
+  gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS)) throw Error(gl.getProgramInfoLog(p));return p;
+}
+try {
+  gl.disable(gl.DITHER);
+  program(kaleidoscope.fragment);program(previewFragment('kaleidoscope',kaleidoscope.fragment));
+  const layout=program(COLLECTION+DRAWING_LAYOUT+`uniform float variety; void main(){
+    vec2 tile=floor(gl_FragCoord.xy)-vec2(9,96);
+    fragColor=vec4(drawingKind(tile,0,variety)/255.0,drawingKind(tile,1,variety)/255.0,drawingKind(tile,2,variety)/255.0,1);
+  }`);
+  gl.useProgram(layout);gl.viewport(0,0,26,256);
+  for (const variety of [0,0.2,0.5,0.99,1,2]) {
+    gl.uniform1f(gl.getUniformLocation(layout,'variety'),variety);gl.drawArrays(gl.TRIANGLES,0,3);
+    const pixels=new Uint8Array(26*256*4);gl.readPixels(0,0,26,256,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+    for(let y=0;y<256;y++) for(let x=0;x<26;x++) {
+      const expected=drawingKinds(x-9,y-96,variety),offset=(y*26+x)*4;
+      if(expected.some((id,i)=>pixels[offset+i]!==id)) throw Error(`GPU selection mismatch at ${x-9},${y-96}, variety ${variety}`);
+    }
+  }
+  const p=program(COLLECTION+DRAWINGS+`void main(){
+    vec2 tile=gl_FragCoord.xy/150.0;
+    float id=(4.0-floor(tile.y))*8.0+floor(tile.x);
+    vec2 pos=(fract(tile)-0.5)*0.95;pos.y-=0.045;
+    float d=drawing(pos,id,0.43,1.0);
+    float pixel=max(length(vec2(dFdx(d),dFdy(d))),0.95/150.0);
+    float ink=1.0-smoothstep(pixel*0.2,pixel*1.5,d);
+    vec3 color=0.6+0.4*cos(vec3(0,2,4)+id*0.63);
+    fragColor=vec4(vec3(0.032,0.04,0.06)+color*ink,1);
+  }`);
+  gl.useProgram(p);gl.viewport(0,0,1200,750);gl.drawArrays(gl.TRIANGLES,0,3);
+  const pixels=new Uint8Array(1200*750*4);gl.readPixels(0,0,1200,750,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+  for(let y=0;y<5;y++) for(let x=0;x<8;x++) {
+    let ink=0;
+    for(let j=0;j<150;j++) for(let i=0;i<150;i++) {
+      const n=((y*150+j)*1200+x*150+i)*4;
+      if(Math.max(pixels[n],pixels[n+1],pixels[n+2])>100) ink++;
+    }
+    if(ink<80||ink>9000) throw Error(`Unexpected ink coverage for drawing ${(4-y)*8+x}: ${ink}`);
+  }
+  status.textContent='PASS: 40 drawings rendered; native and preview shaders linked; 39,936 GPU tile selections match the tested non-repeating layout.';
+} catch(error) { status.textContent=String(error); throw error; }
+</script>
